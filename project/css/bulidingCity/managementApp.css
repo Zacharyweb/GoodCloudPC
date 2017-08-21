@@ -1,0 +1,256 @@
+#Header h3{
+    text-align: center;
+    font-weight: 800;
+    color:rgb(204,204,204);
+    margin-bottom: 30px;
+}
+#queryPage p{
+    margin:10px 0;
+    font-size: 14px;
+}
+#queryPage input{
+    font-size: 12px;
+}
+input{
+    height: 42px;border:0;
+}
+.table{
+    margin-top: 30px;
+}
+.table p{
+    margin:10px 0;
+    font-size: 16px;
+}
+.table p.switch{
+    margin-top: 20px;
+}
+.hover{
+    background-color: rgb(134,144,154);
+    color:#fff;
+    padding:10px 25px;
+    cursor: pointer;
+}
+.afterHover{
+    cursor: pointer;
+    padding:9px 23px;
+    background-color:#fff ;
+    color:#000;
+    border:1px solid #000;
+}
+.addMenu{
+    border:1px dotted rgb(204, 204,204);
+    height:80px;
+    position: relative;
+}
+.addMenu a{
+    position: absolute;
+    right: 20px;
+    top:20px;
+}
+#addMenu1 form{
+    padding: 15px 25px;
+
+}
+#addMenu1 .modal-content{
+    width:500px;
+    margin:0 auto;
+}
+#editMenu1 form{
+    padding: 15px 25px;
+
+}
+#editMenu1 .modal-content{
+    width:500px;
+    margin:0 auto;
+}
+#addMenu2 form{
+    padding: 15px 25px;
+
+}
+#addMenu2 .modal-content{
+    width:500px;
+    margin:0 auto;
+}
+#editMenu2 form{
+    padding: 15px 25px;
+
+}
+#editMenu2 .modal-content{
+    width:500px;
+    margin:0 auto;
+}
+#addMenu3 form{
+    padding: 15px 25px;
+
+}
+#addMenu3 .modal-content{
+    width:500px;
+    margin:0 auto;
+}
+#editMenu3 form{
+    padding: 15px 25px;
+
+}
+#editMenu3 .modal-content{
+    width:500px;
+    margin:0 auto;
+}
+#galleryContainer{
+   padding-left: 250px;
+    margin-top: 70px;
+}
+.operation button.green{
+    position:relative;
+    right:30%;
+    top:50px;
+    margin-right:30px;
+}
+.operation button.dark{
+    position:relative;
+    right:30%;
+    top:50px;
+}
+.tabbable-line>.nav-tabs>li{
+    padding: 5px 15px;
+}
+.tabbable-line>.nav-tabs>li>a{
+    font-size: 16px;
+}
+
+.tabbable-line>.nav-tabs>li.active a{
+    font-weight: bold;
+}
+.table-hover>thead>tr{
+    height: 50px;
+}
+.table-hover>tbody>tr{
+    height: 60px;
+}
+p.isClose{
+    display: inline-block;
+    border:1px solid #666;
+    padding: 3px 6px;
+    position: relative;
+    margin:0 0 0 10px;
+}
+p.isClose b{
+    font-weight:normal;
+}
+p.isClose i{
+    font-style:normal;
+    position: absolute;
+    display:block;
+    color:#fff;
+    background-color:rgb(216,74,80);
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    top:-10px;
+    right: -10px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+}
+.isDisabled{
+    color:lightgray!important;
+    pointer-events: none;
+}
+.thisDisabled{
+    pointer-events: none;
+}
+.width{
+    text-align: left;
+    width: 100px;
+    display:inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+}
+#close1{
+    margin-right: 20px;
+}
+#close2{
+    margin-right: 20px;
+}
+.imgIcon{
+    position: absolute;
+    font-size: 70px;
+    font-weight: 100;
+    color:#999;
+    top:45px;
+    left:127px;
+}
+.imgIcon1{
+    display:inline-block;
+    font-size: 100px;
+    font-weight: 100;
+    color:#999;
+    width: 250px;
+    height: 120px;
+    padding-left: 73px;
+    padding-top: 50px;
+}
+.prompt{
+    color:red;
+    vertical-align: top;
+}
+.red{
+    color:red;
+    display: none;
+}
+.canvasBrother{
+    display: inline-block;
+    vertical-align: middle;
+    width: 120px;
+    height: 120px;
+    position:relative;
+}
+.canvasCss{
+    display: inline-block;
+    vertical-align: middle;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    left:114px;
+    top:0;
+    border:1px solid #eee;
+    background: #fff;
+}
+.canvasCss span{
+    position: absolute;
+    left: 43px;
+    top: 50px;
+}
+.isWidth{
+    width: 470px;
+    display: inline-block;
+}
+.imgContainer ul li{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    cursor: pointer;
+}
+.imgContainer ul li span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border:1px solid #666;
+    border-radius: 50%!important;
+    position: absolute;
+    left: 10px;
+    top:10px;
+    background-color: #fff;
+}
+/*
+
+#storeName{
+    position: relative;
+    left: -27px;
+    outline:medium;
+    height: 32px!important;
+    border-left:none;
+    border-top:none;
+    border-bottom:none;
+    z-index: 1!important;
+}*/

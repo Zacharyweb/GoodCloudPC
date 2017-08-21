@@ -1,0 +1,114 @@
+    #doubleOptionsModal,#singleOptionModal,#tabelModal,#cropperModal,#chooseModal,#videoCoverModal{
+        min-width: 300px;   
+        position: fixed;
+        top:50%;
+        left: 50%;
+        background-color: #fff;
+        padding: 20px;  
+        z-index: 100001;
+        box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+        display: none;    
+    }
+
+    #tabelModal{
+        width: 1100px;
+    }
+    #cropperModal{
+        width: auto;
+    }
+    #videoCoverModal{
+        width: 820px;
+    }
+    .custom-modal-header{
+        position: relative;
+        height: 50px;
+        margin-bottom: 10px;
+       
+    }
+    .custom-modal-header h3{
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 40px;
+        margin:0;
+    }
+    .custom-modal-header  .close-modal{
+        position: absolute;
+        right: 10px;
+        top:2px;
+        cursor: pointer; 
+        font-size: 24px;
+    }
+    #tabelModal  .close-table{
+        position: absolute;
+        right: 10px;
+        top:2px;
+        cursor: pointer; 
+        font-size: 24px;
+    }
+    .custom-modal-body{
+     
+    }
+    #tabelModal .custom-modal-body{
+        border:none;
+    }
+    #chooseModal .custom-modal-body{
+        border:none;
+    }
+    #cropperModal .custom-modal-body{
+        min-height: 180px;
+    }
+    .custom-modal-footer{
+         padding-top:10px; 
+    }
+    .custom-modal-footer button{
+        margin-right: 10px;
+     }
+    .custom-modal-mask{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-color: rgba(0,0,0,0.6);
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        display: none; 
+    }   
+    /*截图模态框预览框*/
+    .cropper-box{
+        position: relative;
+        display: inline-block;
+        padding-left: 170px;
+        padding-bottom: 20px;
+        width: 750px;
+        height: 450px;
+    }
+    .preview-pane {
+        display: block;
+        position: absolute;
+        z-index: 2000;
+        left:20px;
+        top:20px;
+        padding: 3px;
+        border: 1px solid rgba(0, 0, 0, .4);
+        background-color: #fff;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        -webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, .2);
+        -moz-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, .2);
+        box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, .2)
+    }
+   .preview-pane .cropper-preview {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+    }
+    #CanvasContainer{
+        position: absolute;
+        left: -4000px;
+    }
+
+
+
+
+

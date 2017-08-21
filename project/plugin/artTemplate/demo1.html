@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板测试</title>
+    <script src="template.js"></script>
+    <script id="test" type="text/html">
+        <h1>{{title}}</h1>
+        <ul>
+            {{each list as value i}}
+            <li>索引 {{i + 1}} ：{{value}}</li>
+            {{/each}}
+        </ul>
+    </script>
+    <script>
+        var data = {
+            title: '标签',
+            list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+        };
+        var html = template('test', data);
+        console.log(html);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

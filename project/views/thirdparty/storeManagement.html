@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include("shared/global-meta.html")
+    <title>好云商-后台管理</title>
+    <!-- 引入全局样式 -->
+    <!-- 全局样式 -->
+    <!-- 全局样式 -->
+    @@include("shared/global-import-css.html")
+    <!-- 截图插件 -->
+    <link href="../../plugin/cropper/cropper.min.css" type="text/css" rel="stylesheet"/>
+    <!-- 下拉选择框组件样式 -->
+    <link href="../../plugin/temporary/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../plugin/temporary/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- 全局插件样式 -->
+    @@include("shared/global-import-plugins-css.html")
+    <link rel="stylesheet" href="../../plugin/pager/css/pager.css">
+    <link rel="stylesheet" href="../../css/brandMgmt.css">
+    <!-- 主体样式 -->
+    <link rel="stylesheet" href="../../css/combinedShopping.css">
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+<div class="page-wrapper">
+    <!-- 顶部Bar开始 -->
+    @@include("shared/header.html",{ "username":"NickName" })
+    <!-- 顶部Bar结束 -->
+    <div class="clearfix"> </div>
+    <!-- 页面中间部分内容开始 -->
+    <div class="page-container">
+        <!-- 侧边栏开始 -->
+        @@include("shared/thirdPartysliderbar.html")
+        <!-- 侧边栏结束 -->
+        <!-- 页面主内容开始 -->
+        <div class="page-content-wrapper">
+            <div class="page-content" style="min-height: 800px;padding-bottom: 90px;">
+                <div class="page-bar no-border">
+                    <h1 class="page-title bold">店铺管理</h1>
+                </div>
+                <!--<div class="defaultInfo" style="padding: 10px 15px;">
+                    <p>复制店铺邀请链接，发送给店铺联系人的微信</p>
+                    <div>
+                        <span style="background:#ffc;height: 38px;border: 1px solid #e4e4e4;text-align: center;width: 500px;display:inline-block; line-height: 38px;">
+                            <b>佳好佳建材城</b> 诚邀您加入 <b>好云商</b>，请按提示完成注册并登录APP
+                        </span>
+                        <button type="button" class="btn dark btn-outline" style="height: 38px;margin-bottom: 5px;">复制邀请链接</button>
+                    </div>
+                </div>-->
+                <div class="row queryOperation" style="padding: 15px 0;">
+                    <form id="queryImgListForm" class="col-sm-12">
+                        <div class="col-sm-2">
+                            <input class="form-control input-sm" name="shopName" placeholder="请输入区域经理名称">
+                        </div>
+                        <div class="col-sm-2">
+                            <input class="form-control input-sm" name="shopName" placeholder="请输入店铺名称">
+                        </div>
+                        <div class="col-sm-2">
+                            <input class="form-control input-sm" name="contacts" placeholder="请输入联系人">
+                        </div>
+                        <div class="col-sm-2">
+                            <select  class="form-control  select2-multiple select2-hidden-accessible" name="status" tabindex="-1" aria-hidden="true">
+                                <option value="-1" selected>选择状态</option>
+                                <option value="1">未激活</option>
+                                <option value="0">正常</option>
+                            </select>
+                        </div>
+                        <div class="btn-group btn-group-devided col-sm-1" data-toggle="buttons">
+                            <button id="btnQuery" type="button" class="btn dark btn-outline btn"><i class="fa fa-search"></i>&nbsp;查询</button>
+                        </div>
+                        <button type="button" class="btn dark pull-right" id="addShop" data-toggle="modal"  href="#Store">+添加店铺</button>
+                        <button type="button" style="margin-right: 20px;"  class="dark btn-outline btn pull-right">查看店铺激活流程</button>
+                    </form>
+                </div>
+                <div class="table-pphd-wrapper">
+                    <table id="tableExcel" class="table table-striped table-bordered table-hover table-header-fixed">
+                        <thead>
+                        <tr class="table-header">
+                            <th>序号</th>
+                            <th>区域经理</th>
+                            <th>店铺名称</th>
+                            <th>店铺联系人</th>
+                            <th>注册手机号</th>
+                            <th>小视频数</th>
+                            <th>状态</th>
+                            <th>备注</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row" style="position: absolute;bottom:20px;right: 35px;">
+                <span id="pager" class="pager pull-right">
+                </span>
+            </div>
+        </div>
+        <!-- 页面主内容结束 -->
+    </div>
+    <!-- 页面中间内容部分结束 -->
+    <!-- 页脚开始 -->
+    @@include("shared/footer.html")
+
+    <!-- 页脚结束 -->
+</div>
+<!-- 页面内容结束 -->
+<!--进入店铺管理内容加载-->
+<script id="storeManagement" type="text/html">
+    {{each data as value i}}
+    <tr class="thisId" data-id="{{value.Id}}">
+        <td>{{i+1}}</td>
+        <td><img src="{{value.Logo}}" alt=""></td>
+        <td>{{value.ShopName}}</br>
+        {{ if !value.ShopId }}
+        {{/if}}
+        {{ if value.ShopId}}
+            {{ if value.RealShopName=="" }}
+            {{/if}}
+            {{ if !value.RealShopName==""}}
+                {{ if value.RealShopName == value.ShopName }}
+                {{/if}}
+                {{ if value.RealShopName != value.ShopName }}
+                    ({{value.RealShopName}})
+                {{/if}}
+            {{/if}}
+        {{/if}}
+        </td>
+        <td>{{value.Contacts}}</br>
+            {{ if !value.ShopId }}
+            {{/if}}
+            {{ if value.ShopId}}
+                {{ if value.NickName=="" }}
+                {{/if}}
+                {{ if !value.NickName==""}}
+                    {{ if value.Contacts == value.NickName }}
+                    {{/if}}
+                    {{ if value.Contacts != value.NickName }}
+                        ({{value.NickName}})
+                    {{/if}}
+                {{/if}}
+            {{/if}}
+        </td>
+
+        <td>{{value.Tel}}<!--</br>
+            {{ if !value.ShopId }}
+            {{/if}}
+            {{ if value.ShopId}}
+                {{ if value.Phone=="" }}
+                {{/if}}
+                {{ if !value.Phone==""}}
+                    ({{value.Phone}})
+                {{/if}}
+            {{/if}}-->
+        </td>
+        <td>{{value.Cash}}</td>
+        <td><a>0</a></td>
+        <td data-id="{{value.ShopId}}">
+            {{ if !value.ShopId }}
+                未接受邀请
+            {{/if}}
+            {{ if value.ShopId}}
+                正常
+            {{/if}}
+        </td>
+        <td>{{value.Remark}}</td>
+        <td>
+            <a data-toggle="modal" class="addStore"  href="#addStore">编辑</a>&nbsp;&nbsp;
+            <a class="del" data-toggle="modal" href="#confirmModal">删除</a>
+        </td>
+    </tr>
+    {{/each}}
+</script>
+<!--修改店铺弹框-->
+<div class="modal fade bs-modal-lg" id="addStore" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" >
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h3 class="modal-title bold">编辑店铺</h3>
+            </div>
+            <div class="modal-body">
+                <form id="addStoreInfo">
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal" style="margin-right: 20px;">取消</button>
+                <button type="button" class="btn green" id="save2">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--修改店铺弹窗内容加载-->
+<script type="text/html" id="modifyInfo">
+    <p class="form-group brand-msg " id="shopId" data-id="{{data.OrganizeId}}">
+        <span class="required" > *&nbsp;</span>
+        <span class="span-name">店铺名称：&nbsp;</span>
+        <input type="text" name="brandName" style="display: inline-block;width: 60%;margin-left: 8%"
+               id="className" value="{{data.ShopName}}" class="form-control" placeholder="请输入店铺名称，最多15个字" minlength="1" maxlength="15" required>
+    </p>
+    <p class="form-group brand-msg" style="margin-bottom: 5px;">
+        <span class="required" aria-required="true"> *&nbsp;</span>
+        <span class="span-label">注册手机号：&nbsp;</span>
+        <input type="text" value="{{data.Tel}}" name="tel" style="display: inline-block;width: 60%;" class="form-control"
+               id="number" minlength="1" maxlength="30" placeholder="用于店铺端APP的登陆激活" required>
+        <span id="colorRed1" style="font-size: 12px;color:red;display: none;">请填写正确手机号</span>
+    <P style="margin: 0;color: #f00;padding-left: 23%;">请确保该手机号会用于注册和登陆好云商APP</P>
+    </p>
+    <p class="form-group brand-msg">
+        <span class="required" aria-required="true"> *&nbsp;</span>
+        <span class="span-label no-required">联系人：&nbsp;</span>
+        <input type="text"  value="{{data.Contacts}}" name="name" id="contacts" style="display: inline-block; width: 60%;" class="form-control"
+               maxlength="5" placeholder="请输入联系人姓名，最多5个字" required>
+    </p>
+    <div class="form-group brand-msg">
+        <span  class="span-label no-required">备注：&nbsp;</span>
+        <textarea id="remark" style="width: 60%;margin-left:10px;padding: 6px 12px;" >{{data.Remark}}</textarea>
+    </div>
+</script>
+<!--添加店铺弹框-->
+<div class="modal fade bs-modal-lg" id="Store" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" >
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h3 class="modal-title bold">添加店铺</h3>
+            </div>
+            <div class="modal-body">
+                <form id="StoreInfo">
+                    <p class="form-group brand-msg shopId" data-id="{{data.OrganizeId}}">
+                        <span class="required" > *&nbsp;</span>
+                        <span class="span-name">店铺名称：&nbsp;</span>
+                        <input type="text" name="brandName" style="display: inline-block;width: 60%;margin-left: 8%"
+                               class="className form-control" placeholder="请输入店铺名称，最多15个字" minlength="1" maxlength="15" required>
+                        </br>
+                    </p>
+                    <p class="form-group brand-msg" style="margin-bottom: 5px;">
+                        <span class="required" aria-required="true"> *&nbsp;</span>
+                        <span class="span-label">注册手机号：&nbsp;</span>
+                        <input type="text" value="" name="tel" style="display: inline-block;width: 60%;" maxlength="15"
+                               class=" tel form-control" required id="phoneNumber" placeholder="用于店铺端APP的登陆激活">
+                    <span id="colorRed" style="font-size: 12px;color:red;display: none;">请填写正确手机号</span>
+                        <P style="margin: 0;color: #f00;padding-left: 23%;">请确保该手机号会用于注册和登陆好云商APP</P>
+                    </p>
+                    <p class="form-group brand-msg">
+                        <span class="required" aria-required="true"> *&nbsp;</span>
+                        <span class="span-label no-required">联系人：&nbsp;</span>
+                        <input type="text"  value="" name="name" style="display: inline-block; width: 60%;" class="form-control name contacts"
+                               maxlength="5" placeholder="请输入联系人姓名，最多5个字" required>
+                    </p>
+                    <div class="form-group brand-msg">
+                        <span  class="span-label no-required">备注：&nbsp;</span>
+                        <textarea class="remark" maxlength="200" style="width: 60%;margin-left:10px;padding: 6px 12px;"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal" style="margin-right: 20px;">取消</button>
+                <button type="button" class="btn green" id="keep">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--退还保证金弹窗-->
+<div class="modal fade bs-modal-lg" id="return" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="returnAnd">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">取消</button>
+                <button type="button" class="btn green" data-dismiss="modal" data-toggle="modal" href="#return1" id="save1">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--加载退还保证金信息-->
+<script type="text/html" id="returnContent">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h3 class="modal-title bold">提示</h3>
+    </div>
+    <div class="modal-body" style="text-align: center;">
+        <b style="font-size: 24px;">请确认向
+            <span style="color:red;">{{data.ShopName}}</span>的店长
+            <span style="color:red;">{{data.Contacts}}（{{data.Tel}}）</span>，退还保证金。
+            <!--<span style="color:red;">{{data.BondCash}}元</span>-->
+        </b>
+    </div>
+</script>
+
+<!--已经退还保证金弹窗-->
+<div class="modal fade bs-modal-lg" id="return1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="returnAnd1">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--已经退还保证金-->
+<script type="text/html" id="confirmReturn">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h3 class="modal-title bold">提示</h3>
+        <div class="modal-body" style="text-align: center;">
+            <b style="text-align: left"><i class="fa fa-check"></i>已退还</b>
+            <p>详情：向
+                <span>{{data.ShopName}}</span>的店长
+                <span>{{data.Contacts}}（{{data.Tel}}）</span>，退还保证金。
+               <!-- <span>{{data.BondCash}}元</span>-->
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn green" id="close" >关闭</button>
+    </div>
+</script>
+<!--加载店铺拖欠联单礼品费页面-->
+<script type="text/html">
+    {{each data as value i}}
+    <tr>
+        <td style="width: 60px;">1</td>
+        <td style="width: 140px;">圣象地板佳好佳店</td>
+        <td style="width: 140px;"><a href="orderSummary.html">12</a></td>
+        <td>￥200</td>
+        <td style="width: 120px;">￥1000</td>
+        <td>7天</td>
+        <td style="min-width: 60px;">由于拖欠联单费用或佣金已屏蔽该店</td>
+    </tr>
+    {{/each}}
+</script>
+<!--确定删除弹窗-->
+<div class="modal fade bs-modal-sm" id="confirmModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body"> 确定删除吗？ </div>
+            <div class="modal-footer no-border">
+                <button type="button" class="btn dark confirmDelete" data-func="confirmDelete">确定</button>
+                <button type="button" class="btn dark btn-outline deleteCancel" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--导出Excel询问弹窗-->
+<div class="modal fade bs-modal-sm" id="excel" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body"> 确定导出到Excel吗？ </div>
+            <div class="modal-footer no-border">
+                <button type="button" class="btn dark excel">确定</button>
+                <button type="button" class="btn dark btn-outline deleteCancel" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 载入全局依赖js -->
+<!-- 全局依赖js -->
+@@include("shared/global-import-js.html")
+<!-- 下拉选择框（带搜索）初始化 -->
+<script src="../../plugin/temporary/select2/js/select2.full.min.js" type="text/javascript"></script>
+<script src="../../plugin/temporary/select2/components-select2.min.js" type="text/javascript"></script>
+<!-- 表单验证-->
+<script src="../../plugin/jquery-validate/localization/messages_zh.js"></script>
+<!-- 自定义共用脚本 -->
+<script src="../../plugin/artTemplate/template.js"></script>
+<script src="../../plugin/temporary/zj-modal/zj-modal.js"></script>
+<script src="../../js/config.js"></script>
+<script src="../../js/utils.js"></script>
+<script src="../../js/jquery.extend.js"></script>
+<script src="../../plugin/pager/jquery-pager.js"></script>
+<script src="../../js/cropper-init.js" type="text/javascript"></script>
+<!--导出Excel表格js-->
+<script type="text/javascript" language="javascript" src="../../plugin/excel/excel.js"></script>
+<!-- 本页面依赖js -->
+<script src="../../js/storeManagement/storeManagement.js"></script>
+<script>
+        var storeManagement =new StoreManagement();
+        storeManagement.create();
+
+</script>
+</body>
+</html>

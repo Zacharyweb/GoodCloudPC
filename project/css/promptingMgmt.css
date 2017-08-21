@@ -1,0 +1,45 @@
+
+.portlet.light.portlet-fit>.portlet-body{
+    padding: 20px 30px;
+}
+.tabbable-line>.nav-tabs>li{
+    padding: 5px 15px;
+}
+.tabbable-line>.nav-tabs>li>a{
+    font-size: 16px;
+}
+
+.tabbable-line>.nav-tabs>li.active a{
+    font-weight: bold;
+}
+.table-hover>thead>tr{
+    height: 50px;
+}
+.table-hover>tbody>tr{
+    height: 60px;
+}
+.custom-modal{
+    width: 600px;
+}
+.custom-modal .form-group{
+    display: flex;
+    align-items: center;
+}
+.custom-modal .form-group .span-label{
+    width: 125px;
+}
+.no-required{
+    padding-left: 12px!important;
+    width: 135px!important;
+}
+.custom-modal label{
+    padding-left: 10px;
+    line-height: 33px;
+    margin-right: 30px;
+
+}
+.width{
+    width: 120px;
+    display: inline-block;
+    text-align: left;
+}

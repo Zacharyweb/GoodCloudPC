@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include("shared/global-meta.html")
+    <title>好云商-后台管理</title>
+    <!-- 引入全局样式 -->
+    <!-- 全局样式 -->
+    <!-- 全局样式 -->
+    @@include("shared/global-import-css.html")
+    <!-- 截图插件 -->
+    <link href="../../plugin/cropper/cropper.min.css" type="text/css" rel="stylesheet"/>
+    <!-- 下拉选择框组件样式 -->
+    <link href="../../plugin/temporary/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../plugin/temporary/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- 全局插件样式 -->
+    @@include("shared/global-import-plugins-css.html")
+    <link rel="stylesheet" href="../../plugin/pager/css/pager.css">
+    <link rel="stylesheet" href="../../css/brandMgmt.css">
+    <!-- 主体样式 -->
+    <link rel="stylesheet" href="../../css/systemSetting.css">
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+<div class="page-wrapper">
+    <!-- 顶部Bar开始 -->
+    @@include("shared/header.html",{ "username":"NickName" })
+    <!-- 顶部Bar结束 -->
+    <div class="clearfix"> </div>
+    <!-- 页面中间部分内容开始 -->
+    <div class="page-container">
+        <!-- 侧边栏开始 -->
+        @@include("shared/thirdPartysliderbar.html")
+        <!-- 侧边栏结束 -->
+        <!-- 页面主内容开始 -->
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div class="page-bar no-border">
+                    <h1 class="page-title bold">系统参数配置</h1>
+                </div>
+                <div class="settingContent">
+                    <p>
+                        <span class="theFirst">店铺拖欠费用累计 </span>
+                        <img src="../../img/u16225.png" alt="">￥
+                        <input class="DefaultCost" type="text" value="0">
+                    </p>
+                    <p class="borderLine">
+                        <span>或者&nbsp;&nbsp;&nbsp;&nbsp;店铺拖欠时间超过 </span>
+                        <img src="../../img/u16225.png" alt="">
+                        <input class="DefaultCostDay" type="text" value="30">&nbsp;天
+                    </p>
+                    <p>
+                        <span>满足上面任意1项将会关闭店铺</span>
+                        <b class="buttonSave">保存设置</b>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- 页面主内容结束 -->
+    </div>
+    <!-- 页面中间内容部分结束 -->
+    <!-- 页脚开始 -->
+    @@include("shared/footer.html")
+
+    <!-- 页脚结束 -->
+</div>
+<!-- 页面内容结束 -->
+
+<!-- 载入全局依赖js -->
+<!-- 全局依赖js -->
+@@include("shared/global-import-js.html")
+<!-- 下拉选择框（带搜索）初始化 -->
+<script src="../../plugin/temporary/select2/js/select2.full.min.js" type="text/javascript"></script>
+<script src="../../plugin/temporary/select2/components-select2.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+
+    $.ajaxAuthor({
+        type: "get",
+        url: urlFunc.format("api/config/getOrgConfig"),
+        data:{},
+        dataType: "json",
+        success: function(result) {
+            console.log(result)
+            $(".DefaultCost").val(result.data.DefaultCost);
+            $(".DefaultCostDay").val(result.data.DefaultCostDay)
+        }
+    });
+
+    $(".buttonSave").on("click",function () {
+        var val = $(".DefaultCost").val();
+        if(val == ''){
+            return
+        }else{
+            $.ajaxAuthor({
+                type: "post",
+                url: urlFunc.format("api/config/saveOrgConfig"),
+                data:{
+                    key:"DefaultCost",
+                    value:val
+                },
+                dataType: "json",
+                success: function(result) {
+                    console.log(result)
+                    if(result.statusCode == 0){
+                        toastr.success('店铺拖欠费用累计设置成功')
+                    }else{
+                        toastr.warning('店铺拖欠费用累计设置失败')
+                    }
+                },
+                error: function(xhr, msg, ex) {
+                    console.log(ex);
+                }
+            });
+        }
+    });
+    $(".buttonSave").on("click",function () {
+        var day = $(".DefaultCostDay").val();
+        if(day == ''){
+            return
+        }else{
+            $.ajaxAuthor({
+                type: "post",
+                url: urlFunc.format("api/config/saveOrgConfig"),
+                data: {
+                    key: "DefaultCostDay",
+                    value: day
+                },
+                dataType: "json",
+                success: function (result) {
+                    console.log(result)
+                    if(result.statusCode == 0){
+                        toastr.success('店铺拖欠时间设置成功')
+                    }else{
+                        toastr.warning('店铺拖欠时间设置失败')
+                    }
+                },
+                error: function (xhr, msg, ex) {
+                    console.log(ex);
+                }
+            });
+        }
+    })
+</script>
+</body>
+
+</html>

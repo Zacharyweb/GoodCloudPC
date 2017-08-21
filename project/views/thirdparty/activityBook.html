@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8" />
+     @@include("shared/global-meta.html")
+     <title>好云商-主办方后台</title>
+     <!-- 引入全局样式 -->
+     @@include("shared/global-import-css.html")
+     <!-- 引入全局插件样式 -->
+     @@include("shared/global-import-plugins-css.html")
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../plugin/temporary/zj-modal/zj-modal.css">
+    <link rel="stylesheet" href="../../plugin/pager/css/pager.css">
+    <link rel="stylesheet" href="../../css/activityBook.css">
+</head>
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+        <div class="page-wrapper">
+            <!-- 顶部Bar开始 -->
+            @@include("shared/header.html",{ "username":"NickName" })
+            <!-- 顶部Bar结束 -->
+            <div class="clearfix"></div>
+            <!-- 页面中间部分内容开始 -->
+            <div class="page-container">
+                <!-- 侧边栏开始 -->
+                @@include("shared/thirdPartysliderbar.html")
+                <!-- 侧边栏结束 -->
+                <!-- 页面主内容开始 -->
+                <div class="page-content-wrapper">
+                    <div class="page-content">
+                        <!-- 页面主内容头部开始-->
+                        <!-- 页面主标题开始-->
+                        <div class="page-bar no-border">
+                            <h1 class="page-title bold">活动手册</h1>
+                        </div>
+                        <div class="note note-custom">
+                            <div class="note-custom-title">
+                                <a href="javascript:;" class="btn dark mt-clipboard">
+                                    <i class="fa fa-reply"></i> 返回活动任务 </a>
+                                <button type="button" id="changeActivity" class="btn dark btn-outline"> 切换活动 </button>
+                            </div>
+                            <div class="note-custom-body">
+                                <h3> 2017年新春家装节200品牌厂家直购会  </h3>
+                                <p> 2月18日 至 2月19日（上午10:00，下午16:00）</p>
+                                <p> 白马湖动漫广场AB座 </p>
+                            </div>
+                        </div>
+                        <!-- 页面主标题结束-->
+                        <!-- 页面主内容头部结束-->
+                        <div class="portlet light portlet-fit bordered">
+                            <div class="portlet-body">
+                                <div class="tabbable-line boxless margin-bottom-20">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active">
+                                            <a href="#tab_1" data-toggle="tab"> 为什么要使用“好云商”系统 </a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab_2" data-toggle="tab"> 筹备期工作 </a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab_3" data-toggle="tab"> 蓄水期工作 </a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab_4" data-toggle="tab"> 爆破期工作</a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab_5" data-toggle="tab"> 结算期工作 </a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="tab_1">
+                                            <div class="portlet light portlet-fit bordered">
+                                                <div class="portlet-title">
+                                                    <div class="caption">
+                                                        <i class=" icon-layers font-green"></i>
+                                                        <span class="caption-subject font-green bold uppercase">请完成下面任务（已完成<span>0</span>/4）</span>
+                                                    </div>
+                                                </div>
+                                                <div class="portlet-body">
+                                                    <div class="mt-element-list">
+                                                        <div class="mt-list-container list-todo">
+                                                            <div class="list-todo-line"></div>
+                                                            <ul>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-1-1" aria-expanded="false">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold">
+                                                                                    1. 门店激励奖金设置
+                                                                                    <help key=""></help>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                        <div class="task-list panel-collapse collapse in" id="task-1-1">
+                                                                            <ul>
+                                                                                <li class="task-list-item done">
+                                                                                    <div class="task-content">
+                                                                                        <h4>讨论小视频的意义价值和奖金设置
+                                                                                                <help key=""></help>
+                                                                                                <a href="javascript:;" class="user-modal-action" data-bind-temp="temp1_1_1" data-modal-title="设置小视频PK赛"> 去设置
+                                                                                                    <i class="fa fa-angle-double-right"></i>               
+                                                                                                 </a>
+                                                                                        </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="task-list-item">
+                                                                                    <div class="task-content">
+                                                                                        <h4>讨论确认到场人数PK的意义价值、任务和奖
+                                                                                               <help key=""></help>
+                                                                                                 <a href="javascript:;" class="user-modal-action" data-bind-temp="temp1_1_2" data-modal-title="设置客户邀约PK赛"> 去设置
+                                                                                                    <i class="fa fa-angle-double-right"></i>               
+                                                                                                 </a>
+                                                                                           </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-2-1" aria-expanded="true">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold">
+                                                                                    2. 电话薄使用的意义
+                                                                                    <help key=""></help>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-3-1" aria-expanded="false">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold">3. 用户奖金设置
+                                                                                    <help key=""></help>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                        <div class="task-list panel-collapse collapse in" id="task-3-1">
+                                                                            <ul>
+                                                                                <li class="task-list-item done">
+                                                                                    <div class="task-content">
+                                                                                        <h4>讨论新手任务的金额、奖励方式和意义
+                                                                                                <help key=""></help>
+                                                                                                <a href="javascript:;" class="user-modal-action" data-bind-temp="temp1_3_1"
+                                                                                                 data-modal-title="设置新手任务奖金"> 去设置
+                                                                                                    <i class="fa fa-angle-double-right"></i>               
+                                                                                                 </a>
+                                                                                            </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="task-list-item">
+                                                                                    <div class="task-content">
+                                                                                        <h4>讨论组团签到的必要性和奖品设置
+                                                                                            <help key=""></help>
+                                                                                            <a href="javascript:;" class="user-modal-action" data-bind-temp="temp1_3_2"
+                                                                                             data-modal-title="设置组团签到"> 去设置
+                                                                                                <i class="fa fa-angle-double-right"></i>               
+                                                                                            </a>&nbsp;
+                                                                                            <a href="javascript:;" class="user-action" id="hideGropSign">隐藏组团签到</a>
+                                                                                        </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-2-1" aria-expanded="true">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold">
+                                                                                    4. 直播的价值和意义
+                                                                                    <help key=""></help>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="tab_2">
+                                            <div class="portlet light portlet-fit bordered">
+                                                <div class="portlet-title">
+                                                    <div class="caption">
+                                                        <i class=" icon-layers font-green"></i>
+                                                        <span class="caption-subject font-green bold uppercase">请完成下面任务（已完成<span>0</span>/3）</span>
+                                                    </div>
+                                                </div>
+                                                <div class="portlet-body">
+                                                    <div class="mt-element-list">
+                                                        <div class="mt-list-container list-todo">
+                                                            <div class="list-todo-line"></div>
+                                                            <ul>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-1-1" aria-expanded="false">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold">
+                                                                                    1. 创建联盟活动
+                                                                                    <help key=""></help>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                        <div class="task-list panel-collapse collapse in" id="task-1-1">
+                                                                            <ul>
+                                                                                <li class="task-list-item done">
+                                                                                    <div class="task-content">
+                                                                                        <h4>创建联盟活动——准备好参加活动的店长手机号和对应品牌名称
+                                                                                            <help key=""></help>
+                                                                                            <a href="javascript:;" class="user-modal-action" data-bind-temp="temp2_1_1" data-modal-title="创建活动"> 去创建
+                                                                                                <i class="fa fa-angle-double-right"></i>               
+                                                                                             </a>
+                                                                                         </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="task-list-item">
+                                                                                    <div class="task-content">
+                                                                                        <h4>添加对应的品牌活动
+                                                                                               <help key=""></help>
+                                                                                                 <a href="brandActivityMgmt.html" class="user-action"> 去添加
+                                                                                                    <i class="fa fa-angle-double-right"></i>               
+                                                                                                 </a>
+                                                                                           </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="task-list-item">
+                                                                                    <div class="task-content">
+                                                                                        <h4>添加运营APP账号，安装APP并登录
+                                                                                               <help key=""></help>
+                                                                                                 <a href="brandActivityMgmt.html" class="user-action"> 去添加
+                                                                                                    <i class="fa fa-angle-double-right"></i>               
+                                                                                                 </a>
+                                                                                           </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-3-1" aria-expanded="false">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold">2. 通知参展商
+                                                                                    <help key=""></help>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                        <div class="task-list panel-collapse collapse in" id="task-3-1">
+                                                                            <ul>
+                                                                                <li class="task-list-item done">
+                                                                                    <div class="task-content">
+                                                                                        <h4>通知各个门店安装并注册活动APP
+                                                                                            <help key=""></help> 
+                                                                                        </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="task-list-item">
+                                                                                    <div class="task-content">
+                                                                                        <h4>通知各个门店提供LOGO和活动优惠信息
+                                                                                             <help key=""></help>
+                                                                                        </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="task-list-item">
+                                                                                    <div class="task-content">
+                                                                                        <h4>向门店宣讲各种PK的意义
+                                                                                             <help key=""></help>
+                                                                                        </h4>
+                                                                                    </div>
+                                                                                </li>
+
+                                                                                <li class="task-list-item">
+                                                                                    <div class="task-content">
+                                                                                        <h4>向门店宣讲电话薄的使用意义
+                                                                                             <help key=""></help>
+                                                                                        </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-1-1" aria-expanded="false">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold">
+                                                                                    3. 完善活动版面
+                                                                                    <help key=""></help>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                        <div class="task-list panel-collapse collapse in" id="task-1-1">
+                                                                            <ul>
+                                                                                <li class="task-list-item done">
+                                                                                    <div class="task-content">
+                                                                                        <h4>手机门店LOGO和活动宣传语，并制作成合格图片
+                                                                                            <help key=""></help>
+                                                                                            <help key=""/>
+                                                                                         </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="task-list-item">
+                                                                                    <div class="task-content">
+                                                                                        <h4>将合格图片替换对应位置
+                                                                                               <help key=""></help>
+                                                                                                 <a href="javascript:;" class="user-action"> 去设置
+                                                                                                    <i class="fa fa-angle-double-right"></i>               
+                                                                                                 </a>
+                                                                                           </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="task-list-item">
+                                                                                    <div class="task-content">
+                                                                                        <h4>完善其他版面
+                                                                                               <help key=""></help>
+                                                                                                 <a href="javascript:;" class="user-action"> 去完善
+                                                                                                    <i class="fa fa-angle-double-right"></i>               
+                                                                                                 </a>
+                                                                                           </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                   
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="tab_3">
+                                            <div class="portlet light portlet-fit bordered">
+                                                <div class="portlet-title">
+                                                    <div class="caption">
+                                                        <i class=" icon-layers font-green"></i>
+                                                        <span class="caption-subject font-green bold uppercase">请完成下面任务（已完成<span>0</span>/5）</span>
+                                                    </div>
+                                                </div>
+                                                <div class="portlet-body">
+                                                    <div class="mt-element-list">
+                                                        <div class="mt-list-container list-todo">
+                                                            <div class="list-todo-line"></div>
+                                                            <ul>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-2-1" aria-expanded="true">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold">
+                                                                                    1. 跟进参展商的代办任务
+                                                                                    <help key=""></help>
+                                                                                    <span  class="user-action"> 去跟进
+                                                                                        <i class="fa fa-angle-double-right"></i>               
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                                  <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-2-1" aria-expanded="true">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold">
+                                                                                    2. 跟进门店邀约进度
+                                                                                    <help key=""></help>
+                                                                                    <span  class="user-action"> 去跟进
+                                                                                        <i class="fa fa-angle-double-right"></i>               
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-2-1" aria-expanded="true">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold">
+                                                                                    3.跟进小视频PK赛
+                                                                                    <help key=""></help>
+                                                                                    <span  class="user-action"> 去跟进
+                                                                                        <i class="fa fa-angle-double-right"></i>               
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-2-1" aria-expanded="true">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold">
+                                                                                    4. 跟进客户邀约PK赛
+                                                                                    <help key=""></help>
+                                                                                    <span  class="user-action"> 去跟进
+                                                                                        <i class="fa fa-angle-double-right"></i>               
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-2-1" aria-expanded="true">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold">
+                                                                                   5. 电话确认已报名用户是否到场
+                                                                                    <help key=""></help>
+                                                                                    <span  class="user-action"> 去确认
+                                                                                        <i class="fa fa-angle-double-right"></i>               
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="tab_4">
+                                            <div class="portlet light portlet-fit bordered">
+                                                <div class="portlet-title">
+                                                    <div class="caption">
+                                                        <i class=" icon-layers font-green"></i>
+                                                        <span class="caption-subject font-green bold uppercase">请完成下面任务（已完成<span>0</span>/4）</span>
+                                                    </div>
+                                                </div>
+                                                <div class="portlet-body">
+                                                    <div class="mt-element-list">
+                                                        <div class="mt-list-container list-todo">
+                                                            <div class="list-todo-line"></div>
+                                                            <ul>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-2-1" aria-expanded="true">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold">
+                                                                                    1. 用户签到
+                                                                                    <help key=""></help>
+                                                                                    <span class="user-action"> 去查看
+                                                                                        <i class="fa fa-angle-double-right"></i>               
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                                  <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-2-1" aria-expanded="true">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold"> 
+                                                                                    2. 团购核销
+                                                                                    <help key=""></help>
+                                                                                    <span class="user-action"> 去查看
+                                                                                        <i class="fa fa-angle-double-right"></i>               
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-2-1" aria-expanded="true">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold">
+                                                                                    3. 下单核销（新手任务）
+                                                                                    <help key=""></help>
+                                                                                    <span class="user-action"> 去查看
+                                                                                        <i class="fa fa-angle-double-right"></i>               
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-2-1" aria-expanded="true">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold">
+                                                                                    4. 直播
+                                                                                    <help key=""></help>
+                                                                                    <span class="user-action"> 去查看
+                                                                                        <i class="fa fa-angle-double-right"></i>               
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="tab_5">
+                                            <div class="portlet light portlet-fit bordered">
+                                                <div class="portlet-title">
+                                                    <div class="caption">
+                                                        <i class=" icon-layers font-green"></i>
+                                                        <span class="caption-subject font-green bold uppercase">请完成下面任务（已完成<span>0</span>/4）</span>
+                                                    </div>
+                                                </div>
+                                                <div class="portlet-body">
+                                                    <div class="mt-element-list">
+                                                        <div class="mt-list-container list-todo">
+                                                            <div class="list-todo-line"></div>
+                                                            <ul>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-2-1" aria-expanded="true">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold">
+                                                                                    1. 核销新手任务
+                                                                                    <help key=""></help>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-1-1" aria-expanded="false">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold">
+                                                                                    2. 核销各种PK
+                                                                                    <help key=""></help>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                        <div class="task-list panel-collapse collapse in" id="task-1-1">
+                                                                            <ul>
+                                                                                <li class="task-list-item done">
+                                                                                    <div class="task-content">
+                                                                                        <h4>核销小视频PK赛
+                                                                                                <help key=""></help>
+                                                                                                <a href="javascript:;" class="user-action"> 去查看
+                                                                                                    <i class="fa fa-angle-double-right"></i>               
+                                                                                                 </a>
+                                                                                             </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="task-list-item">
+                                                                                    <div class="task-content">
+                                                                                        <h4>核销客户邀约PK赛
+                                                                                               <help key=""></help>
+                                                                                                 <a href="javascript:;" class="user-action"> 去查看
+                                                                                                    <i class="fa fa-angle-double-right"></i>               
+                                                                                                 </a>
+                                                                                           </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-todo-icon bg-white">
+                                                                        <i class="fa fa-circle-o task-unfinished"></i>
+                                                                        <i class="fa fa-check-circle font-green task-finished"></i>
+                                                                    </div>
+                                                                    <div class="list-todo-item grey">
+                                                                        <a class="list-toggle-container font-white" href="#task-3-1" aria-expanded="false">
+                                                                            <div class="list-toggle done uppercase">
+                                                                                <div class="list-toggle-title bold">3. 统计数据
+                                                                                    <help key=""></help>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                        <div class="task-list panel-collapse collapse in" id="task-3-1">
+                                                                            <ul>
+                                                                                <li class="task-list-item done">
+                                                                                    <div class="task-content">
+                                                                                        <h4>用户签到情况
+                                                                                                <help key=""></help>
+                                                                                                <a href="javascript:;" class="user-action"> 去查看
+                                                                                                    <i class="fa fa-angle-double-right"></i>               
+                                                                                                 </a>
+                                                                                            </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                                 <li class="task-list-item done">
+                                                                                    <div class="task-content">
+                                                                                        <h4>用户签到情况
+                                                                                                <help key=""></help>
+                                                                                                <a href="javascript:;" class="user-action"> 去查看
+                                                                                                    <i class="fa fa-angle-double-right"></i>               
+                                                                                                 </a>
+                                                                                            </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                                 <li class="task-list-item done">
+                                                                                    <div class="task-content">
+                                                                                        <h4>用户下单情况
+                                                                                                <help key=""></help>
+                                                                                                <a href="javascript:;" class="user-action"> 去查看
+                                                                                                    <i class="fa fa-angle-double-right"></i>               
+                                                                                                 </a>
+                                                                                            </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                                 <li class="task-list-item done">
+                                                                                    <div class="task-content">
+                                                                                        <h4>团购情况
+                                                                                                <help key=""></help>
+                                                                                                <a href="javascript:;" class="user-action"> 去查看
+                                                                                                    <i class="fa fa-angle-double-right"></i>               
+                                                                                                 </a>
+                                                                                            </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                                 <li class="task-list-item done">
+                                                                                    <div class="task-content">
+                                                                                        <h4>直播下单情况
+                                                                                            <help key=""></help>
+                                                                                            <a href="javascript:;" class="user-action"> 去查看
+                                                                                                <i class="fa fa-angle-double-right"></i>               
+                                                                                            </a>
+                                                                                        </h4>
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 页面主内容结束 -->
+                </div>
+                <!-- 页面中间内容部分结束 -->
+                <!-- 页脚开始 -->
+                @@include("shared/footer.html")
+                <!-- 页脚结束 -->
+            </div>
+            <!-- 页面内容结束 -->
+            <!-- 其他组件载入开始 -->
+            <!-- 模态框组件 -->
+            <div class="custom-modal">
+                <div class="custom-modal-header">
+                    <h3></h3>
+                    <span class="close-custom-modal"><i class="fa fa-close"></i></span>
+                </div>
+                <div class="custom-modal-body">
+                    
+                </div>
+                <div class="custom-modal-footer"> 
+                    <button class="btn dark confirm">保存设置</button>        
+                </div>
+            </div>
+            <div class="custom-modal-mask"></div>
+
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+                <p class="progress-text">
+                    <span>0</span>%
+                </p>
+            </div>
+            <!-- 其他组件载入结束-->
+            <!-- 模板载入 -->
+            <script type="text/html" id="temp1_1_1">
+                <p class="custom-form-group">
+                    <span class="span-label1">奖池总金额：&nbsp;&nbsp;</span>
+                    <input type="text" class="form-control">
+                    <span class="span-label2">元</span>
+                </p> 
+            </script>
+            <script type="text/html" id="temp1_1_2">
+                <p class="custom-form-group">
+                    <span class="span-label1">奖池总金额：&nbsp;&nbsp;</span>
+                    <input type="text" class="form-control"> 
+                    <span class="span-label2">元</span>
+                </p> 
+            </script>
+            <script type="text/html" id="temp1_3_1">
+                <form class="custom-modal-form">
+                    <h4 class="form-title">奖励金额设置</h4>
+                    <div class="form-group">
+                        <h5 class="form-group-title bold">设置总奖池金额
+                            <span class="font-red">（必填）</span>
+                            <help key="">
+                        </h5>
+                        <p class="custom-input-wrapper">
+                            完成指定任务,平分总奖池
+                            <input type="text" class="form-control"> 
+                            元代金券
+                        </p>   
+                    </div> 
+                    <div class="form-group">
+                        <h5 class="form-group-title bold">设置用户最高可拿奖励金额
+                            <span class="font-blue">（选填）</span>
+                            <help key="">
+                        </h5>
+                        <p class="custom-input-wrapper">
+                            限定每个完成任务的用户最多可领奖券金额<=
+                            <input type="text" class="form-control"> 
+                            元代金券
+                        </p>   
+                    </div>
+                </form> 
+                <form class="custom-modal-form">
+                    <h4 class="form-title">任务内容设置</h4>
+                    <div class="form-group">
+                        <h5 class="form-group-title bold">问题1</h5>
+                        <p class="custom-question">本次家装节展会的活动地点在哪里？</p>
+                        <div class="custom-options"> 
+                            <p class="custom-options-item">A
+                                 <input type="text" class="form-control">
+                            </p> 
+                            <p class="custom-options-item">B
+                                 <input type="text" class="form-control">
+                            </p> 
+                            <p class="custom-options-item">C
+                                 <input type="text" class="form-control">
+                            </p> 
+                            <p class="custom-options-item">D
+                                 <input type="text" class="form-control">
+                            </p> 
+                        </div>   
+                    </div>
+                    <div class="form-group">
+                        <h5 class="form-group-title bold">问题2</h5>
+                        <p class="custom-question">本次家装节展会的活动时间？</p>
+                        <div class="custom-options"> 
+                            <p class="custom-options-item">A
+                                 <input type="text" class="form-control">
+                            </p> 
+                            <p class="custom-options-item">B
+                                 <input type="text" class="form-control">
+                            </p> 
+                            <p class="custom-options-item">C
+                                 <input type="text" class="form-control">
+                            </p> 
+                            <p class="custom-options-item">D
+                                 <input type="text" class="form-control">
+                            </p> 
+                        </div>   
+                    </form>  
+      
+                </div>   
+            </script>
+            <script type="text/html" id="temp1_3_2">
+                <p class="custom-form-group">
+                    <span class="span-label1">成团户数：&nbsp;&nbsp;</span>
+                    <input type="text" class="form-control">
+                </p> 
+                <p class="custom-form-group">
+                    <span class="span-label1">成团奖励说明：&nbsp;&nbsp;</span>
+                    <input type="text" class="form-control"> 
+                </p>  
+            </script>
+            <script type="text/html" id="temp2_1_1">
+              <form action="#" class="form-horizontal form-row-seperated">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">
+                                <span class="required-icon">*</span>&nbsp;
+                                联盟活动主题：
+                            </label>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="本次活动主题，最多30字" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">
+                                <span class="required-icon">*</span>&nbsp;
+                                爆破时间段：
+                            </label>
+                            <div class="col-md-9">
+                                <div class="col-md-4 no-padding" >
+                                    <div class="input-group date form_datetime">
+                                        <input type="text" size="16" readonly="" class="form-control" placeholder="起始时间">
+                                        <span class="input-group-btn">
+                                            <button class="btn default date-set display-none" type="button">
+                                                <i class="fa fa-calendar"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <span class="col-md-2 no-padding text-center" style="line-height: 34px;">至</span>
+                                <div class="col-md-4 no-padding">
+                                    <div class="input-group date form_datetime">
+                                        <input type="text" size="16" readonly="" class="form-control" placeholder="结束时间">
+                                        <span class="input-group-btn">
+                                            <button class="date-set display-none" type="button">
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">
+                                <span class="required-icon">*</span>&nbsp;
+                                活动地点：
+                            </label>
+                            <div class="col-md-9">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">
+                                <span class="required-icon">*</span>&nbsp;
+                                主办方联系人：
+                            </label>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="联系人姓名" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">
+                                <span class="required-icon">*</span>&nbsp;
+                                主办方手机号：
+                            </label>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="手机号" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">备注：</label>
+                            <div class="col-md-9">
+                                <textarea class="form-control" rows="3" placeholder="备注事项"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form> 
+            </script>
+            <!-- 载入全局依赖js -->
+            <!-- 全局依赖js -->
+            @@include("shared/global-import-js.html")
+                <!-- Tab栏菜单 -->
+                <script src="../../plugin/temporary/bootstrap-tabdrop/js/bootstrap-tabdrop.js" type="text/javascript"></script>
+
+                <script src="../../plugin/temporary/zj-modal/zj-modal.js"></script>
+                <script src="../../js/config.js"></script>
+                <script src="../../js/utils.js"></script>
+                <script src="../../js/jquery.extend.js"></script>
+                <script src="../../js/activityBook/activityBook.js"></script>
+            <script>
+            //页面页码模块
+            $("#changeActivity").on('click', function() {
+                showTabelModal();
+            });
+            $('.task-unfinished').on('click',function(){
+                $(this).toggle().siblings('i').toggle();
+
+            });
+            $('.task-finished').on('click',function(){
+                $(this).toggle().siblings('i').toggle();
+
+            });
+            $('.user-modal-action').on('click',function(){
+                var tempId = $(this).data('bindTemp');
+                var list = [100];
+                var modalTitle = $(this).data('modalTitle');
+                var htmlStr = template(tempId,{});
+                $(this).customModal({
+                    modalWidth:600,
+                    show:true,
+                    title:modalTitle,
+                    content:htmlStr
+                });
+            });
+            </script>
+    </body>
+
+</html>

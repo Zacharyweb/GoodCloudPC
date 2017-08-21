@@ -1,0 +1,121 @@
+.note.note-custom{
+	position: relative;
+	border:none;
+}
+.note-custom-body{
+	display: flex;
+}
+.note-custom-body img{
+	height: 120px;
+}
+.note-custom-body .building-city-msg{
+	flex: 1;
+	padding: 5px 0 0 30px;
+}
+.note.note-custom .note-custom-body .building-city-msg h3{
+	font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    padding-top: 10px;
+}
+.note-custom-body .building-city-msg p {
+     font-size: 14px;
+}
+.note-custom-body .building-city-msg p .shop-num,
+.note-custom-body .building-city-msg p .guider-num{
+	display: inline-block;
+	padding: 2px 5px;
+	background-color: #364150;
+	color: #fff;
+	border-radius: 4px!important;
+}
+.building-city-edit{
+	position: absolute;
+	height: 60px;
+	line-height: 60px;
+	padding:0 10px;
+	background-color:#659be0;
+	top:-4px;
+	right: 40px;
+	box-shadow: -2px 2px 7px rgba(0,0,0,.4);
+}
+.building-city-edit a{
+	display: block;
+	height: 100%;
+	padding: 0 5px;
+	border-left:1px dashed #3a80d7;
+	border-right:1px dashed #3a80d7;
+	color:#fff;
+}
+.building-city-edit a span{
+	font-size: 16px;
+	cursor: pointer;
+}
+
+
+.ribbon-content p{
+	margin:0 10px;
+	line-height: 34px;
+}
+.system-prompt .prompt-item{
+	display: flex;
+	align-items: center;
+}
+.system-prompt .prompt-item .fa-exclamation-circle{
+	padding-left: 10px;
+	font-size: 26px;
+	color:#ed6b75;
+}
+.quick-entry .ribbon-content p a{
+	color: #333;
+}
+
+
+.modal .modal-body .form-group{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+.modal .modal-body .form-group .span-label{
+    width: 120px;
+}
+.modal .modal-body .form-group .building-city-img-url{
+	display: none;
+}
+.modal .modal-body .form-group img{
+	height: 150px;
+}
+.modal .modal-body  .form-group:nth-of-type(1) .span-label{
+	width: 102px;
+}
+.modal .modal-body  div.form-group:nth-of-type(1) .span-label{
+	width: 95px;
+}
+.modal .modal-body  .form-group:nth-of-type(1),
+.modal .modal-body  div.form-group:nth-of-type(1){
+	align-items: flex-start;
+}
+.modal .modal-body .form-group .map-wrapper{
+	flex: 1;
+}
+.textarea{
+	padding: 30px 100px;
+}
+.yuLan{
+	position: absolute;
+	top: 140px;
+	left: 245px;
+	font-size: 17px;
+	color:#fff;
+	background: #999;
+	opacity: 0.9;
+	padding: 5px 10px;
+	font-weight: 100;
+}
+.yuLan:hover{
+	color:#fff;
+	text-decoration:none;
+}
+.yuLan i{
+	font-size: 17px;
+}

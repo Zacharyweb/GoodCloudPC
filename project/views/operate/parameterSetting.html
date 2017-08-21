@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>好云商-后台管理</title>
+    @@include("shared/global-meta.html")
+    <!-- 引入全局样式 -->
+    <!-- 全局样式 -->
+    @@include("shared/global-import-css.html")
+    <!-- 引入全局插件样式 -->
+    <!-- 全局插件样式 -->
+    @@include("shared/global-import-plugins-css.html")
+    <!-- 全局主题样式 -->
+    <link rel="stylesheet" href="../../plugin/pager/css/pager.css">
+    <link rel="stylesheet" href="../../plugin/cropper/cropper.min.css">
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+<div class="page-wrapper">
+    <!-- 顶部Bar开始 -->
+    @@include("shared/header.html")
+    <!-- 顶部Bar结束 -->
+    <div class="clearfix"></div>
+    <!-- 页面中间部分内容开始 -->
+    <div class="page-container">
+        <!-- 侧边栏开始 -->
+        @@include("shared/operatesliderbar.html")
+        <!-- 侧边栏结束 -->
+        <!-- 页面主内容开始 -->
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div class="page-bar no-border">
+                    <h1 class="page-title bold">参数设置</h1>
+                </div>
+                <!-- 活动查询框结束 -->
+                <form id="queryImgListForm">
+                    <div class="row m-heading-1 border-default m-bordered">
+                        <div class="col-sm-3">
+                            <input name="key" class="form-control input-sm" placeholder="请输入Key">
+                        </div>
+                        <div class="col-sm-3">
+                            <input name="remark" class="form-control input-sm" placeholder="请输入备注">
+                        </div>
+                        <div class="col-sm-3">
+                            <input name="group" class="form-control input-sm" placeholder="请输入分组">
+                        </div>
+                        <div class="btn-group btn-group-devided col-sm-1 col-xs-2" data-toggle="buttons">
+                            <button id="btnQuery" type="button" class="btn dark btn-outline pull-right"><i class="fa fa-search"></i>&nbsp;查询</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- 表格开始-->
+                        <div id="Header" class="portlet light bordered">
+                            <div class="portlet-body" style="min-height:700px; height:auto!important;
+                            height:700px; position: relative;padding-bottom: 70px;">
+                                <table id="articleList" class="table table-striped table-bordered table-hover table-header-fixed table-layout">
+                                    <thead>
+                                    <tr class="table-header">
+                                        <th width="10%">Key</th>
+                                        <th width="10%">Value</th>
+                                        <th width="20%">备注</th>
+                                        <th width="8%">分组</th>
+                                        <th width="10%">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row">
+                                            <span id="pager" class="pager pull-right">
+                                            </span>
+                            </div>
+                        </div>
+                        <!-- 表格结束 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 页面主内容结束 -->
+    </div>
+    <!-- 页面中间内容部分结束 -->
+    <!-- 页脚开始 -->
+    @@include("shared/footer.html")
+    <!-- 页脚结束 -->
+</div>
+<!-- 页面内容结束 -->
+<script type="text/html" id="container">
+    {{each data as value i}}
+    <tr data-id="{{value.Id}}">
+        <td class="text-overflow" title="{{value.CKey}}">{{value.CKey}}</td>
+        <td class="text-overflow" title="{{value.CValue}}">{{value.CValue}}</td>
+        <td class="text-overflow" title="{{value.Remark}}">{{value.Remark}}</td>
+        <td class="text-overflow" title="{{value.GroupName}}">{{value.GroupName}}</td>
+        <td>
+            <a data-toggle="modal" class="edit" href="#edit">编辑</a>&nbsp;&nbsp;
+            <!--<a data-toggle="modal" class="del" href="#deleteStore">删除</a>-->
+        </td>
+    </tr>
+    {{/each}}
+</script>
+<!--是否删除弹窗-->
+<div class="modal fade bs-modal-sm" id="deleteStore" tabindex="-1" role="dialog" aria-hidden="true" style="display: none">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body"> 确定删除吗？ </div>
+            <div class="modal-footer no-border">
+                <button type="button"  class="btn dark confirmDelete" data-func="confirmDelete">确定</button>
+                <button type="button" class="cancel btn dark btn-outline" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--编辑参数弹窗-->
+<div class="modal fade bs-modal-lg" id="edit" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="width:600px;margin: 0 auto">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title bold">修改参数</h4>
+            </div>
+            <form style="padding-left: 30px;">
+                <p class="info" style="padding-left: 25px;">
+                    <b style="width: 70px;display: inline-block">Key:</b><span></span>
+                </p>
+                <div class="form-group brand-msg" style="padding: 15px;margin: 0;">
+                    <span class="span-label" style="width: 70px;display: inline-block"><span class="required" aria-required="true"> *</span>value：</span>
+                    <input name="value" type="text" style="display: inline-block;width: 60%;" class="form-control" required="">
+                </div>
+                <div class="form-group brand-msg" style="padding: 15px;margin: 0;">
+                    <span class="span-label" style="width: 70px;display: inline-block"><span class="required" aria-required="true"> *</span>分组：</span>
+                    <input name="groupName" type="text" style="display: inline-block;width: 60%;" class="form-control" required="">
+                </div>
+                <div class="form-group brand-msg" style="padding: 15px;">
+                    <span class="span-label" style="width: 70px;display: inline-block;vertical-align: top;">&nbsp;&nbsp;&nbsp;&nbsp;备注：</span>
+                    <textarea name="remark" type="text" cols="43" rows="5"></textarea>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn green" id="keep2">保存</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- 载入全局依赖js -->
+<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../assets/global/scripts/app.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+<script src="../../assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+<script src="../../plugin/artTemplate/template.js"></script>
+<script src="../../plugin/draggabilly/draggabilly.pkgd.min.js"></script>
+<script src="../../js/config.js"></script>
+<script src="../../js/utils.js"></script>
+<script src="../../js/jquery.extend.js"></script>
+<script src="../../plugin/toastr/toastr.js"></script>
+<script src="../../plugin/jquery-validate/jquery.validate.js"></script>
+<script src="../../js/common.js"></script>
+<!-- 本页面依赖组件初始化 -->
+<script src="../../plugin/pager/jquery-pager.js"></script>
+<script src="../../js/categoryManager/parameterSetting.js"></script>
+
+<script>
+    var parameterSetting =new ParameterSetting();
+    parameterSetting.create();
+</script>
+</body>
+
+</html>

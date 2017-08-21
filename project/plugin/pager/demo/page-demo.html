@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>这是一个分页实例</title>
+    <link href="../css/pager.css" rel="stylesheet" />
+    <script src="../jquery.min.js"></script>
+    <script src="../jquery-pager.js"></script>
+
+</head>
+    <body>
+        <div>
+            <span id="pager" class="pager">
+            </span>
+        </div>
+        <script>
+                var pageSize = 5;
+                var startIndex = 1;
+                var option = {
+                    callback: function (index) {
+                        startIndex = index;
+                        console.log(startIndex);
+                    },
+                    pagesize: pageSize,
+                    showpage: 6,
+                    pageParam: "pageIndex",
+                    ajax: true
+                }
+                //初始化
+                $("span.pager").Pager("init",20, option);
+        </script>
+    </body>
+</html>

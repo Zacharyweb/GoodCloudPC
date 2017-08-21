@@ -1,0 +1,41 @@
+
+
+.disabled{
+    color:lightgray!important;
+}
+select.form-control{
+  height: 34px;
+  font-size: 15px;
+}
+.portlet-title button {
+    margin-right: 15px;
+    border-radius: 4px!important;
+}
+
+.modal-body {
+    padding-bottom: 4px;
+}
+
+.modal label.all-select {
+    padding-top: 8px;
+}
+
+.modal label.all-select span {
+    top: 8px;
+}
+
+.modal .custom-select {
+    height: 285px;
+    overflow: auto;
+}
+
+.modal .modal-footer {
+    text-align: left;
+}
+.modal .modal-footer p {
+   margin-top:0;
+   margin-bottom:10px;
+}
+.modal .modal-footer ul {
+   padding:0;
+}

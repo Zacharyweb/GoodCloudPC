@@ -1,0 +1,48 @@
+<div class="portlet light bordered tab-pane" id="banner">
+    <div class="portlet-title">
+        <div class="caption font-dark">
+            <i class=" icon-frame font-dark"></i>
+            <span class="caption-subject bold">轮播Banner <help key=""/></span>
+        </div>
+        <div class="actions">
+            <div class="btn-group btn-group-devided" data-toggle="buttons">
+                <label class="btn btn-transparent dark btn-outline btn-sm hide-module" data-target-tab="#banner">
+                    <input type="radio" class="toggle">隐藏本模块</label>
+                <label class="btn btn-transparent dark btn-outline btn-sm show-module" data-target-tab="#banner">
+                    <input type="radio" class="toggle">显示本模块</label>
+                <label id="saveBanner" class="btn btn-transparent dark btn-sm">
+                    <input type="radio" class="toggle">保存并预览</label>
+            </div>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <p> 最多上传5张海报图，点击箭头可排序。<span class="font-grey-salsa">（多张图片时会自动轮播。）</span></p>
+        <div class="scroller-x row banner-outer-wrapper">
+            <div class="scroller-x-content" id="bannerWarpper">
+                <div id="addBanner" class="content-item">
+                    <h3 class="sbold font-grey text-center mouse-pointer" >
+                        <i class="fa fa-plus"></i>点击添加轮播活动海报图
+                    </h3>
+                    <p class="font-grey text-center mouse-pointer"> 尺寸要求：375像素 * 150像素 </p>
+                </div>
+                <!-- 轮播Banner -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 轮播图模板 -->
+<script type="text/html" id="bannerImgTemp">
+
+    {{each bannerList as item i}}
+    <div data-id="{{item.src}}" class="content-item relative">
+        <img src="{{item.imgSrc}}">
+        <span class="banner-actions">
+                    <span>
+                        <i class="icon-arrow-left font-white mouse-pointer to-prev"></i>
+                        <i class="icon-arrow-right font-white mouse-pointer to-next"></i>
+                    </span>
+                <i class="icon- icon-trash font-white mouse-pointer banner-delete"></i>
+        </span>
+    </div>
+    {{/each}}
+</script>

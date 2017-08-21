@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Canvas绘制弧线入门示例</title>
+</head>
+<body>
+
+<canvas class="myCanvas" width="300px" height="300px" style="border: 1px solid red;">
+    您的浏览器不支持canvas标签。
+</canvas>
+<script type="text/javascript">
+    var canvas = document.getElementById("myCanvas");
+    if(canvas.getContext){
+        var ctx = canvas.getContext("2d");
+        ctx.beginPath();
+        ctx.lineWidth = 5;
+        ctx.lineWidth = 5;//线条宽度
+        var circle = {
+            x : 100,    //圆心的x轴坐标值
+            y : 100,    //圆心的y轴坐标值
+            r : 30      //圆的半径
+        };
+        ctx.strokeStyle ='#32c5d2';
+        ctx.arc(circle.x,circle.y,circle.r,0,2*Math.PI,false);
+        ctx.stroke();
+    }
+</script>
+</body>
+</html>

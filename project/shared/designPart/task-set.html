@@ -1,0 +1,57 @@
+<div class="portlet light bordered tab-pane active" id="task">
+    <div class="portlet-title">
+        <div class="caption font-dark">
+            <i class="fa fa-money font-dark"></i>
+            <span class="caption-subject bold">任务奖券设置 <help key=""/></span>
+        </div>
+        <div class="actions">
+            <div class="btn-group btn-group-devided" data-toggle="buttons">
+                <label class="btn btn-transparent dark btn-sm">
+                    <input id="saveTaskConfig" type="radio" class="toggle">保存并预览</label>
+            </div>
+        </div>
+
+    </div>
+    <div  class="portlet-body row">
+        <div class="col-xs-12">
+            <div class="mt-element-ribbon bg-grey-steel ">
+                <div class="ribbon ribbon-border-hor ribbon-clip ribbon-color-danger">
+                    <div class="ribbon-sub ribbon-clip"></div> 奖励金额设置</div>
+                <div class="ribbon-content">
+                    <p class="ribbon-explain bold">设置总奖池金额<span class="font-red">（必填）</span><help key=""/></p>
+                    <p class="ribbon-entry form-group">完成指定任务，平分总奖池
+                        <span class="required" aria-required="true"> * </span>
+                        <input type="text" class="form-control" id="totalMoney" placeholder="请输入数字（必填）"> 元代金券
+                    </p>
+                    <p class="ribbon-explain bold">设置用户最高可拿奖励金额（选填）<help key=""/></p>
+                    <p class="ribbon-entry form-group">限定每个完成任务的用户最多可领奖券金额（不大于）
+                        <input type="text" class="form-control" id="maxMoney" placeholder="请输入数字（选填）"> 元代金券
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="mt-element-ribbon bg-grey-steel ">
+                <div class="ribbon ribbon-border-hor ribbon-clip ribbon-color-info">
+                    <div class="ribbon-sub ribbon-clip"></div> 任务内容设置 </div>
+                <div id="questionSet" class="ribbon-content">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script id="questionTmpl" type="text/html">
+    {{each data as value i}}
+    <div data-id="{{value.id}}">
+        <p class="ribbon-explain bold border-info">问题{{i+1}}</p>
+        <p  data-name="title" class="custom-question">{{value.title}}</p>
+        <div class="ribbon-entry form-group custom-options">
+            {{each value.select as svalue j}}
+            <p data-name="select"> <label data-name="opt">{{svalue.opt}}</label>.<input type="text" data-name="value"  class="form-control" value="{{svalue.value}}" > </p>
+            {{/each}}
+        </div>
+    </div>
+    {{/each}}
+</script>

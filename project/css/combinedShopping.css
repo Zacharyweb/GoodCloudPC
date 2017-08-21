@@ -1,0 +1,61 @@
+.page-content .defaultInfo{
+    border:1px dotted rgb(204,204,204);
+    padding-left: 15px;
+    font-size:14px;
+    margin-bottom:15px;
+}
+.page-content .defaultInfo p{
+    margin:5px 0;
+}
+.queryOperation{
+    border:1px dotted rgb(204,204,204);
+    margin: 0 0 15px 0;
+    position: relative;
+}
+#queryBrandsForm{
+    padding:0;
+}
+span.default{
+    color:red;
+}
+div.queryOperation{
+    padding:15px 0;
+}
+div.queryOperation p{
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+}
+div.queryOperation p input{
+    position: absolute;
+    cursor: pointer;
+    width: auto;
+    top: -10px;
+}
+div.queryOperation p span{
+    margin-left: 25px;
+}
+
+div.queryOperation select{
+    width:110px;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+.modal-body p.thisColor span{
+    color:red;
+}
+.buttonSave{
+    font-weight: normal;
+    border: 1px solid #666;
+    font-size: 14px;
+    padding: 7px 15px;
+    color: #FFF;
+    background: rgb(29,41,57);
+    cursor: pointer;
+    border-radius: 7px;
+   margin-left: 90%;
+}
+.buttonSave:hover{
+    color: rgb(29,41,57);
+    background:#FFF ;
+}

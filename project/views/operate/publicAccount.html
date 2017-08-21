@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>好云商-后台管理</title>
+     @@include("shared/global-meta.html")
+    <!-- 引入全局样式 -->
+    @@include("shared/global-import-css.html")
+    @@include("shared/global-import-plugins-css.html")
+    <!-- 全局主题样式 -->
+    <link rel="stylesheet" href="../../plugin/datetimerpicker/jquery.datetimepicker.css">
+    <link rel="stylesheet" href="../../plugin/pager/css/pager.css">
+    <link rel="stylesheet" href="../../css/bulidingCity/publicAccount.css">
+</head>
+
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+    <div class="page-wrapper">
+        <!-- 顶部Bar开始 -->
+       @@include("shared/header.html",{ "username":"NickName" })
+
+        <!-- 顶部Bar结束 -->
+        <div class="clearfix"></div>
+        <!-- 页面中间部分内容开始 -->
+        <div class="page-container">
+            <!-- 侧边栏开始 -->
+           @@include("shared/operatesliderbar.html")
+            <!-- 侧边栏结束 -->
+            <!-- 页面主内容开始 -->
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <div class="page-bar no-border">
+                        <h1 class="page-title bold">公众号管理</h1>
+                    </div>
+                    <div class="row m-heading-1 border-default m-bordered">
+                        <form id="queryImgListForm" class="row">
+                            <div class="col-sm-3">
+                                <input id="text" class="form-control input-sm" name="remark" placeholder="请输入公众号名称">
+                            </div>
+                            <div class="col-sm-3">
+                                <input id="text" class="form-control input-sm" name="remark" placeholder="请输入备注">
+                            </div>
+                            <div class="btn-group btn-group-devided col-sm-2" data-toggle="buttons">
+                                <button type="button" class="btn dark btn-outline" id="queryImgListBtn"><i class="fa fa-search"></i>&nbsp;查询</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- 活动查询框结束 -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- 表格开始-->
+                            <div class="portlet light bordered">
+                                <div class="portlet-title row">
+                                    <div class="caption font-dark col-sm-6">
+                                        <div class="col-sm-12">
+                                            <span class="caption-subject bold" style="line-height: 34px;">排序</span>
+                                            <button type="button" class="btn dark btn-outline" id="queryImgListBtn">按公众号年审时间&nbsp;<i class="fa fa-sort"></i></button>
+                                            <button type="button" class="btn dark btn-outline" id="queryImgListBtn">按商户证书到期时间&nbsp;<i class="fa fa-sort"></i></button>
+                                        </div>      
+                                    </div>
+                                    <div class="btn-group btn-group-devided col-sm-6" data-toggle="buttons">
+                                        <a type="button" id="addAccount" class="btn dark pull-right"  data-toggle="modal" href="#addModal" style="margin-top: 8px;">
+                                            +添加公众号
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="account-msg-pane">
+                                        <div class="note note-custom">
+                                            <div class="note-custom-title">
+                                                <h3>第六空间（杭州滨江）</h3>
+                                                <span class="font-dark">
+                                                    第六空间建材城
+                                                </span>
+                                            </div>
+                                            <div id="activityInfo" class="note-custom-body">
+                                                <p>AppID(应用ID)： wx669a395498a7a229 </p>
+                                                <p>AppSecret(应用密钥)： c9e0c0775c21af6540c5079108a939b3</p>
+                                                <p>URL： http://wx.kerlai.com/WeixinIsVeryCool36</p>
+                                                <p>Token： iUZ0WSrauMudV4HJ2LYO</p>
+                                                <p>EncodingAESKey： wvxjyNTcjs4Ahw0b6mkjBQsfPx3uDQYuM1LlVkNexKb</p>
+                                                <p>年审到期时间： 2017-12-31</p>
+                                                <p class="more-margin">微信支付商户号：</p>
+                                                <p>微信支付Key：</p>
+                                                <p>商户证书主题：第六空间</p>
+                                                <p>商户证书到期时间：2017-12-31</p>
+                                                <p>备注</p>
+                                                <p>
+                                                    <a data-func="edit" data-toggle="modal" href="#editModal">编辑</a>&nbsp;&nbsp;&nbsp;
+                                                    <a data-func="delete" data-toggle="modal" href="#confirmModal">删除</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                     
+                                    </div>
+                                    <div class="row">
+                                        <span id="imgListPager" class="pager pull-right">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 表格结束 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 页面主内容结束 -->
+        </div>
+        <!-- 页面中间内容部分结束 -->
+        <!-- 页脚开始 -->
+         @@include("shared/footer.html")
+
+        <!-- 页脚结束 -->
+    </div>
+   <div class="modal fade" id="addModal" tabindex="-1" role="basic" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title bold">添加公众号</h4>
+                </div>
+                <div class="modal-body">
+                    <form >
+                        <fieldset>
+                            <legend>归属建材城</legend>
+                            <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" > *&nbsp;</span>
+                                    <span class="span-label">选择归属建材城：&nbsp;&nbsp;</span>
+                                </span>
+                                <select id="tagsSelect2" class="form-control input-sm" tabindex="-1" aria-hidden="true" name="part">
+                                    <option value="1">佳好佳</option>
+                                </select>
+                            </p>
+                            <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" ></span>
+                                    <span class="span-label">备注：</span>
+                                </span>
+                                <textarea type="text"  class="form-control"  rows="3" maxlength="200"  placeholder="最多200字符"></textarea>
+                            </p>
+                        </fieldset>
+                        <fieldset>
+                            <legend>微信公众号</legend>
+                            <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">公众号名称：</span>
+                                </span>
+                                <input type="text" class="form-control"  maxlength="14"  required  placeholder="">
+                            </p>
+                            <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">AppID（应用ID）：</span>
+                                </span>
+                                <input type="text" class="form-control"  maxlength="14"  required  placeholder="">
+                            </p>
+                            <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">AppSecret（应用密匙）：</span>
+                                </span>
+                                <input type="text"   class="form-control"  maxlength="14"  required  placeholder="">
+                            </p>
+                            <p class="form-group">
+                               <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">公众号名称：</span>
+                               </span>
+                                <input type="text"   class="form-control"  maxlength="14"  required  placeholder="">
+                            </p>
+                            <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">URL：</span>
+                                </span>
+                                <input type="text"   class="form-control"  maxlength="14"  required  placeholder="">
+                            </p>
+                            <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">Token：</span>
+                                </span>
+                                <input type="text" class="form-control"  maxlength="14"  required  placeholder="">
+                            </p>
+                            <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">EncodingAESKey:</span>
+                               </span>
+                                <input type="text"   class="form-control"  maxlength="14"  required  placeholder="">
+                            </p>
+                            <p class="form-group  date-picker input-daterange">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">公众号年审到期时间：</span>
+                                </span>
+                                <input type="text" class="form-control date-time-input" name="dateTimeInput" placeholder="请选择日期时间">
+                            </p>
+                        </fieldset>
+                        <fieldset>
+                            <legend>微信支付</legend>
+                            <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">微信商户号:</span>
+                                </span>
+                                <input type="text"   class="form-control"  maxlength="14"  required  placeholder="">
+                            </p>
+                            <p class="form-group">
+                               <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">微信支付Key:</span>
+                               </span>
+                                <input type="text"   class="form-control"  maxlength="14"  required  placeholder="">
+                            </p>
+                            <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">商户证书到期时间:</span>
+                                </span>
+                                <input type="text" class="form-control date-time-input" name="dateTimeInput" placeholder="请选择日期时间">
+                            </p>
+                            <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">商户证书主题:</span>
+                                </span>
+                                <input type="text"   class="form-control"  maxlength="14"  required  placeholder="">
+                            </p>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                     <button type="button" class="btn green pull-right" id="saveAdd">保存</button>
+                     <button type="button" class="btn dark pull-right btn-outline" style="margin-right: 20px;" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>                   
+    </div>
+    <div class="modal fade" id="editModal" tabindex="-1" role="basic" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title bold">编辑账号</h4>
+                </div>
+                 <div class="modal-body">
+                     <form >
+                         <fieldset>
+                             <legend>归属建材城</legend>
+                             <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" > *&nbsp;</span>
+                                    <span class="span-label">选择归属建材城：&nbsp;&nbsp;</span>
+                                </span>
+                                 <select id="tagsSelect2" class="form-control input-sm" tabindex="-1" aria-hidden="true" name="part">
+                                     <option value="1">佳好佳</option>
+                                 </select>
+                             </p>
+                             <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" ></span>
+                                    <span class="span-label">备注：</span>
+                                </span>
+                                 <textarea type="text"  class="form-control"  rows="3" maxlength="200"  placeholder="最多200字符"></textarea>
+                             </p>
+                         </fieldset>
+                         <fieldset>
+                             <legend>微信公众号</legend>
+                             <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">公众号名称：</span>
+                                </span>
+                                 <input type="text" class="form-control"  maxlength="14"  required  placeholder="">
+                             </p>
+                             <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">AppID（应用ID）：</span>
+                                </span>
+                                 <input type="text" class="form-control"  maxlength="14"  required  placeholder="">
+                             </p>
+                             <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">AppSecret（应用密匙）：</span>
+                                </span>
+                                 <input type="text"   class="form-control"  maxlength="14"  required  placeholder="">
+                             </p>
+                             <p class="form-group">
+                               <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">公众号名称：</span>
+                               </span>
+                                 <input type="text"   class="form-control"  maxlength="14"  required  placeholder="">
+                             </p>
+                             <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">URL：</span>
+                                </span>
+                                 <input type="text"   class="form-control"  maxlength="14"  required  placeholder="">
+                             </p>
+                             <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">Token：</span>
+                                </span>
+                                 <input type="text" class="form-control"  maxlength="14"  required  placeholder="">
+                             </p>
+                             <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">EncodingAESKey:</span>
+                               </span>
+                                 <input type="text"   class="form-control"  maxlength="14"  required  placeholder="">
+                             </p>
+                             <p class="form-group  date-picker input-daterange">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">公众号年审到期时间：</span>
+                                </span>
+                                 <input type="text" class="form-control date-time-input" name="dateTimeInput" placeholder="请选择日期时间">
+                             </p>
+                         </fieldset>
+                         <fieldset>
+                             <legend>微信支付</legend>
+                             <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">微信商户号:</span>
+                                </span>
+                                 <input type="text"   class="form-control"  maxlength="14"  required  placeholder="">
+                             </p>
+                             <p class="form-group">
+                               <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">微信支付Key:</span>
+                               </span>
+                                 <input type="text"   class="form-control"  maxlength="14"  required  placeholder="">
+                             </p>
+                             <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">商户证书到期时间:</span>
+                                </span>
+                                 <input type="text" class="form-control date-time-input" name="dateTimeInput" placeholder="请选择日期时间">
+                             </p>
+                             <p class="form-group">
+                                <span>
+                                    <span class="required" aria-required="true" >*</span>
+                                    <span class="span-label">商户证书主题:</span>
+                                </span>
+                                 <input type="text"   class="form-control"  maxlength="14"  required  placeholder="">
+                             </p>
+                         </fieldset>
+                     </form>
+                </div>
+                <div class="modal-footer">
+                     <button type="button" class="btn green pull-right" id="saveEdit">保存</button>
+                     <button type="button" class="btn dark pull-right btn-outline" style="margin-right: 20px;" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>                   
+    </div>
+
+    <div class="modal fade bs-modal-sm" id="confirmModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body"> 确定删除吗？ </div>
+                <div class="modal-footer no-border">
+                    <button type="button" class="btn dark" data-func="confirmDelete">确定</button>
+                    <button type="button" class="btn dark btn-outline" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 列表模板 -->
+    <script id="renovationImgTemp" type="text/html">
+        {{each data as value i}}
+        <tr data-img-item-id="{{value.id}}" data-top="{{value.top}}">
+            <td>
+                <label class="mt-checkbox mt-checkbox-outline">
+                    <input type="checkbox" value="{{value.id}}">
+                    <span></span>
+                </label>
+            </td>
+            <td class="table-td-img">
+                <img src="{{value.imgSrc}}" alt="">
+            </td>
+            <td>{{value.space}}</td>
+            <td>{{value.style}}</td>
+            <td>{{value.part}}</td>
+            <td>{{value.updateTime}}</td>
+            <td>{{value.remark}}</td>
+            <td>
+                <a data-func="toTop" data-toggle="modal" href="#editModal">编辑</a>&nbsp;&nbsp;&nbsp;
+                <a data-func="delete" data-toggle="modal" href="#confirmModal">删除</a>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+    <!-- 分类tags模板 -->
+    <!-- 页面内容结束 -->
+    <!-- 载入全局依赖js -->
+     @@include("shared/global-import-js.html")
+    <!-- 本页面依赖组件初始化 -->
+    <script src="../../plugin/datetimerpicker/jquery.datetimepicker.js"></script>
+    <script src="../../plugin/pager/jquery-pager.js"></script>
+    <script src="../../js/bulidingCity/publicAccount.js"></script>
+    <script>
+        // var renovationImgList = new RenovationImgList();
+        // renovationImgList.create({});
+
+            $('.date-time-input').datetimepicker({
+                lang: 'ch',
+                format: 'Y-m-d H:i',
+                step:5,
+                timepicker: true,
+                readonly: true,
+                clearButton: true,
+                //失去焦点不赋值
+                validateOnBlur: false,
+                //禁用滚动
+                scrollInput: false
+            });
+    
+    </script>
+</body>
+
+</html>

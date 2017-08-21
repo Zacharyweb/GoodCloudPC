@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>好云商-后台管理</title>
+    @@include("shared/global-meta.html")
+    <!-- 引入全局样式 -->
+    <!-- 全局样式 -->
+    @@include("shared/global-import-css.html")
+    <!-- 引入全局插件样式 -->
+    <!-- 全局插件样式 -->
+    @@include("shared/global-import-plugins-css.html")
+    <!-- 全局主题样式 -->
+    <link rel="stylesheet" href="../../plugin/pager/css/pager.css">
+    <link rel="stylesheet" href="../../plugin/cropper/cropper.min.css">
+    <link rel="stylesheet" href="../../css/decorationCollection.css">
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+<div class="page-wrapper">
+    <!-- 顶部Bar开始 -->
+    @@include("shared/header.html")
+    <!-- 顶部Bar结束 -->
+    <div class="clearfix"></div>
+    <!-- 页面中间部分内容开始 -->
+    <div class="page-container">
+        <!-- 侧边栏开始 -->
+        @@include("shared/operatesliderbar.html")
+        <!-- 侧边栏结束 -->
+        <!-- 页面主内容开始 -->
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div class="page-bar no-border">
+                    <h1 class="page-title bold">装修宝典</h1>
+                </div>
+                <div class="row">
+                    <div class="modal-header">
+                        <h3 class="bold" style="text-align: center">创作文案</h3>
+                    </div>
+                    <div class="modal-body" style="margin-left: 5%">
+                        <div style="margin-bottom: 15px;font-size: 15px;">
+                            <span class="width">关联文章：</span><span>这里是文章标题</span><i class="fa fa-smile-o"></i>
+                        </div>
+                        <div>
+                            <span class="width" style="vertical-align: top;">
+                                <span style="color:red;"> *&nbsp;</span>
+                                <span class="span-label">文案：</span>
+                            </span>
+                            <textarea cols="50" rows="15"></textarea>
+                        </div>
+                        <div style="padding-left:110px;margin-top: 30px;">
+                            <button class="btn dark btn-outline" style="margin-right: 20px;" id="back">返回</button>
+                            <button class="btn green btn-outline" id="keep">保存</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 页面主内容结束 -->
+    </div>
+    <!-- 页面中间内容部分结束 -->
+    <!-- 页脚开始 -->
+    @@include("shared/footer.html")
+    <!-- 页脚结束 -->
+</div>
+<!-- 页面内容结束 -->
+
+<!-- 载入全局依赖js -->
+<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../assets/global/scripts/app.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+<script src="../../assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+<script src="../../plugin/artTemplate/template.js"></script>
+<script src="../../plugin/draggabilly/draggabilly.pkgd.min.js"></script>
+<script src="../../js/config.js"></script>
+<script src="../../js/utils.js"></script>
+<script src="../../js/jquery.extend.js"></script>
+<script src="../../plugin/toastr/toastr.js"></script>
+<script src="../../plugin/jquery-validate/jquery.validate.js"></script>
+<script src="../../js/common.js"></script>
+
+<!-- 本页面依赖组件初始化 -->
+<script src="../../plugin/pager/jquery-pager.js"></script>
+<script>
+    $('#back').on('click',function () {
+        window.location = 'decorationCollectionList.html';
+    })
+</script>
+</body>
+
+</html>

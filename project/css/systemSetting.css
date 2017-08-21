@@ -1,0 +1,46 @@
+.settingContent{
+    margin-top:50px;
+    width: 500px;
+    margin-left: 100px;
+}
+.settingContent img{
+    margin-right: 20px;
+}
+.settingContent input{
+    outline: none;
+    border:1px solid #666;
+    margin: 0;
+    padding:1px 0;
+}
+.settingContent span.theFirst{
+    margin-left: 6%;
+}
+.settingContent b{
+    font-weight: normal;
+    border:1px solid #666;
+    font-size:14px;
+    padding:7px 15px;
+    color:#FFF;
+    background:rgb(29,41,57);
+    cursor: pointer;
+    border-radius: 7px;
+    margin-left:15px;
+}
+.settingContent b:hover{
+    color:#000;
+    background:#FFF;
+    cursor: pointer;
+}
+.settingContent p.borderLine{
+    border-bottom:2px solid #999;
+    height: 50px;
+    width: 400px;
+    line-height: 50px;
+}
+.settingContent b.buttonSave{
+    margin-left: 25%;
+}
+.settingContent h4{
+    font-weight: 600;
+    margin-bottom: 30px;
+}

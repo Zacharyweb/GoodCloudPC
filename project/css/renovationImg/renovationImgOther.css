@@ -1,0 +1,15 @@
+.disabled{
+    color:lightgray!important;
+}
+.portlet-title button{
+    border-radius: 4px!important;
+}
+
+.modal .modal-body p{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+.modal .modal-body p .span-label{
+    width: 120px;
+}

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include("shared/global-meta.html")
+    <title>好云商-后台管理</title>
+    <!-- 引入全局样式 -->
+    <!-- 全局样式 -->
+    <!-- 全局样式 -->
+    @@include("shared/global-import-css.html")
+    <!-- 截图插件 -->
+    <link href="../../plugin/cropper/cropper.min.css" type="text/css" rel="stylesheet"/>
+    <!-- 下拉选择框组件样式 -->
+    <link href="../../plugin/temporary/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../plugin/temporary/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- 全局插件样式 -->
+    @@include("shared/global-import-plugins-css.html")
+    <link rel="stylesheet" href="../../plugin/pager/css/pager.css">
+    <link rel="stylesheet" href="../../css/brandMgmt.css">
+    <!--日期插件样式-->
+    <link rel="stylesheet" href="../../plugin/datetimerpicker/jquery.datetimepicker.css">
+    <!-- 主体样式 -->
+    <link rel="stylesheet" href="../../css/statisticsData/statisticsData.css">
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+<div class="page-wrapper">
+    <!-- 顶部Bar开始 -->
+    @@include("shared/header.html",{ "username":"NickName" })
+    <!-- 顶部Bar结束 -->
+    <div class="clearfix"> </div>
+    <!-- 页面中间部分内容开始 -->
+    <div class="page-container">
+        <!-- 侧边栏开始 -->
+        @@include("shared/thirdPartysliderbar.html")
+        <!-- 侧边栏结束 -->
+        <!-- 页面主内容开始 -->
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div class="page-bar no-border">
+                    <h1 class="page-title bold">收支流水</h1>
+                </div>
+                <div class="revenue isBorder">
+                    <div class="backColor firstWith height left relative">
+                        <p style="font-size: 20px;margin:10px 0;">建材城账户结余(元)：<b class="blod">+1204.7</b></p>
+                        <span>
+                           建材城账户与实际微信商户账户不保证一致，请以实际微信商户平台端为准
+                           请及时充值已保证微信商户平台有可用余额发红包
+                       </span>
+                        <img src="../../img/u16225.png" class="absolute" alt="">
+                    </div>
+                    <div class="height left twoWith" style="margin-right:1%;">
+                        <div class="backColor vertical">
+                            <p class="pMargin pHeight">累计收入(元)：<b>+1204.7</b></p>
+                        </div>
+                        <div class="backColor top">
+                            <p class="pMargin pHeight">累计支出(元)：<b>-1204.7</b></p>
+                        </div>
+                    </div>
+                    <div class="backColor height left twoWith vertical">
+                        <p style="margin-top: 50px;">今日结余(元)：<b>-1204.7</b></p>
+                    </div>
+                    <div class="height left twoWith">
+                        <div class="backColor">
+                            <p class="pMargin pHeight">今日收入(元)：<b>-1204.7</b></p>
+                        </div>
+                        <div class="backColor top">
+                            <p class="pMargin pHeight">今日支出(元)：<b>-1204.7</b></p>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="row isBorder" style="margin:20px 0;">
+                    <form id="queryBrandsForm" class="col-sm-12">
+                        <div class="col-sm-3">
+                            <div class="input-group  date-picker input-daterange col-xs-12" style="text-align: center">
+                                <input type="text" class="form-control input-sm" placeholder="开始时间" id="startDate" name="startDate" value="" readonly="readonly">
+                                <span class="input-group-addon">至</span>
+                                <input type="text" class="form-control input-sm" placeholder="结束日期" id="endDate" name="endDate" value="" readonly="readonly">
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <input class="form-control input-sm" name="shopName" placeholder="请输入流水业务">
+                        </div>
+                        <div class="col-sm-2">
+                            <input class="form-control input-sm" name="shopName" placeholder="请输入业务关系店铺">
+                        </div>
+                        <div class="col-sm-2">
+                            <select  class="form-control  select2-multiple select2-hidden-accessible" name="state" tabindex="-1" aria-hidden="true">
+                                <option value="-1" selected>请选择业务类型</option>
+                                <option value="0">店铺保证金</option>
+                                <option value="1">微信手续费</option>
+                                <option value="0">VR全景红包</option>
+                                <option value="1">推广人员佣金</option>
+                                <option value="0">联单联购费用</option>
+                                <option value="1">PK赛奖励</option>
+                            </select>
+                        </div>
+                        <div class="btn-group btn-group-devided col-sm-1" data-toggle="buttons">
+                            <button id="btnQuery" type="button" class="btn dark btn-outline btn"><i class="fa fa-search"></i>&nbsp;查询</button>
+                        </div>
+                        <div class="btn-group btn-group-devided col-sm-1 right" data-toggle="buttons" style="float: right;">
+                            <button type="button" class="btn dark">&nbsp;导出到Excel</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="table-pphd-wrapper">
+                    <div class="statisticsInfo">
+                        <p>
+                            <span class="starTime">
+                                2017-04-01
+                            </span>至
+                            <span class="endTime">
+                                2017-04-01
+                            </span>结余(元)：
+                            <b>+616.7</b>,其中流水收入(元)：
+                            <b>+616.7</b>， 流水支出(元)：
+                            <b>-616.7</b>
+                        </p>
+                    </div>
+                    <table class="table table-striped table-bordered table-hover table-header-fixed" id="brandTable">
+                        <thead>
+                        <tr class="table-header">
+                            <th>流水时间</th>
+                            <th>流水业务 </th>
+                            <th>业务类型</th>
+                            <th>收支金额元</th>
+                            <th>业务人</th>
+                            <th>业务人</th>
+                            <th>流水号</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>2017-04-08 11:20:39</td>
+                            <td><span class="name">王大力</span>提现店铺保证金</td>
+                            <td>店铺保证金</td>
+                            <td><b>-500</b></td>
+                            <td>王大力</td>
+                            <td>圣象地板佳好佳店</td>
+                            <td><a data-toggle="modal" href="#Pipeline">HG17...6204（查看）</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="row" style="position: absolute;bottom:15px;right: 30px;">
+                        <span id="pager" class="pager pull-right">
+                            <span style="float:left;padding: 0;line-height: 33px;">
+                                共
+                                <label style="color:orange;padding:0;margin:0;font-size:16px;">50</label>
+                                条数据;&nbsp;&nbsp;每页显示
+                                <select class="selectSize">
+                                    <option value="5">5</option>
+                                    <option selected="" value="10">10</option>
+                                    <option value="12">12</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="100">100</option>
+                                </select>  共
+                                <label style="color:orange;padding:0 3px;font-size:16px">5</label>页
+                            </span>
+                            <span class="current">首页</span>
+                            <span class="current prev">上一页</span>
+                            <span class="current">1</span>
+                            <a href="javascript:void(0)">2</a>
+                            <a href="javascript:void(0)">3</a>
+                            <a href="javascript:void(0)">4</a>
+                            <a href="javascript:void(0)">5</a>
+                            <a href="javascript:void(0)" class="next">下一页</a>
+                            <a href="javascript:void(0)">尾页</a>
+                            <span style="padding:0;">
+                                跳转到
+                                <input class="jump" type="text" style="width:40px;height: 30px;">
+                                页
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 页面主内容结束 -->
+    </div>
+    <!-- 页面中间内容部分结束 -->
+    <!-- 页脚开始 -->
+    @@include("shared/footer.html")
+
+    <!-- 页脚结束 -->
+</div>
+<!--流水详情弹窗-->
+<div class="modal fade bs-modal-lg" id="Pipeline" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" >
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h3 class="modal-title bold">流水详情</h3>
+            </div>
+            <div class="modal-body">
+                <p class="pColor">流水号：<span>王大锤</span></p>
+                <p class="pColor">流水时间：<span>王大锤</span></p>
+                <p>流水业务：<span>王大锤</span></p>
+                <p>业务类型：<span>王大锤</span></p>
+                <p>业务人：<span>王大锤</span></p>
+                <p>业务关系店铺：<span>王大锤</span></p>
+            </div>
+            <div class="modal-footer" style="text-align:left">
+                <p>付款人：<span>王大锤</span></p>
+                <p>付款人：<span>王大锤</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- 页面内容结束 -->
+<!-- 载入全局依赖js -->
+<!-- 全局依赖js -->
+@@include("shared/global-import-js.html")
+<!-- 下拉选择框（带搜索）初始化 -->
+<script src="../../plugin/temporary/select2/js/select2.full.min.js" type="text/javascript"></script>
+<script src="../../plugin/temporary/select2/components-select2.min.js" type="text/javascript"></script>
+<!-- 上传图片脚本 -->
+<script src="../../plugin/qCloud/cos-js-sdk-v4.js"></script>
+<script src="../../plugin/qCloud/crypto.js"></script>
+<script src="../../plugin/qCloud/qCloud.js"></script>
+<script src="../../plugin/upload/cropper.js"></script>
+<script src="../../plugin/upload/qcloud-cropper.js"></script>
+<!-- 表单验证-->
+<script src="../../plugin/jquery-validate/localization/messages_zh.js"></script>
+<!-- 自定义共用脚本 -->
+<script src="../../plugin/pager/jquery-pager.js"></script>
+<!--日期-->
+<script src="../../plugin/datetimerpicker/jquery.datetimepicker.js"></script>
+<!-- 本页面依赖js -->
+<script src="../../js/statisticsData/revenue.js"></script>
+<script>
+    var revenue =new Revenue();
+    revenue.create({});
+    $(".brand-logo-img").click(function(){
+        $.imgUpload({
+            callbackEle:"[name='brandImg'],.brand-logo-img",
+            successCallback:function(path){
+                console.log(path);
+            },
+            cropper:true,
+            cropperOpts: {
+                aspectRatio: 327/ 214,//截图框的比例
+                zoomable:false, //禁用鼠标滚轮放大缩小
+                viewMode:1 //截图框只能在图片区域内移动
+            }
+        },cos)
+    });
+
+</script>
+</body>
+</html>

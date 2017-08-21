@@ -1,0 +1,54 @@
+.modal-lg{
+	width: 1200px!important;
+}
+.modal .modal-body .form-group1 .required{
+	color:#e02222;
+}
+.modal .modal-body .form-group1 input{ 
+	 margin-top: 10px;
+}
+.modal .modal-body .form-group{
+    margin-bottom: 45px;
+}
+
+.link-order-modal .order-item{
+	display: flex;
+}
+.link-order-modal .order-item:nth-of-type(1){
+	margin-top: 10px;
+}
+.link-order-modal .order-item .border-default{
+	flex: 1;
+	margin-right: 10px;
+}
+.link-order-modal .order-item .border-default .col-sm-3{
+	display: flex;
+	align-items: center;
+}
+.link-order-modal .order-item .border-default .col-sm-3 input{
+	margin-top: 0;
+}
+.link-order-modal .order-item .border-default .order-status label,
+.link-order-modal .order-item .border-default .order-money label{
+	width: 120px;
+}
+.link-order-modal .order-item .border-default .order-validity label{
+	margin:0;
+	margin-right: 10px;
+	display: flex;
+	align-items: center;
+	line-height: 30px;
+}
+.link-order-modal .order-item .border-default .order-validity label input{
+   margin-top: 0;
+   height: auto!important;
+}
+.link-order-modal .order-item .border-default .order-remark label{
+	width: 80px;
+}
+.link-order-modal .order-item  .action-for-order button{
+	width: 66px;
+	height: 66px;
+	font-size: 30px;
+	color:#BFBFBF;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片上传demo</title>
+    <script src="../../assets/global/plugins/jquery.min.js"></script>
+    <!--必须不能用jquery2.0-->
+    <link rel="stylesheet" href="../cropper/cropper.css">
+    <link href="../../assets/global/css/components.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../js/config.js"></script>
+    <script src="../../js/utils.js"></script>
+    <script src="../cropper/cropper.js"></script>
+    <script src="../qCloud/crypto.js"></script>
+    <script src="../qCloud/cos-js-sdk-v4.js"></script>
+    <script src="../qCloud/qCloud.js"></script>
+    <script src="qcloud-cropper.js"></script>
+
+    <script>
+        $(function(){
+            $("#btn1").click(function(){
+                $.imgUpload({
+                    callbackEle:"[name='logo'],#test1",
+                    successCallback:function(path){
+                        console.log(path);
+                    },
+                    cropper:false,
+                    cropperOpts: {
+                        aspectRatio: 1 / 1,//截图框的比例
+                        preview:$('.cropper-preview'),//预览框
+                        zoomable:false, //禁用鼠标滚轮放大缩小
+                        viewMode:1, //截图框只能在图片区域内移动
+                    }
+                },cos)
+            })
+
+//            $("#btn1").click(function(){
+//                $("#addAccount").modal();
+//            })
+        })
+
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+<input  type="file" value="这是个测试">
+<input id="btn1" type="button" value="上传图片">
+<img id="test1" src="" alt="">
+<input name="logo" value="">
+
+<div class="modal fade" id="addAccount" tabindex="-1" role="basic" aria-hidden="true"
+     style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header ui-draggable-handle">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">添加账号</h4>
+            </div>
+
+            <div class="modal-body">
+                <input id="btn" type="button" value="上传图片">
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                <button type="button" id="save" class="btn green">保存</button>
+            </div>
+
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+</body>
+</html>

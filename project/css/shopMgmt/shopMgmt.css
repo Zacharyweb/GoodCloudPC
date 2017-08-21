@@ -1,0 +1,30 @@
+.border-green .invitation-shop-tips{
+	margin:15px 0;
+	font-size: 16px;
+}
+.modal .modal-body .form-group{
+    margin-bottom: 45px;
+}
+.explain-for-tel{
+	position: absolute;
+	width: 100%;
+	top:40px;
+	left:105px;
+}
+#refundDepositModal .modal-body p{
+	margin:0;
+	margin-top: 10px;
+}
+#refundDepositModal .modal-body p span{
+	color:#e02222;
+}
+#ImportExcelModal .modal-body{
+	padding-bottom: 30px;
+}
+#ImportExcelModal .modal-body .form-group{
+	margin:0;
+	margin-top: 10px;
+}
+#importExcelBtn{
+	margin-left: 30px;
+}

@@ -1,0 +1,34 @@
+
+<!-- 海报面板模板 -->
+<script  type="text/html" id="posterPaneTemp">
+    {{each data as item i}}
+    <div class="portlet light bordered tab-pane" id="{{item.code}}">
+        <div class="portlet-title">
+            <div class="caption font-dark">
+                <i class="icon-picture font-dark"></i>
+                <span class="caption-subject bold poster-pane-name">活动海报</span>
+            </div>
+            <div class="actions">
+                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                    <label class="btn btn-transparent dark btn-outline btn-sm deletePoster" data-target-tab="{{item.code}}"><input type="radio" class="toggle">删除海报</label>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div>
+                <p class="bold font-green-sharp">作用和意义</p>
+                <p>这里可以展示联盟活动的平面设计海报，新添加的默认会到活动报名页的最后面，若需要提高某个海报的优先级，选中后点击上/下移按钮即可。</p>
+                <p class="bold font-green-sharp">操作说明</p>
+                <p>点击图片上的更换图片可重新选择图片。建议图片宽度：700像素。</p>
+            </div>
+        </div>
+        <div class="portlet-body row">
+            <div class="col-md-12">
+                <div class="poster-wrapper relative">
+                    <img src="{{item.imgSrc}}" style="width:50%;" alt="">
+                    <span data-id="{{item.code}}" class="change-poster"><i class="icon-refresh" ></i> 更换图片</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</script>

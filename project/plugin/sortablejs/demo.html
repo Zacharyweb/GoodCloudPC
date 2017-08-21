@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖动排序插件案例</title>
+<style>
+	ul{
+		list-style: none;
+	}
+	.sort-able-list1 li, .sort-able-list2 li{
+		width: 200px;
+		height: 30px;
+		text-align: center;
+		line-height: 30px;
+		color: #3e4f5f;
+		border: 1px solid #3e4f5f;
+		margin-bottom: 10px;
+
+	}
+</style>
+</head>
+<body>
+   <h1>组内元素可全部拖动排序</h1>
+   <div class="sort-able-list1">
+	   <ul>
+		   	<li>1</li>
+		   	<li>2</li>
+		   	<li>3</li>
+		   	<li>4</li>
+		   	<li>5</li>
+	   </ul>
+   </div>
+
+    <h1>组内元素部分拖动排序</h1>
+    <div class="sort-able-list2">
+	   <ul>
+		   	<li>1（不可拖动）</li>
+		   	<li>2（不可拖动）</li>
+		   	<li class="sortable-item">3</li>
+		   	<li class="sortable-item">4</li>
+		   	<li class="sortable-item">5</li>
+	   </ul>
+   </div>
+
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="Sortable.min.js"></script>	
+</body>
+</html>
+<script>
+    var sortableList1 = $(".sort-able-list1 ul")[0];
+    var sortable1 = Sortable.create(sortableList1, {
+        onEnd: function() {
+            // 拖动排序结束时
+            console.log('Sortable1 end');
+        }
+    });
+    var sortableList2= $(".sort-able-list2 ul")[0];
+    var sortable2 = Sortable.create(sortableList2, {
+    	draggable: '.sortable-item',//设置组内可拖动的对象
+        onEnd: function() {
+            // 拖动排序结束时
+            console.log('Sortable2 end');
+        }
+    });
+        
+</script>

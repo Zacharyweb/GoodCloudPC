@@ -1,0 +1,15 @@
+#singleOptionModal{
+    width: 800px;
+    transform: none;
+    margin:-300px 0 0 -400px;
+}
+
+#singleOptionModal .custom-modal-body{
+    padding-top: 20px;
+}
+.portlet  table .table-td-index{
+    width: 30px;
+}
+.disabled{
+    color: lightgray!important;
+}

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>好云商-后台管理</title>
+    @@include("shared/global-meta.html")
+    <!-- 引入全局样式 -->
+    <!-- 全局样式 -->
+    @@include("shared/global-import-css.html")
+    <!-- 引入全局插件样式 -->
+    <!-- 全局插件样式 -->
+    @@include("shared/global-import-plugins-css.html")
+    <!-- 全局主题样式 -->
+    <link rel="stylesheet" href="../../plugin/pager/css/pager.css">
+    <link rel="stylesheet" href="../../plugin/cropper/cropper.min.css">
+    <!-- 树状分支样式 -->
+    <link rel="stylesheet" href="../../css/treeStructure.css">
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+<div class="page-wrapper">
+    <!-- 顶部Bar开始 -->
+    @@include("shared/header.html")
+    <!-- 顶部Bar结束 -->
+    <div class="clearfix"></div>
+    <!-- 页面中间部分内容开始 -->
+    <div class="page-container">
+        <!-- 侧边栏开始 -->
+        @@include("shared/operatesliderbar.html")
+        <!-- 侧边栏结束 -->
+        <!-- 页面主内容开始 -->
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div class="page-bar no-border">
+                    <h1 class="page-title bold">|文章目录</h1>
+                </div>
+                <div style="margin-top:15px;min-height:400px; height:auto!important;
+                            height:400px;">
+                    <div class="row m-heading-1 border-default m-bordered ">
+                        <button id="fold" class="btn green btn-outline">展开</button>
+                        <button class="btn dark btn-outline" data-toggle="modal" id="addFirstClass" href="#addDirectory1"  style="display: inline-block;margin-left: 20px;">+添加一级目录</button>
+                    </div>
+                    <div class="modal-body" style="padding-bottom: 70px;border:1px solid #e1e5ec;">
+                        <div class="portlet-body" style="padding-bottom: 50px">
+                            <div style="font-size: 18px;">
+                                <span style="width: 30%;display: inline-block;text-align:center;">文章类目</span>
+                                <span style="width: 40%;display: inline-block;text-align:center;">操作</span>
+                            </div>
+                            <div id="onedTable" style="width: 100%">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+
+                <!-- 活动查询框结束 -->
+            </div>
+        </div>
+        <!-- 页面主内容结束 -->
+    </div>
+    <!-- 页面中间内容部分结束 -->
+    <!-- 页脚开始 -->
+    @@include("shared/footer.html")
+    <!-- 页脚结束 -->
+</div>
+
+<!--添加一级目录弹框-->
+<div class="modal fade bs-modal-lg" id="addDirectory1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h3 class="modal-title bold">添加一级目录</h3>
+            </div>
+            <div class="modal-body" style="padding-left: 30px;">
+                <form id="addBrandForm1">
+                    <p class="form-group brand-msg">
+                        <span class="span-label"><span class="required" aria-required="true"> *&nbsp;</span>类目名：</span>
+                        <input type="text" name="brandName" style="display: inline-block;width: 60%;"
+                                class="form-control className" placeholder="长度1-15个字符" minlength="1" maxlength="15" required="">
+                    </p>
+                    <p class="form-group brand-msg">
+                        <span class="span-label">副标题：</span>
+                        <input type="text" name="tel" style="display: inline-block;width: 60%;" class="form-control subhead" required="" ismobile="true"
+                                minlength="1" maxlength="30" placeholder="长度1-30个字符">
+                    </p>
+                    <div class="form-group brand-msg">
+                        <span class="span-label no-required">图标：</span>
+                        <div class="logo-img-wrapper" style="display: inline-block; width: 120px;height: 120px;">
+                            <input type="hidden" class="inputImg"  name="img">
+                            <i class="brand-logo-img icon iconfont icon-add imgIcon"></i>
+                            <img class="brand-logo-img bigImg" style="display: inline-block; width: 120px;height: 120px;" alt="">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" id="quxiao1" >取消</button>
+                <button type="button" class="btn green" id="save1">保存</button>
+                <button type="button" class="btn green" id="xiuGai">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--添加子类-->
+<div class="modal fade bs-modal-lg" id="addSubclass" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title bold">添加子类</h4>
+            </div>
+            <div class="modal-body">
+                <div id="Header" class="portlet light bordered">
+                    <div style="height: 50px">
+                        <span style="display: inline-block;width: 100px">一级类目名称</span>
+                        <input id="fClass" style="display: inline-block;width: 300px;" readonly type="text" class="form-control input-sm">
+                    </div>
+                    <div>
+                        <span style="display: inline-block;width: 100px"><span style="color:red;">*&nbsp;&nbsp;</span>类目名称</span>
+                        <input id="title" type="text" style="display: inline-block;width: 300px;" class="form-control input-sm" placeholder="请填写类目名称">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn green" id="save">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--编辑子类-->
+<div class="modal fade bs-modal-lg" id="editSubclass" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title bold">修改子类</h4>
+            </div>
+            <div class="modal-body">
+                <div class="portlet light bordered">
+                    <div style="height: 50px">
+                        <span style="display: inline-block;width: 100px">一级类目名称</span>
+                        <input id="sClass" style="display: inline-block;width: 300px;" type="text" readonly class="form-control input-sm">
+                    </div>
+                    <div id="append">
+                        <span style="display: inline-block;width: 100px"><span style="color:red;">*&nbsp;&nbsp;</span>类目名称</span>
+                        <input id="sTitle" type="text" style="display: inline-block;width: 300px;" class="form-control input-sm" placeholder="请填写类目名称">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn green" id="keep">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bs-modal-sm" id="confirmModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body"> 确定删除吗？ </div>
+            <div class="modal-footer no-border">
+                <button type="button" class="btn dark confirmDelete" data-dismiss="modal" data-func="confirmDelete">确定</button>
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-modal-sm" id="confirmModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body"> 确定删除吗？ </div>
+            <div class="modal-footer no-border">
+                <button type="button" class="btn dark confirmDelete" data-dismiss="modal" data-func="confirmDelete">确定</button>
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--一级目录-->
+<script id="directoryOne" type="text/html">
+    {{each data as value i}}
+    <ul>
+        <li class="parentList" data-id="{{value.Fid}}" data-sort="{{value.FSort}}">
+            <div class="change tree" style="width:30%;">
+                <span class="clickSpan theIcon">+</span>
+                <span class="info">
+			    <P class="muFirstTitle">{{value.FTitle}}</P>
+			    <br>
+                <i>{{value.FSubhead}}</i>
+		        </span>
+            </div>
+            <div class="operation" style="width:30%;text-align: right;">
+                <a data-func="edit" data-toggle="modal" href="#addSubclass" class="addSubclass">添加子类</a>&nbsp;&nbsp;
+                <a data-toggle="modal"  href="#addDirectory1"  class="massagRevise">修改</a>&nbsp;&nbsp;
+                <a data-func="up" class="firstMoveUp">上移</a>&nbsp;&nbsp;
+                <a data-func="down"  class="firstMoveDown">下移</a>&nbsp;&nbsp;
+                <a class="noDisplay massageDelete1" data-func="del" data-toggle="modal" href="#confirmModal1">删除</a>
+            </div>
+            {{each value.list as item j}}
+            <li class="list" data-id="{{item.Id}}" data-Sort="{{item.Sort}}" style="display: none;padding-left: 30px;">
+                <div class="xianshi" style="width: 100%;">
+                    <div class="change tree zishu" style="width:30%;">
+                        <span class="info"><i>{{item.Title}}</i></span>
+                    </div>
+                    <div style="width:30%;text-align: right;padding-right:13px;">
+                        <a class="move_edit" data-toggle="modal" href="#editSubclass">编辑</a>&nbsp;&nbsp;
+                        <a class="move_up">上移</a>&nbsp;&nbsp;
+                        <a class="move_down">下移</a>&nbsp;&nbsp;
+                        <a class="noDisplay removeChild" data-func="delChild" data-toggle="modal" href="#confirmModal2">删除</a>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </li>
+    </ul>
+    {{/each}}
+</script>
+
+<!--添加子类目-->
+<!-- 页面内容结束 -->
+<!-- 载入全局依赖js -->
+<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../assets/global/scripts/app.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+<script src="../../assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+<script src="../../plugin/artTemplate/template.js"></script>
+<script src="../../plugin/draggabilly/draggabilly.pkgd.min.js"></script>
+<script src="../../js/config.js"></script>
+<script src="../../js/utils.js"></script>
+<script src="../../js/jquery.extend.js"></script>
+<script src="../../plugin/toastr/toastr.js"></script>
+<script src="../../plugin/jquery-validate/jquery.validate.js"></script>
+<script src="../../js/common.js"></script>
+<!-- 上传图片脚本 -->
+<script src="../../plugin/qCloud/cos-js-sdk-v4.js"></script>
+<script src="../../plugin/qCloud/crypto.js"></script>
+<script src="../../plugin/qCloud/qCloud.js"></script>
+<script src="../../plugin/upload/cropper.js"></script>
+<script src="../../plugin/upload/qcloud-cropper.js"></script>
+<script>
+    $(".brand-logo-img").click(function(){
+        $.imgUpload({
+            callbackEle:"[name='brandImg'],.brand-logo-img",
+            successCallback:function(path){
+                $('.inputImg').attr("path",path);
+                $('.imgIcon').css('display','none');
+            },
+            cropper:false,
+            cropperOpts: {
+                aspectRatio: 1/1,//截图框的比例
+                zoomable:false, //禁用鼠标滚轮放大缩小
+                viewMode:1 //截图框只能在图片区域内移动
+            }
+        },cos)
+    });
+    $(".brand-logo-img1").click(function(){
+        $.imgUpload({
+            callbackEle:"[name='brandImg'],.brand-logo-img1",
+            successCallback:function(path){
+                $('.inputImg1').attr("path",path);
+                $('.imgIcon1').css('display','none');
+            },
+            cropper:false,
+            cropperOpts: {
+                aspectRatio: 220/ 220,//截图框的比例
+                zoomable:false, //禁用鼠标滚轮放大缩小
+                viewMode:1 //截图框只能在图片区域内移动
+            }
+        },cos)
+    })
+</script>
+<!-- 树状分支脚本 -->
+<script src="../../js/treeStructure.js"></script>
+<!-- 本页面依赖组件初始化 -->
+<script src="../../plugin/pager/jquery-pager.js"></script>
+<script src="../../js/decorationCollection/decorationCollectionCatalog.js"></script>
+<script>
+    //页面页码模块
+        var decorationCollectionCatalog =new DecorationCollectionCatalog();
+        decorationCollectionCatalog.create();
+</script>
+</body>
+</html>

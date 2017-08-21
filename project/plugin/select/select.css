@@ -1,0 +1,77 @@
+ul,li{
+    list-style-type: none;
+    padding: 0;
+}
+#select{
+    width: 200px;
+    height: 34px;
+    display: inline-block;
+}
+#storeName{
+    width: 200px;
+    max-height: 200px;
+    overflow: auto;
+    display: none;
+    position: absolute;
+    border: 1px solid #7A9CD3;
+    background-color: #fff;
+    margin: 0;
+}
+#storeName li{
+    cursor: pointer;
+    height: 28px;
+    font-size: 15px!important;
+    line-height: 28px;
+    padding-left: 5px;
+}
+#storeName li:hover{
+    background-color: #1E90FF;
+    color:#fff;
+}
+#selectInput{
+    height: 34px!important;
+    font-size: 15px!important;
+    border-radius: 0!important;
+    background-color: #fff;
+    border: 1px solid #c2cad8;
+    width: 200px;
+    padding-left: 5px;
+}
+
+
+#select1{
+    width: 200px;
+    height: 34px;
+    display: inline-block;
+}
+#storeName1{
+    width: 200px;
+    max-height: 200px;
+    overflow: auto;
+    display: none;
+    position: absolute;
+    border: 1px solid #7A9CD3;
+    background-color: #fff;
+    margin: 0;
+    z-index: 10000;
+}
+#storeName1 li{
+    cursor: pointer;
+    height: 28px;
+    font-size: 15px!important;
+    line-height: 28px;
+    padding-left: 5px;
+}
+#storeName1 li:hover{
+    background-color: #1E90FF;
+    color:#fff;
+}
+#selectInput1{
+    height: 34px!important;
+    font-size: 15px!important;
+    border-radius: 0!important;
+    background-color: #fff;
+    border: 1px solid #c2cad8;
+    width: 200px;
+    padding-left: 5px;
+}

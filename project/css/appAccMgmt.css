@@ -1,0 +1,29 @@
+    .portlet  table .table-td-index{
+        width: 50px;
+    }
+    .portlet  table .table-td-action{
+        width: 210px;
+    }
+    .portlet  table .table-td-phone{
+        width:180px;
+    }
+
+    #singleOptionModal{
+        width: 400px;
+        transform: none;
+        margin:-200px 0 0 -170px;
+    }
+    .third-party-msg{
+        display: flex;
+        line-height: 34px;
+    }
+    .third-party-msg input,.third-party-msg textarea{
+       flex:1;
+    }
+    .third-party-msg .span-label{
+        width: 100px;
+    }
+    .third-party-msg .remarks{
+        width: 112px; 
+        padding-left: 12px;   
+    }

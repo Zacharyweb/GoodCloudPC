@@ -1,0 +1,61 @@
+<div class="portlet light bordered tab-pane" id="groupon">
+    <div class="portlet-title">
+        <div class="caption font-dark">
+            <i class="icon-users font-dark"></i>
+            <span class="caption-subject bold">组团签到 <help key=""/></span>
+        </div>
+        <div class="actions">
+            <div class="btn-group btn-group-devided" data-toggle="buttons">
+                <label class="btn btn-transparent dark btn-outline btn-sm hide-module" data-target-tab="#groupon">
+                    <input type="radio" class="toggle">隐藏本模块</label>
+                <label class="btn btn-transparent dark btn-outline btn-sm show-module" data-target-tab="#groupon">
+                    <input type="radio" class="toggle">显示本模块</label>
+                <label id="saveGroupon" class="btn btn-transparent dark btn-sm">
+                    <input type="radio" class="toggle">保存并预览</label>
+            </div>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="mt-element-ribbon bg-grey-cararra form">
+            <div class="ribbon ribbon-left ribbon-vertical-left ribbon-shadow ribbon-border-dash-vert ribbon-color-primary">
+                <div class="ribbon-sub ribbon-bookmark"></div>
+                <i class="fa fa-star"></i>
+            </div>
+            <div class="ribbon-content">
+                <form id="grouponForm" action="javascript:return false;" class="form-horizontal form-row-seperated">
+                    <input type="hidden" name="id">
+                    <div class="form-group no-border">
+                        <label class="control-label col-xs-3 text-center">成团户数：</label>
+                        <div class="col-md-9">
+                            <div class="input-inline input-medium">
+                                <div class="input-group">
+                                                                    <span class="input-group-addon">
+                                                                         <i class="icon-users"></i>
+                                                                    </span>
+                                    <input name="number" type="number" class="form-control">
+
+                                </div>
+
+                            </div>
+                            <span class="help-inline"> 建议4户。</span>
+                        </div>
+                    </div>
+                    <div class="form-group no-border">
+                        <label class="control-label col-xs-3 text-center">奖励说明：</label>
+                        <div class="col-md-9">
+                            <div class="input-inline input-medium">
+                                <div class="input-group">
+                                                                    <span class="input-group-addon">
+                                                                       <i class="icon-present"></i>
+                                                                     </span>
+                                    <input type="text" name="awardDesc" class="form-control">
+                                </div>
+                            </div>
+                            <span class="help-inline"> 如：每个团员可获得食用油1瓶。</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

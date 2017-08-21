@@ -1,0 +1,92 @@
+<div class="page-header navbar">
+    <!-- 顶部内容开始 -->
+    <div class="page-header-inner ">
+        <!-- 页面LOGO开始 -->
+        <div class="page-logo">
+            <a href="">
+                <img class="logo-img" src="" alt="">
+            </a>
+            <div class="menu-toggler sidebar-toggler">
+                <span></span>
+            </div>
+        </div>
+        <!-- 页面LOGO结束 -->
+        <!-- 小屏菜单栏触发器开始-->
+        <a href="javascript:;" class="menu-toggler responsive-toggler" data-target=".navbar-collapse">
+            <span></span>
+        </a>
+        <!-- 小屏菜单栏触发器结束 -->
+        <!-- 顶部右侧内容开始 -->
+        <div class="top-menu">
+            <ul class="nav navbar-nav pull-right ">
+                <li class="greet-for-user">
+                    Hi,<span id="nickName" ></span>!
+                </li>
+                <li class="dropdown dropdown-user">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <img alt="" class="img-circle" src="../../img/logo.png" />
+                        <span class="username username-hide-on-mobile"></span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-default">
+                        <li>
+                            <a data-func="updatePwd" data-toggle="modal" data-target="#updatePassword">
+                                <i class="icon-user"></i> 修改密码
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a id="quit" href="javascript:void(0);">
+                                <i class="icon-key"></i> 退出 </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- 顶部右侧内容结束 -->
+    </div>
+    <!-- 顶部内容结束-->
+</div>
+<div class="modal fade" id="updatePassword" tabindex="-1" role="basic" aria-hidden="true"
+     style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header ui-draggable-handle">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">修改密码</h4>
+            </div>
+
+            <div class="modal-body">
+                <form class="form-horizontal" id="updateAccountForm" action="">
+                    <input name="id" type="hidden" value="0">
+                    <div class="form-group">
+                        <span class="col-sm-3"><label class="required">*</label>旧密码：</span>
+                        <div class="col-sm-9">
+                            <input name="oldPassword" type="text" class="form-control ">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <span class="col-sm-3"><label class="required">*</label>新密码：</span>
+                        <div class="col-sm-9">
+                            <input id="password" name="password"  type="text" class="form-control ">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <span class="col-sm-3">*重复新密码:</span>
+                        <div class="col-sm-9">
+                            <input name="confirmPassword" class="form-control" >
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                <button type="button" id="savePassword" class="btn green">保存</button>
+            </div>
+
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

@@ -1,0 +1,11 @@
+.disabled{
+    color:lightgray!important;
+    pointer-events: none;
+}
+.category-name{
+    display: flex;
+    line-height: 34px;
+}
+.category-name input{
+    flex:1;
+}

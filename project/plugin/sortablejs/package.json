@@ -1,0 +1,108 @@
+{
+  "_args": [
+    [
+      "sortablejs",
+      "C:\\Users\\zachary\\Desktop\\final"
+    ]
+  ],
+  "_cnpm_publish_time": 1487918612225,
+  "_from": "sortablejs@latest",
+  "_id": "sortablejs@1.5.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/sortablejs",
+  "_nodeVersion": "6.9.1",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/sortablejs-1.5.1.tgz_1487918611605_0.8055508281104267"
+  },
+  "_npmUser": {
+    "email": "ibnRubaXa@gmail.com",
+    "name": "rubaxa"
+  },
+  "_npmVersion": "3.10.8",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "sortablejs",
+    "raw": "sortablejs",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "http://r.cnpmjs.org/sortablejs/download/sortablejs-1.5.1.tgz",
+  "_shasum": "efae13b84c677f3b3d3f4f8e46c7e05fc6acb525",
+  "_shrinkwrap": null,
+  "_spec": "sortablejs",
+  "_where": "C:\\Users\\zachary\\Desktop\\final",
+  "author": {
+    "email": "ibnRubaXa@gmail.com",
+    "name": "Konstantin Lebedev"
+  },
+  "bugs": {
+    "url": "https://github.com/rubaxa/Sortable/issues"
+  },
+  "dependencies": {},
+  "description": "Minimalist JavaScript library for reorderable drag-and-drop lists on modern browsers and touch devices. No jQuery. Supports AngularJS and any CSS library, e.g. Bootstrap.",
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-version": "*"
+  },
+  "directories": {},
+  "dist": {
+    "noattachment": false,
+    "shasum": "efae13b84c677f3b3d3f4f8e46c7e05fc6acb525",
+    "size": 21342,
+    "tarball": "http://r.cnpmjs.org/sortablejs/download/sortablejs-1.5.1.tgz"
+  },
+  "exportName": "Sortable",
+  "files": [
+    "Sortable.js",
+    "Sortable.min.js"
+  ],
+  "gitHead": "473bd8fecfd2f2834e4187fb033dfa6912eb3b98",
+  "homepage": "https://github.com/rubaxa/Sortable#readme",
+  "keywords": [
+    "sortable",
+    "reorder",
+    "drag",
+    "meteor",
+    "angular",
+    "ng-sortable",
+    "react",
+    "mixin"
+  ],
+  "license": "MIT",
+  "main": "Sortable.js",
+  "maintainers": [
+    {
+      "email": "ibnRubaXa@gmail.com",
+      "name": "rubaxa"
+    }
+  ],
+  "name": "sortablejs",
+  "optionalDependencies": {},
+  "publish_time": 1487918612225,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rubaxa/Sortable.git"
+  },
+  "scripts": {
+    "prepublish": "./node_modules/grunt/bin/grunt",
+    "test": "./node_modules/grunt/bin/grunt"
+  },
+  "spm": {
+    "ignore": [
+      "meteor",
+      "st"
+    ],
+    "main": "Sortable.js"
+  },
+  "version": "1.5.1"
+}

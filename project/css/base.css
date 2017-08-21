@@ -1,0 +1,316 @@
+*{
+    font-family: "微软雅黑";
+}
+/*统一元素样式*/
+ul{
+    list-style: none!important;
+}
+input,select{
+    height: 34px!important;
+    font-size: 15px!important;
+} 
+select option{
+    font-size: 15px!important;
+}
+.select2-search__field{
+    display: none!important;
+}
+/*自定义公共类*/
+.no-border{
+    border:none!important;
+}
+.no-padding{
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+.relative {
+    position: relative;
+}
+.mouse-pointer {
+    cursor: pointer;
+}
+.full-width{
+    width: 100%!important;
+}
+#uploadFile{
+    display: none;
+}
+.disabled{
+    color:lightgray!important;
+}
+/*载入中CSS3动画*/
+.spinner {
+  width: 150px;
+  height: 30px;
+  text-align: center;
+  font-size: 10px;
+  position: fixed;
+  z-index: 10000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: none;
+}
+.spinner > div {
+  background-color: #32C5D2;
+  height: 100%;
+  width: 10px;
+  display: inline-block; 
+  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+  animation: stretchdelay 1.2s infinite ease-in-out;
+}
+ 
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+ 
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+ 
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+ 
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+.progress-text{
+  margin:0;
+  position: absolute;
+  width: 100%;
+  top:100%;
+  left: 0;
+  text-align: center;
+  color:#fff;
+  font-size: 20px;
+}
+@-webkit-keyframes stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) } 
+  20% { -webkit-transform: scaleY(1.0) }
+}
+ 
+@keyframes stretchdelay {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% {
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+/*顶部栏*/  
+.greet-for-user {
+    color: #c6cfda;
+    line-height: 50px;
+    padding: 0 10px;
+    font-size: 18px;
+}
+.dropdown-menu>li>a{
+    padding: 16px;
+}
+.dropdown-menu .divider{
+    margin:0;
+}
+/*侧边栏*/
+.page-sidebar .nav-item a {
+    height: 60px;
+    line-height: 40px;
+}
+/*版面标题*/
+.portlet-title .caption{
+    padding-left: 15px!important;
+}
+
+.portlet-title button{
+    border-radius: 4px!important;
+}
+/*页脚*/
+.page-footer .pull-right {
+    color: #98a6ba;
+}
+.page-footer .pull-right a {
+    line-height: 96px;
+    color: #98a6ba;
+}
+
+/*自定义note面板*/
+.page-header-fixed .page-container{
+    margin-top: 0;
+}
+.note.note-custom{
+     color:#010407;
+     border-color: #364150;
+     background-color: #f5f8fd;
+}     
+.note.note-custom .note-custom-title{
+    border-bottom: 1px solid #e7ecf1;
+    padding-bottom: 10px;
+}
+.note.note-custom .note-custom-title button{
+    margin-left: 10px;
+}
+.note.note-custom .note-custom-body h3{
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 20px;     
+}
+.note.note-custom .note-custom-body p{
+     margin-top: 10px;
+}
+
+.btn-custom-lg{ 
+    height: 40px;
+    line-height: 30px!important;
+    font-size: 18px!important;
+    border-radius: 6px!important;
+}
+
+/*X方向滚动条框*/
+.scroller-x {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.scroller-x .scroller-x-content {
+    height: 100%;
+}
+
+.scroller-x .scroller-x-content .content-item {
+    float: left;
+    margin-left: 10px;
+}
+
+/*面板reset*/
+.portlet-title p {
+    margin: 10px 0;
+    line-height: 2;
+}
+/*模态框*/
+.modal .modal-body .form-group{
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+.modal .modal-body .form-group .span-label{
+    width: 120px;
+}
+/*表格单元格文字居中*/
+table thead tr th,
+table tbody tr td {
+    text-align: center;
+    vertical-align: middle!important;
+}
+/*表格单元格图片大小统一*/
+table tbody tr td img{
+    width: 100px;
+    height: 100px;
+}
+
+/*红色必填*号*/
+.required-icon{
+    color:#e02222;
+}
+
+/*帮助图标*/
+.fa-question-circle{
+    color:#bfcad1;
+    cursor: pointer;
+}
+.fa-question-circle.large{
+    font-size: 24px;
+}
+.fa-question-circle.middle{
+    font-size: 18px;
+}
+/*jquery-validate的error样式*/
+.form-group{ position:relative;    clear: both;}
+form.cmxform label.error, label.error {
+    font-size:12px;
+    color: red;
+    /*font-style: italic;*/
+    margin: 5px 0px 0px 5px;
+    /*position: absolute;
+    left: 365px;
+    top: 0;*/
+    /*max-width: 100px;*/
+}
+input.error,textarea.error,select.error{
+    border: #F53431 1px solid;
+    border-bottom: #F53431 1px solid!important;
+    outline: 0;
+    outline: thin dotted \9;
+    -webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.075),0 0 8px #F53431;
+    -moz-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.075),0 0 8px #F53431;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.075),0 0 8px #F53431;
+}
+label.error{ display:none;}
+.open_down{width:56px;height:18px;background:url(../image/open_down.png) 0 0 no-repeat; display:inline-block;}
+.open_down2{width:56px;height:18px;background:url(../image/open_down.png) 0 -19px no-repeat; display:inline-block;}
+/*时间控件readonly样式*/
+input[readonly]{ background:inherit!important;}
+/*搜索form里面的输入框高度*/
+#SearchForm .form-control{ height: 34px!important; line-height: 20px!important; padding: 6px!important; }
+/*排序*/
+[order-field] .fa{ margin-left: 10px;}
+[order-field] .icon-hide{ display: none;}
+[order-field]:hover .icon-hide{ display:inline-block;}
+/*文本溢出隐藏*/
+.text-overflow {
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.table-layout{
+    table-layout:fixed
+}
+.imgContiner{
+    width: 100%;
+    max-height: 600px;
+    text-align: center;
+    padding-top: 150px;
+}
+.imgContiner img{
+    max-width: 1100px;
+    max-height: 600px;
+}
+.imgFather{
+    display: block;
+}
+.imgClose{
+    position: absolute;
+    margin-left: -50px;
+    margin-top: 17px;
+    cursor: pointer;
+    background: #000;
+    opacity: 0.5;
+    width: 35px;
+    height: 35px;
+    padding-top: 10px;
+    border-radius: 50%!important;
+}
+.imgClose:hover{
+    background-color:#1CAF9A;
+}
+.imgClose i{
+  font-size:36px;
+  color:#eee;
+}
+.isDisabled{
+    color:lightgray!important;
+    pointer-events: none;
+}
+.layerMongolia{
+    background-color: rgba(249,249,249,0.5);
+    width: 100%;
+    height: 100%;
+}
+.loading{
+    padding-top: 20%;
+    text-align: center;
+}

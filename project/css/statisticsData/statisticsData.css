@@ -1,0 +1,84 @@
+.clear{ clear:both}
+.left{float: left}
+.isBorder{
+    border:1px dotted rgb(204,204,204);
+    padding:15px 0;
+}
+.statisticsInfo{
+    height: 60px;
+    border:1px solid rgb(231,236,241);
+    background: rgb(242,242,242);
+    border-bottom: none;
+    padding:5px 30px;
+}
+
+.backColor{
+    border:1px solid rgb(231,236,241);
+    background: rgb(242,242,242);
+    padding:0 10px;
+}
+.height{
+    height: 130px;
+    margin-left:1%;
+}
+.income{
+    color:rgb(0,102,0);
+}
+.expenditure{
+    color:red;
+}
+.top{
+    margin-top:8px;
+}
+.firstWith{
+    width: 40%;
+}
+.twoWith{
+    width: 18%;
+}
+b{
+    font-weight: normal;
+}
+.vertical{
+vertical-align:middle;
+}
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+.revenue img{
+    right: 5px;
+    top:5px;
+}
+.blod {
+    font-weight: 800;
+}
+.pMargin{
+    margin: 20px 0 0 0;
+}
+.pHeight{
+    height: 39px;
+}
+.pColor{
+color:rgb(204,204,204)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

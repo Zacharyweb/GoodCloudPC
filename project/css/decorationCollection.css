@@ -1,0 +1,133 @@
+.inpSel input{
+    margin: 0;
+    padding: 5px 10px;
+    border: 1px solid #aaaaaa;
+    height: 34px;
+}
+.inpSel select#select2-single-input-sm{
+    margin: 0;
+    padding: 8px 10px;
+    border: 1px solid #aaaaaa;
+    height: 34px;
+}
+.inpSel button{
+    margin: 0;
+    padding: 5px 10px;
+    border: 1px solid #aaaaaa;
+    height: 34px;
+}
+p.isClose{
+    display: inline-block;
+    border:1px solid #666;
+    padding: 3px 6px;
+    position: relative;
+    margin-left: 10px;
+}
+p.isClose b{
+    font-weight:normal;
+}
+p.isClose i{
+    font-style:normal;
+    position: absolute;
+    display:block;
+    color:#fff;
+    background-color:rgb(216,74,80);
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    top:-10px;
+    right: -10px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+}
+span.width{
+    display:inline-block ;
+    width: 110px;
+    text-align: left;
+}
+#description{
+    width:700px;
+    height:400px;
+    visibility:hidden;
+}
+div.ke-container.ke-container-default{
+    margin-left:110px;
+}
+#recommendContainer{
+    padding-left: 34px;
+}
+.imgIcon1{
+    display:inline-block;
+    font-size: 45px;
+    font-weight: 100;
+    color:#999;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    border: none;
+    top:25px;
+    left:16px;
+}
+.imgIcon{
+    display:inline-block;
+    font-size: 80px;
+    font-weight: 100;
+    color:#999;
+    width: 100px;
+    height: 100px;
+    padding-left: 26px;
+    padding-top: 10px;
+    position: absolute;
+    border: none;
+    top:45px;
+    left:125px;
+}
+#smallImg .container{
+    display: inline-block;
+    width: 80px;
+    height: 60px;
+    position: relative;
+    padding: 0;
+}
+#smallImg img{
+    display: inline-block;
+    width: 80px;
+    height: 60px;
+}
+#Header2{
+    min-height:500px;
+    height:auto!important;
+    height:500px;
+    position: relative;
+    padding-bottom: 20px;
+    max-height:650px;
+    overflow: auto;
+}
+#Header2 h3{
+    font-size:18px;
+}
+#Header2 button{
+    width: 120px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 5px;
+}
+#Header2 .container{
+    min-height:88px;
+    height:auto!important;
+    height:88px;
+    width: 100%;
+}
+span.red{
+    color:red;
+    display: none;
+}
+/*.updateTime{
+    cursor: pointer;
+}
+.clickNumber{
+    cursor: pointer;
+}*/

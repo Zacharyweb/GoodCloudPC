@@ -1,0 +1,94 @@
+i{font-style: normal;
+    color:#b9a2ab;}
+.change.tree{
+    text-align: left;
+    padding: 0;
+}
+.tree p{
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    margin:0;
+}
+.tree .info{
+    display: inline-block;
+    background: #e8e8e1;
+    font-size: 14px;
+    line-height: 20px;
+    margin:6px 0 ;
+    padding: 0 8px;
+    border: 1px solid #c6c6c6;
+    border-radius: 8px;
+}
+.theIcon{
+    display:inline-block;
+    line-height: 18px;
+    background: #5a6571;
+    border:1px solid #5a6571;
+    color:#fff;
+    border-radius: 5px;
+    padding:0 4px;
+    margin: -5px 5px 0 5px;
+    cursor:pointer;
+    vertical-align: middle!important;
+}
+.change.tree.zishu{
+    padding-left: 20px;
+}
+.portlet-body ul{
+    padding-left: 10px;
+}
+.portlet-body ul li div{
+    display: inline-block;
+}
+a.disabled{
+    color:#666;
+}
+.isBlock{
+    color:red;
+}
+#quxiao{
+    margin-right: 20px;
+}
+#quxiao1{
+    margin-right: 20px;
+}
+#queryImgListForm{
+    padding:0;
+    margin-left: -15px;
+}
+.isDisabled{
+    color:lightgray!important;
+    pointer-events: none;
+}
+.imgIcon1{
+    display:none;
+    font-size: 45px;
+    font-weight: 100;
+    color:#999;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    border: none;
+    top:24px;
+    left:137px
+}
+.imgIcon{
+    font-size: 100px;
+    font-weight: 100;
+    color:#999;
+    width: 100px;
+    height: 100px;
+    padding-left: 10px;
+    padding-top: 10px;
+    position: absolute;
+    border: none;
+    top:43px;
+    left:120px;
+}
+.parentList:hover{
+    background-color: #eee;
+}
+.list:hover{
+    background-color: #eee;
+}

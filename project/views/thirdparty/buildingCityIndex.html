@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>好云商-后台管理</title>
+    @@include("shared/global-meta.html")
+    <!-- 引入全局样式 -->
+    @@include("shared/global-import-css.html")
+    @@include("shared/global-import-plugins-css.html")  
+
+    <!-- 页面插件 -->
+    <link href="../../plugin/cropper/cropper.min.css" type="text/css" rel="stylesheet"/>>
+    <!-- 页面样式 -->
+    <link rel="stylesheet" href="../../plugin/pager/css/pager.css">
+    <link rel="stylesheet" href="../../plugin/cropper/cropper.min.css">
+    <link rel="stylesheet" href="../../css/buildingCityIndex.css">
+    
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+    <div class="page-wrapper">
+        <!-- 顶部Bar开始 -->
+         @@include("shared/header.html",{ "username":"NickName" })
+        <!-- 顶部Bar结束 -->
+        <div class="clearfix"></div>
+        <!-- 页面中间部分内容开始 -->
+        <div class="page-container">
+            <!-- 侧边栏开始 -->
+             @@include("shared/thirdPartysliderbar.html")
+            <!-- 侧边栏结束 -->
+            <!-- 页面主内容开始 -->
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <!-- 页面主内容头部开始-->
+                    <!-- 页面主标题开始-->
+                    <div class="page-bar no-border">
+                        <h1 class="page-title bold">建材城首页</h1>
+                    </div>
+                    <!-- 页面主标题结束-->
+                    <!-- 页面主内容头部结束-->
+                   <div class="note note-custom">
+                        <div id="buildingContent" class="note-custom-body">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                     
+                            <div class="col-md-6">
+                                <div class="mt-element-ribbon bg-grey-steel system-prompt">
+                                    <div class="ribbon ribbon-shadow ribbon-color-danger uppercase">系统提示</div>
+                                    <div class="ribbon-content">
+                                        <div class="prompt-item">
+                                            <span class="fa fa-exclamation-circle"></span>
+                                            <p>商品平台可用余额不足，有5个红包发送失败</p>
+                                            <a href="javascript:;" class="btn btn-outline dark mt-clipboard">
+                                                 查看详情 <i class="fa fa-chevron-right"></i>
+                                            </a>
+                                        </div>
+                                        <div class="prompt-item" >
+                                            <p>长期余额不足将使推广运营效果下降，请立即前往 
+                                                <a href="">微信支付商户平台</a>
+                                                充值若已完成充值，请点击重发。
+                                                <a href="javascript:;" class="btn btn-outline dark mt-clipboard">
+                                                 重发红包 <i class="fa fa-chevron-right"></i>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-element-ribbon bg-grey-steel">
+                                    <div class="ribbon ribbon-shadow ribbon-color-info uppercase">小视频PK赛•今日战况</div>
+                                    <div class="ribbon-content">
+                                        <p>小视频PK赛•今日战况</p>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="col-md-6">
+                                <div class="mt-element-ribbon bg-grey-steel quick-entry">
+                                    <div class="ribbon ribbon-shadow ribbon-color-primary uppercase">快捷入口</div>
+                                    <div class="ribbon-content">
+                                        <p><a href=""><i class="fa fa-arrow-right"></i>&nbsp;添加新联单</a></p>
+                                        <p><a href=""><i class="fa fa-arrow-right"></i>&nbsp;查看收支流水</a></p>
+                                        <p><a href=""><i class="fa fa-arrow-right"></i>&nbsp;发布公告</a></p>
+                                    </div>
+                                </div>
+                                <div class="mt-element-ribbon bg-grey-steel">
+                                    <div class="ribbon ribbon-shadow ribbon-color-success uppercase">公告</div>
+                                    <div class="building-city-edit pull-right">
+                                        <a data-toggle="modal">
+                                            <span  class="icon-note" data-toggle="modal" href="#add">&nbsp;发布公告</span>
+                                        </a>
+                                    </div>
+                                    <div class="ribbon-content" id="isNotice">
+                                        <p>公告</p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 页面主内容结束 -->
+        </div>
+        <!-- 页面中间内容部分结束 -->
+        <!-- 页脚开始 -->
+      @@include("shared/footer.html")
+        <!-- 页脚结束 -->
+    </div>
+    <!-- 页面内容结束 -->
+    <div class="modal fade bs-modal-lg" id="add" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="width:600px;margin: 0 auto">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title bold">编辑公告</h4>
+                </div>
+                <div class="textarea">
+                    <textarea rows="10" cols="50"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn dark btn-outline" data-dismiss="modal" id="close2">关闭</button>
+                    <button type="button" class="btn green" id="keep2">保存</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- 载入全局依赖js -->
+    <!-- 全局依赖js -->
+@@include("shared/global-import-js.html")
+    <!--获取建材城首页页面内容-->
+    <script id="buildingCity" type="text/html">
+        <div class="building-city-img">
+            <img src="{{data.logo}}" alt="" style="width:340px;height: 170px;">
+            <a class="yuLan" href="{{data.panoUrl}}">预览全景 <i class="fa fa-angle-right"></i></a>
+        </div>
+        <div class="building-city-msg">
+            <h3><i class="fa fa-building-o"></i>&nbsp;&nbsp;{{data.name}}</h3>
+            <p title="{{data.desc}}" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;word-break: break-all;width:500px;">{{data.desc}}</p>
+            <p>入驻店铺
+                <span class="shop-num">{{data.shopCount}}</span> 个，导购
+                <span class="guider-num">{{data.guideCount}}</span> 人。
+            </p>
+            <p>地址：{{data.addrees}}</p>
+            <p>联系电话：{{data.tel}}</p>
+        </div>
+        <div class="building-city-edit">
+            <a data-toggle="modal" id="editMsgBtn" href="editBuildingCity.html">
+                <span class="icon-note">&nbsp;编辑</span>
+            </a>
+        </div>
+    </script>
+    <script id="notice" type="text/html">
+       <p>{{data.notice}}</p>
+    </script>
+    <!--修改的弹窗内容修改-->
+<!-- 本页面依赖组件初始化 -->
+<script src="../../plugin/pager/jquery-pager.js"></script>
+<!--本页面js-->
+    <script type="text/javascript" src="../../js/buildingCityIndex/buildingCityIndex.js"></script>
+    <!-- 上传图片脚本 -->
+    <script src="../../plugin/qCloud/cos-js-sdk-v4.js"></script>
+    <script src="../../plugin/qCloud/crypto.js"></script>
+    <script src="../../plugin/qCloud/qCloud.js"></script>
+    <script src="../../plugin/upload/cropper.js"></script>
+    <script src="../../plugin/upload/qcloud-cropper.js"></script>
+<script>
+    //页面页码模块
+    var buildingCityIndex =new BuildingCityIndex();
+    buildingCityIndex.create();
+</script>
+
+</body>
+</html>

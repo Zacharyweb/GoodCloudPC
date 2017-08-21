@@ -1,0 +1,47 @@
+<div class="portlet light bordered tab-pane" id="brand">
+    <div class="portlet-title">
+        <div class="caption font-dark">
+            <i class="fa fa-registered font-dark"></i>
+            <span class="caption-subject bold">品牌活动 <help key=""/></span>
+        </div>
+        <div class="actions">
+            <div class="btn-group btn-group-devided" data-toggle="buttons">
+                <label class="btn btn-transparent dark btn-outline btn-sm hide-module" data-target-tab="#brand">
+                    <input type="radio" class="toggle">隐藏本模块</label>
+                <label class="btn btn-transparent dark btn-outline btn-sm show-module" data-target-tab="#brand">
+                    <input type="radio" class="toggle">显示本模块</label>
+                <label id="saveBrand" class="btn btn-transparent dark btn-sm">
+                    <input type="radio" class="toggle">保存并预览</label>
+            </div>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="portlet light portlet-fit bordered">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-cursor-move font-green"></i>
+                    <span class="caption-subject bold font-green"> 品牌排序 </span>
+                    <span class="caption-helper">按住鼠标可拖动排序</span>
+                </div>
+                <div class="actions">
+                    <a href="activityMgmt.html" class="btn red btn-outline to-brand-activity"> 管理品牌活动
+                        <i class="fa fa-angle-double-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="row brand-wrapper" id="dragBrand">
+                    <!-- 品牌墙 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 品牌墙模板 -->
+<script type="text/html" id="brandTemp">
+    {{each brandList as item i}}
+    <div class="col-xs-6 brand-img-wrapper" data-id="{{item.id}}">
+        <img width="200" src="{{item.imgSrc}}">
+    </div>
+    {{/each}}
+</script>

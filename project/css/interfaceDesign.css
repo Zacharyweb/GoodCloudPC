@@ -1,0 +1,270 @@
+    /*二维码*/
+    .QCcode-wrapper .caption{
+        width: 100%;
+    }
+
+    .QCcode-wrapper .QCcode-img-wrapper{
+        width: 80%;
+        padding-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    .QCcode-wrapper img{
+        width: 120px;
+        height: 120px;
+    }
+    /*tab切换栏*/
+    .nav-tabs {
+        border: none;
+    }
+    .nav-tabs>li {
+        margin-bottom: 5px;
+    }
+    .nav-tabs>li>a { 
+        cursor: pointer;
+        height: 60px;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 40px;
+        color: #555;
+        background-color: #fff;
+        box-shadow: -2px 2px 7px rgba(0, 0, 0, .4);
+    }
+    
+    .nav-tabs>li>a::after {
+        border: none;
+        content: '';
+        position: absolute;
+        top: 5px;
+        bottom: 5px;
+        left: 0;
+        right: 0;
+    }
+    .nav-tabs>li.drag-nav-item>a::after {
+        border-top: 1px dashed #62748f;
+        border-bottom: 1px dashed #62748f;
+    }
+    
+    .nav-tabs>li>a .fa-chevron-up {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    .nav-tabs>li>a .fa-chevron-down {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+    .nav-tabs>li.active>a,
+    .nav-tabs>li.active>a:focus,
+    .nav-tabs>li.active>a:hover {
+        background-color: #ececec;
+        border: none;
+    } 
+    .drag-nav-item .move-icon {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border: 1px solid #ccc;
+        left: 15px;
+        top: 14px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 50%;
+    }
+    /*任务奖券设置*/
+    #tab_15_1 .ribbon-content{
+        padding-top: 15px;
+    }
+    .ribbon-content .ribbon-explain {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        padding-left: 15px;
+        border-left: 5px solid #ed6b75;   
+    }
+    .ribbon-content .ribbon-entry {
+        margin: 0;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        padding-left: 20px;
+        border-bottom: 1px dashed #62748f;
+    }
+    .ribbon-content .ribbon-entry .form-control {
+        width: 165px;
+        display: inline-block;
+    }
+    .ribbon-content .ribbon-explain.border-info{
+        border-color: #3a80d7;
+    }
+    .ribbon-content .custom-question{
+        padding-left: 20px;
+    }
+    .form-group.custom-options p{
+        padding-left: 10px;
+    }
+    .form-group.custom-options p input{
+        margin-left: 20px;
+    }
+    
+    /*轮播Banner*/
+    .portlet-body .banner-outer-wrapper{
+        height: 180px;
+        margin:0;
+    }
+    #bannerWarpper{
+        width: 1930px;
+    }
+    #bannerWarpper div{
+        width: 375px;
+        height:150px;
+        border:3px solid #e1e5ec;
+        padding-top: 24px;
+    }
+    #bannerWarpper  .content-item img{
+        width: 375px; 
+        height:150px;
+    }    
+    #bannerWarpper .content-item .banner-actions {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 50px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 0 20px;
+        font-size: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    /*小视频入口*/
+    .video-list>div {
+        float: left;
+        margin-left: 10px;
+        width: 150px;
+        height: 150px;
+        position: relative;
+        margin-bottom: 10px;
+    }
+    .video-list .video-cover{
+        width: 150px;
+        height: 150px;
+    }
+    .video-list .video-cover img {
+        width: 100%;
+        height: 100%;
+    }
+    .video-list>.video-item span {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 50px;
+        left: 0;
+        bottom: 0;
+        font-size: 24px;
+        padding-right: 10px;
+        text-align: right;
+        line-height: 50px;
+    }
+    .video-list>.video-item span i {
+        cursor: pointer;
+    }
+    .video-list .video-add-item {
+        border: 3px solid #e1e5ec;
+        font-size: 60px;
+        line-height: 144px;
+        text-align: center;
+    }
+    .video-list .video-add-item i {
+        cursor: pointer;
+    }
+    .video-list>.video-item .video-cover{
+        display: none;
+    }
+    .video-cover-paper{
+        padding-left: 630px;
+        margin:10px 0;
+    }
+    .custom-modal-header{
+        border:none;
+    }
+     #videoCoverModal .custom-modal-body ul{
+        width: 780px;
+        padding:0;
+        display: flex;
+        flex-wrap: wrap;
+     }
+      #videoCoverModal .custom-modal-body li{
+        position: relative;
+        width: 140px;
+        height: 140px;
+        margin-left: 12px;
+        margin-top: 12px;
+        display: fixed;
+        cursor: pointer;
+      }
+      #videoCoverModal .custom-modal-body li .fa-check-circle{
+        position: absolute;
+        display: none;
+        top:10px;
+        left: 0px;
+        color:#e35b5a;
+        font-size: 30px;
+      }
+       #videoCoverModal .custom-modal-body li:hover{
+        border:3px solid #e6e6e6;
+      }
+      #videoCoverModal .custom-modal-body li.selected{
+         border:3px solid #e6e6e6;
+      }
+       #videoCoverModal .custom-modal-body li.selected .fa-check-circle{
+         display: block;
+      }
+
+    #videoCoverModal .custom-modal-body li img{
+        width: 100%;
+        height: 100%;
+    }
+   
+    /*活动基础信息*/
+    #tab_15_3 .activity-time span.col-xs-2{
+        text-align: center;
+        line-height: 34px;
+    }
+
+    /*品牌活动*/
+    #brand .portlet-body{
+        width: 384px;
+    }
+    #brand  .portlet-body .brand-img-wrapper img{
+        width: 164px;
+        height: 107px;    
+    }
+    #brand .brand-img-wrapper {
+        height: 113px;
+        width: 170px;
+        padding: 3px;
+        box-shadow: -2px 2px 7px rgba(0, 0, 0, .4);
+        margin-left: 12px;
+        margin-top: 8px;
+        cursor: move;
+    }
+    /*活动海报*/
+    .poster-wrapper .change-poster{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50%;
+        height: 50px;
+        padding-left: 20px;
+        font-size: 20px;
+        line-height: 50px;
+        background-color: rgba(0,0,0,0.6);
+        color:#fff;
+        cursor: pointer;
+        display: none;
+     }
+
+     label.show-module{
+        display: none;
+     }

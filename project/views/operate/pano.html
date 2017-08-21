@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>全景预览</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="IE=edge"/>
+    <style>
+        @media only screen and (min-device-width: 800px) {
+            html {
+                overflow: hidden;
+            }
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            color: #FFFFFF;
+            background-color: #000000;
+        }
+    </style>
+    <script>
+        var ggggg=1;
+    </script>
+</head>
+<body>
+
+
+<!--<script src="http://image.yetong.org/panos/config/plugins/command.js"></script>-->
+<!--<div style="position:absolute; z-index: 100000; text-align: right; width: 50%;"><br><br><br><br>-->
+    <!--<button type="button" onclick="pano.enterVR()">进入vr</button>-->
+    <!--<button type="button" onclick="pano.addHot('test111')">加个锚点</button>-->
+    <!--<button type="button" onclick="pano.change('http://1.1.1.10:8080/showtime/pano/xml?key=1494843208972_lijuantest')">换一个全景</button>-->
+<!--</div>-->
+
+<div id="pano" style="width:100%;height:100%;">
+    <noscript>
+        <table style="width:100%;height:100%;">
+            <tr style="vertical-align:middle;">
+                <td>
+                    <div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div>
+                </td>
+            </tr>
+        </table>
+    </noscript>
+</div>
+
+</body>
+<script src="http`://image.yetong.org/panos/config/tour.js"></script>
+<script src="../../js/pano-client.js"></script>
+<script>
+    var helper={
+        getUrlParams: function () {
+            if (window.location.href.indexOf('?') == -1) {
+                return false;
+            }
+            var vars = {}, hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        },
+        getUrlParam: function (name) {
+            return helper.getUrlParams()[name];
+        }
+    }
+    pano.init({
+        xmlpath: "http://1.1.1.10:8080/showtime/pano/xml?key="+helper.getUrlParam("key"),
+        target:"pano",
+        editmod:false
+    });
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>时间选择器demo</title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="jquery.datetimepicker.css"/>
+		<script src="jquery.datetimepicker.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function(){
+				$('#startDate').datetimepicker({
+		            lang: 'ch',
+		            format: 'Y-m-d',
+		            timepicker: false,
+		            BeforeSelectData: function (a, b, c) {
+		                if (new Date(c) < new Date($('#startDate').val())) {
+		                    console.log("结束时间不能小于开始时间", false);
+		                    return false;
+		                }
+		                return true;
+		            },
+		            readonly: true,
+		            clearButton: true,
+		            //失去焦点不赋值
+		            validateOnBlur: false,
+		            //禁用滚动
+		            scrollInput: false
+		        });
+				$('#endDate').datetimepicker({
+		            lang: 'ch',
+		            format: 'Y-m-d H:i:s',
+		            timepicker: true,
+					step:5,
+		            BeforeSelectData: function (a, b, c) {
+		                if (new Date(c) < new Date($('#startDate').val())) {
+		                    console.log("结束时间不能小于开始时间", false);
+		                    return false;
+		                }
+		                return true;
+		            },
+		            readonly: true,
+		            clearButton: true,
+		            //失去焦点不赋值
+		            validateOnBlur: false,
+		            //禁用滚动
+		            scrollInput: false
+		        });
+			})
+
+		</script>
+	</head>
+	<body>
+		<input type="text" class="form-control input-sm" placeholder="开始时间" id="startDate" name="startDate" value="" readonly="readonly">
+		<input type="text" class="form-control input-sm" placeholder="结束日期" id="endDate" name="endDate" value="" readonly="readonly">
+	</body>
+</html>

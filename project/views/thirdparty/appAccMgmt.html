@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include("shared/global-meta.html")
+    <title>好云商-后台管理</title>
+    <!-- 引入全局样式 -->
+    @@include("shared/global-import-css.html")
+    <!-- 引入全局插件样式 -->
+    @@include("shared/global-import-plugins-css.html")
+
+    <link rel="stylesheet" href="../../plugin/pager/css/pager.css">
+    <link rel="stylesheet" href="../../css/appAccMgmt.css">
+
+</head>
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+        <div class="page-wrapper">
+            <!-- 顶部Bar开始 -->
+            @@include("shared/header.html",{ "username":"NickName" })
+            <!-- 顶部Bar结束 -->
+            <div class="clearfix"> </div>
+            <!-- 页面中间部分内容开始 -->
+            <div class="page-container">
+                <!-- 侧边栏开始 -->
+                @@include("shared/thirdPartysliderbar.html")
+                <!-- 侧边栏结束 -->
+                <!-- 页面主内容开始 -->
+                <div class="page-content-wrapper">
+                    <div class="page-content">
+                        <div class="page-bar no-border">
+                            <h1 class="page-title bold">APP端账号管理</h1>
+                        </div>
+                         <div class="portlet light bordered">
+                                <div class="portlet-title">
+                                    <div class="caption font-dark">
+                                        
+                                    </div>
+                                    <div class="actions">
+                                        <div class="btn-group btn-group-devided" id="addAcount" data-toggle="buttons">
+                                            <a class=" btn dark add_modal btn-custom-lg" id="add" href="javascript:void(0);"><i class="fa fa-plus"></i> 添加</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <table class="table table-striped table-bordered table-hover" id="dataTable">
+                                        <thead>
+                                            <tr class="table-header">
+                                                <th>序号</th>
+                                                <th>昵称</th>
+                                                <th>注册手机号</th>
+                                                <th>备注</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+
+                                        </tbody>
+                                    </table>
+                                    <div class="row">
+                                        <span id="pager" class="pager pull-right">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <!-- 页面主内容结束 -->
+            </div>
+            <!-- 页面中间内容部分结束 -->
+            <!-- 页脚开始 -->
+             @@include("shared/footer.html")
+            <!-- 页脚结束 -->
+        </div>
+        <!-- 页面内容结束 -->
+        <!-- 其他组件载入开始 -->
+        <div class="modal fade" id="addAccount" tabindex="-1" role="basic" aria-hidden="true"
+             style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header ui-draggable-handle">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title">添加账号</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <form class="form-horizontal" id="addForm" action="">
+                            <input name="id" type="hidden" value="0">
+                            <div class="form-group">
+                                <span class="col-sm-3"><label class="required">*</label>昵称：</span>
+                                <div class="col-sm-9">
+                                    <input name="nickName" type="text" class="form-control ">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <span class="col-sm-3"><label class="required">*</label>注册手机号：</span>
+                                <div class="col-sm-9">
+                                    <input name="tel"  type="text" class="form-control ">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <span class="col-sm-3">备  注:</span>
+                                <div class="col-sm-9">
+                                    <textarea name="remark" class="form-control" ></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn dark btn-outline" data-dismiss="modal">关闭</button>
+                        <button type="button" id="save" class="btn green">保存</button>
+                    </div>
+
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <script id="dataTmpl" type="text/html">
+            {{each data as value i}}
+            <!--{{if value.Utype!=0}}-->
+                <tr data-id="{{value.Id}}" class="table-tr-index">
+            <!--{{else}}-->
+                <!--<tr style="display: none"  class="table-tr-index">-->
+            <!--{{/if}}-->
+                <td class="table-td-index">{{i+1}}</td>
+                <td class="table-td-name">{{value.NickName}}</td>
+                <td class="table-td-phone">{{value.Tel}}</td>
+                <td class="table-td-remark">{{value.Remark}}</td>
+                <td class="table-td-action">
+                    <a data-func="edit" href="javascript:void(0);">编辑</a>
+                    <a data-func="del" href="javascript:void(0);" class="massage_delete">删除</a>
+                </td>
+            </tr>
+            {{/each}}
+        </script>
+        <!-- 其他组件载入结束-->
+        <!-- 载入全局依赖js -->
+        @@include("shared/global-import-js.html")
+        <!-- 模态框 -->
+        
+
+        <script src="../../plugin/pager/jquery-pager.js"></script>
+        <script src="../../js/appAccMgmt/appAccMgmt.js"></script>
+
+
+        <!-- 本页面依赖js -->
+        <script>
+            var appAccMgmt = new AppAccMgmt();
+            appAccMgmt.create();
+        </script>
+    </body>
+
+</html>

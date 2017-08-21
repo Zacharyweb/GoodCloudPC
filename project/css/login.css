@@ -1,0 +1,211 @@
+
+.login {
+    background: url(../img/login.jpg) no-repeat;
+}
+.login a {
+    color: #acb5c3!important;
+    line-height: 20px;
+}
+
+.login-mask {
+    width: 100%;
+    height: 100%;
+    padding-top: 12%;
+}
+.login .content {
+    width: 400px;
+    margin: 0 auto
+}
+
+.login .form-title {
+    margin-bottom: 20px;
+    color: #edf4f8;
+    font-size: 19px;
+    font-weight: 600!important
+}
+
+.login .form-subtitle {
+    color: #c9dce9;
+    font-size: 17px;
+    font-weight: 500!important;
+    padding-left: 10px
+}
+.login .content{
+    width: 480px;
+    height: 395px;
+    background-color: #2B3643;
+    text-align: center;
+    border-radius: 10px!important;
+}
+.logo{
+    width: 100%;
+    text-align: center;
+    padding-top: 41px;
+    padding-bottom: 50px;
+}
+.login .content h4 {
+    color: #555
+}
+
+.login .content .forget-form,
+.login .content .login-form {
+    padding: 0;
+    margin: 0
+}
+
+.login .content .form-control:active,
+.login .content .form-control:focus {
+    border: 1px solid #67809f;
+}
+
+.login .content .form-control::-moz-placeholder {
+    color: #ccc;
+    opacity: 1
+}
+
+.login .content .form-control:-ms-input-placeholder {
+    color: #ccc
+}
+
+.login .content .form-control::-webkit-input-placeholder {
+    color: #ccc
+}
+
+.login .content .forget-form {
+    display: none
+}
+
+.login .content .form-title {
+    font-weight: 300;
+    margin-bottom: 25px
+}
+
+.login .content .form-actions {
+    clear: both;
+    border: 0;
+    padding: 0 30px 25px;
+    margin-left: -30px;
+    margin-right: -30px
+}
+
+.form-actions .forget-password-block {
+    padding-top: 7px
+}
+
+.login .has-input-icon {
+    position: relative;
+}
+
+.login .has-input-icon .input-icon {
+    position: absolute;
+    top: 14px;
+    left: 8px;
+    font-size: 24px;
+
+}
+/*input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #414a56 inset!important;
+}*/
+.login .has-input-icon input {
+    width:400px;
+    height:49px!important;
+    border-radius: 24px!important;
+    display: inline-block;
+    background-color: #414a56!important;
+    border:none;
+    color:#fff;
+    outline:none;
+}
+.login .forget-password {
+    font-size: 14px;
+}
+
+.login .content .forget-form .form-actions {
+    border: 0;
+    margin-bottom: 0;
+    padding-bottom: 20px
+}
+
+.login .content .register-form .form-actions {
+    border: 0;
+    margin-bottom: 0;
+    padding-bottom: 0
+}
+
+.login .btn,
+.login .btn-default {
+    font-weight: 600;
+    padding: 10px 25px!important;
+    background-color: #fff;
+    color: #67809f;
+}
+
+.login .content .form-actions .btn {
+    margin-top: 1px
+}
+
+.login .btn {
+    border: 1px solid #67809f;
+}
+
+.login .btn:hover {
+    border: 1px solid #67809f;
+    background-color: #67809f;
+    color: #fff;
+}
+
+.login .btn-default {
+    border: 1px solid #67809f
+}
+
+.login .btn-default:hover {
+    border: 1px solid #67809f;
+    background-color: #67809f;
+    color: #fff
+}
+
+.login .content .forget-password {
+    font-size: 15px
+}
+
+.login .copyright {
+    text-align: center;
+    margin: 10px auto 30px 0;
+    padding: 10px;
+    color: #c9dce9;
+    font-size: 13px
+}
+
+label.error{
+    color:red;
+}
+#btnLogin{
+    width:400px;
+    height:49px;
+    border-radius: 24px!important;
+    display: inline-block;
+    background-color: #36C6D3!important;
+    color:#fff;
+    font-size: 18px;
+    font-weight: normal;
+    border:none;
+    margin-bottom: 33px;
+}
+#forget-password{
+    font-size: 14px;
+}
+.info{
+    font-size:14px!important;
+    color:#b3b0af!important;
+}
+#jiaJu{
+    padding-top: 200px;
+}
+.jiaJu{
+    display: inline-block;
+    text-align: center;
+    color: #b3b0af;
+    font-size: 28px;
+    width: 100%;
+    padding-bottom: 15px;
+}

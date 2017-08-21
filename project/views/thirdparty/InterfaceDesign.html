@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include("shared/global-meta.html")
+    <title>好云商-主办方后台</title>
+    <!-- 引入全局样式 -->
+    @@include("shared/global-import-css.html")
+    <!-- 截图组件 -->
+    <link href="../../plugin/cropper/cropper.min.css" type="text/css" rel="stylesheet"/>
+    <!-- 引入全局插件样式 -->
+    @@include("shared/global-import-plugins-css.html")
+
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../plugin/pager/css/pager.css">
+    <link rel="stylesheet" href="../../css/interfaceDesign.css">
+    <link rel="stylesheet" href="../../plugin/datetimerpicker/jquery.datetimepicker.css">
+
+</head>
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+        <div class="page-wrapper">
+            <!-- 顶部Bar开始 -->
+            @@include("shared/header.html")
+            <!-- 顶部Bar结束 -->
+            <div class="clearfix"></div>
+            <!-- 页面中间部分内容开始 -->
+            <div class="page-container">
+                <!-- 侧边栏开始 -->
+                @@include("shared/thirdPartysliderbar.html")
+                <!-- 侧边栏结束 -->
+                <!-- 页面主内容开始 -->
+                <div class="page-content-wrapper">
+                    <div class="page-content">
+                        <!-- 页面主内容头部开始-->
+                        <!-- 页面主标题开始-->
+                        <div class="page-bar no-border">
+                            <h1 class="page-title bold">活动界面设计与排版</h1>
+                        </div>
+                        <div class="note note-custom">
+                            <div class="note-custom-title">
+                                <a href="javascript:;" class="btn dark mt-clipboard">
+                                    <i class="fa fa-reply"></i> 返回活动任务 </a>
+                                <button type="button" id="changeActivity" class="btn dark btn-outline"> 切换活动 </button>    
+                            </div>
+                            <div id="activityInfo" class="note-custom-body">
+
+                            </div>
+                        </div>
+                        <!-- 页面主标题结束-->
+                        <!-- 页面主内容头部结束-->
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <div class="portlet light bordered">
+                                    <div class="portlet-title QCcode-wrapper">
+                                        <div class="caption font-dark">
+                                            <div class="caption-subject bold text-center">
+                                                <i class="icon-screen-smartphone font-dark"></i> 微信扫码，实时预览
+                                            </div>
+                                            <div class="center-block QCcode-img-wrapper">
+                                                <img id="qrImg" src="../../img/logo.png" alt="二维码">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body">
+                                        <ul class="nav nav-tabs tabbable-line row" id="dragNav">
+
+                                            <li class="col-xs-12" id="addPoster">
+                                                <a class="text-center"><i class="fa fa-plus"></i> 活动海报 </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-9 tab-content">
+                                <!-- 开始内容页 -->
+                                @@include("shared/designPart/task-set.html")
+                                @@include("shared/designPart/banner.html")
+                                @@include("shared/designPart/basicInfo.html")
+                                @@include("shared/designPart/brand.html")
+                                @@include("shared/designPart/video.html")
+                                @@include("shared/designPart/groupon.html")
+                                @@include("shared/designPart/sealImg.html")
+                                <!-- 结束PANE内容页 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 页面主内容结束 -->
+            </div>
+            <!-- 页面中间内容部分结束 -->
+            <!-- 页脚开始 -->
+            @@include("shared/footer.html")
+            <!-- 页脚结束 -->
+        </div>
+        <!-- 页面内容结束 -->
+
+        <div class="spinner">
+              <div class="rect1"></div>
+              <div class="rect2"></div>
+              <div class="rect3"></div>
+              <div class="rect4"></div>
+              <div class="rect5"></div>
+              <p class="progress-text">
+                  <span>0</span>%
+              </p>
+        </div>
+        <!-- 其他组件载入结束-->
+        <script  type="text/html" id="activityInfoTmpl">
+            <h3>{{name}}</h3>
+            <p> {{relEndTime}} 至 {{relBeginTime}}</p>
+            <p> {{address}} </p>
+        </script>
+        <script type="text/html" id="moduleConfigTmpl">
+            {{each data as value i}}
+                {{if !value.drag}}
+                    {{if i==0}}
+                        <li class="col-xs-12 active">
+                    {{else}}
+                        <li class="col-xs-12">
+                    {{/if}}
+                        <a data-src="{{value.src}}" data-seal="{{value.seal}}" data-hide="{{value.hide}}" data-text="{{value.text}}" data-code="{{value.code}}" data-drag="{{value.drag}}" href="#{{value.code}}" class="text-center" data-toggle="tab">
+                            <span class="tab-text">
+                                {{value.text}}
+                                <label class="hideTxt">
+                                {{if value.hide}}
+                                    (已隐藏)
+                                {{/if}}
+                                 </label>
+                            </span>
+                        </a>
+                    </li>
+                {{else}}
+                    <li class="col-xs-12 drag-nav-item">
+                       <a data-src="{{value.src}}" data-seal="{{value.seal}}" data-hide="{{value.hide}}" data-text="{{value.text}}" data-code="{{value.code}}" data-drag="{{value.drag}}" href="#{{value.code}}" class="text-center" data-toggle="tab">
+                            <span class="move-icon">
+                                <i class="fa fa-arrows"></i>
+                            </span>
+
+                            <span class="tab-text">
+                                {{value.text}}
+                                {{if value.seal}}
+                                    {{value.code}}
+                                {{/if}}
+                                <label class="hideTxt">
+                                {{if value.hide}}
+                                    (已隐藏)
+                                {{/if}}
+                                 </label>
+                            </span>
+                        </a>
+
+
+                    </li>
+                {{/if}}
+            </li>
+            {{/each}}
+        </script>
+        <!-- 载入全局依赖js -->
+        <!-- 全局依赖js -->
+        @@include("shared/global-import-js.html")
+        <!-- Tab栏菜单 -->
+        <script src="../../plugin/temporary/bootstrap-tabdrop/js/bootstrap-tabdrop.js" type="text/javascript"></script>
+        <!-- 拖动排序脚本 -->
+        <script src="../../plugin/sortablejs/Sortable.min.js"></script>
+        <!-- 渲染模板脚本 -->
+        <script src="../../plugin/artTemplate/template.js"></script>
+
+        <!--上传相关-->
+        <script src="../../plugin/cropper/cropper.js"></script>
+        <script src="../../plugin/qCloud/crypto.js"></script>
+        <script src="../../plugin/qCloud/cos-js-sdk-v4.js"></script>
+        <script src="../../plugin/qCloud/qCloud.js"></script>
+        <script src="../../plugin/upload/qcloud-cropper.js"></script>
+        <!--上传相关-->
+
+        <script src="../../plugin/datetimerpicker/jquery.datetimepicker.js"></script>
+
+        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=NI85IBD7Gwtu9RNGbfAfjBsWvyChHDLF"></script>
+
+        <script src="../../plugin/pager/jquery-pager.js"></script>
+        <script src="../../js/interfaceDesign/interfaceDesign.js"></script>
+        <script src="../../js/interfaceDesign/pageLoader.js"></script>
+        <script src="../../js/activityMgmtForThirdparty/activityReadygo.js"></script>
+        <script src="../../js/activityMgmtForThirdparty/createActivity.js"></script>
+        <script>
+
+            activityReadygo.ready(function (id) {
+                var pageLoader=new PageLoader();
+                pageLoader.create({
+                    activityId:id,
+                    createActivity:new createActivity()
+                });
+
+            })
+
+
+
+
+        </script>
+
+    </body>
+</html>

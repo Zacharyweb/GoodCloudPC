@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include("shared/global-meta.html")
+    <title>好云商-后台管理</title>
+    <!-- 引入全局样式 -->
+    <!-- 全局样式 -->
+    <!-- 全局样式 -->
+    @@include("shared/global-import-css.html")
+    <!-- 截图插件 -->
+    <link href="../../plugin/cropper/cropper.min.css" type="text/css" rel="stylesheet"/>
+    <!-- 下拉选择框组件样式 -->
+    <link href="../../plugin/temporary/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../plugin/temporary/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- 全局插件样式 -->
+    @@include("shared/global-import-plugins-css.html")
+    <link rel="stylesheet" href="../../plugin/pager/css/pager.css">
+    <link rel="stylesheet" href="../../css/brandMgmt.css">
+    <!-- 主体样式 -->
+    <link rel="stylesheet" href="../../css/combinedShopping.css">
+    <link rel="stylesheet" href="../../css/bulidingCity/managementApp.css">
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+<div class="page-wrapper">
+    <!-- 顶部Bar开始 -->
+    @@include("shared/header.html",{ "username":"NickName" })
+    <!-- 顶部Bar结束 -->
+    <div class="clearfix"> </div>
+    <!-- 页面中间部分内容开始 -->
+    <div class="page-container">
+        <!-- 侧边栏开始 -->
+        @@include("shared/thirdPartysliderbar.html")
+        <!-- 侧边栏结束 -->
+        <!-- 页面主内容开始 -->
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div class="page-bar no-border">
+                    <h1 class="page-title bold">编辑建材城基础信息</h1>
+                </div>
+                <div id="Header" class="portlet light bordered" style="padding-bottom:30px;">
+                    <div class="portlet-body" >
+                        <div id="queryPage">
+                            <h3>编辑建材城基础信息</h3>
+                            <form class="form-horizontal form-row-seperated" id="addForm">
+                                <div class="form-body" id="createModelTmpl" UserName="{{data.UserName}}" Remark="{{data.Remark}}" PassWord="{{data.PassWord}}">
+                                    <div class="form-group brand-msg">
+                                        <label class="control-label col-md-3">
+                                            <span class="required-icon">*</span>&nbsp;
+                                            建材城首图：
+                                        </label>
+                                        <div class="logo-img-wrapper" style="display: inline-block; width: 240px;height: 120px;margin-left: 15px;">
+                                            <input type="hidden" class="isLogoImg" name="img">
+                                            <img class="brand-logo-img" id="logo" src="" alt=""
+                                                 style="display: inline-block; width: 240px;height: 120px;">
+                                        </div>
+                                        <div id="canvas1" class="canvasCss" style="display: none;left: 360px;top:1px;border:none;width: 118px;height: 118px;">
+                                            <canvas id="myCanvas1" width="118px" height="118px">
+                                                您的浏览器不支持canvas标签。
+                                            </canvas>
+                                            <span class="percent"></span>
+                                        </div>
+                                        <span class="isLogo" style="display:none;color:red;">请上传建材城首图</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">
+                                            <span class="required-icon">*</span>&nbsp;
+                                            建材城名称：
+                                        </label>
+                                        <div class="col-md-9">
+                                            <div class="input-group date form_datetime">
+                                                <input type="text" class="form-control" id="name"  required style="width: 374px ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">
+                                            <span class="required-icon">*</span>&nbsp;
+                                            联系电话：
+                                        </label>
+                                        <div class="col-md-9">
+                                            <div class="input-group date form_datetime">
+                                                <input type="text" class="form-control" id="phone" required style="width: 374px ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">
+                                            <span class="required-icon">*</span>&nbsp;
+                                            建材城介绍：
+                                        </label>
+                                        <div class="col-md-9">
+                                            <div class="input-group date form_datetime">
+                                                <textarea id="desc" cols="50" rows="5" style="outline:none;"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">
+                                            <span class="required-icon">*</span>&nbsp;
+                                            地址：
+                                        </label>
+                                        <div class="col-md-9">
+                                                <input type="text" style="outline:none;padding: 6px 12px;background-color: #fff;border: 1px solid #c2cad8;width:374px; transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;" id="thisAddress" name="thisAddress"  required>
+                                                <input type="hidden" id="thisX" name="thisX" >
+                                                <input type="hidden" id="thisY" name="thisY">
+                                                <div id="allmap" style=" width:500px; height:250px; margin-top: 20px;border:1px solid #999;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">
+                                            <span class="required-icon">*</span>&nbsp;
+                                            全景地址：
+                                        </label>
+                                        <div class="col-md-9">
+                                            <div class="input-group date form_datetime">
+                                                <input type="text" class="form-control" id="panoUrl" required style="width: 374px ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group brand-msg">
+                                        <label class="control-label col-md-3">
+                                            <span class="required-icon">*</span>&nbsp;
+                                            全景封面图：
+                                        </label>
+                                        <div class="col-md-9" style="display: inline-block;">
+                                            <input type="hidden" class="inputImg1" name="coverImg">
+                                            <i class="icon iconfont icon-add imgIcon1" style="display:none;position: absolute;border: none;top: 5px;left: 15px;"></i>
+                                            <img class="coverImg" alt="" style="display: inline-block;width: 240px;height: 120px;">
+                                            <span class="prompt"></span>
+                                            <span class="isCoverImg" style="display:none;color:red;">请上传全景封面图</span>
+                                        </div>
+                                        <div id="canvas" class="canvasCss" style="display: none;left: 360px;top:1px;border:none;width: 118px;height: 118px;">
+                                            <canvas id="myCanvas" width="118px" height="118px">
+                                                您的浏览器不支持canvas标签。
+                                            </canvas>
+                                            <span class="percent"></span>
+                                        </div>
+                                    </div>
+                                    <div class="portlet-title operation" style="padding-top: 40px;padding-bottom: 30px;">
+                                        <label class="control-label col-md-3">
+                                        </label>
+                                        <div class="col-md-9" >
+                                            <!--<a type="button" class="btn dark btn-outline" href="buildingCityIndex.html" style="margin-left: -5px;">返回</a>-->
+                                            <a type="button" class="btn green toggle-disabled" style="margin-left: -5px;" id="add">保存</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 页面主内容结束 -->
+    </div>
+    <!-- 页面中间内容部分结束 -->
+    <!-- 页脚开始 -->
+    @@include("shared/footer.html")
+
+    <!-- 页脚结束 -->
+</div>
+<!-- 页面内容结束 -->
+<!-- 载入全局依赖js -->
+<!-- 全局依赖js -->
+<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../assets/global/scripts/app.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+<script src="../../assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+<script src="../../plugin/artTemplate/template.js"></script>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=NI85IBD7Gwtu9RNGbfAfjBsWvyChHDLF"></script>
+<script type="text/javascript" src="../../plugin/jquery-validate/localization/messages_zh.js"></script>
+
+<script src="../../js/config.js"></script>
+<script src="../../js/utils.js"></script>
+<script src="../../js/jquery.extend.js"></script>
+<script src="../../plugin/toastr/toastr.js"></script>
+<script src="../../plugin/jquery-validate/jquery.validate.js"></script>
+<script src="../../js/common.js"></script>
+<!-- 下拉选择框（带搜索）初始化 -->
+<script src="../../plugin/temporary/select2/js/select2.full.min.js" type="text/javascript"></script>
+<script src="../../plugin/temporary/select2/components-select2.min.js" type="text/javascript"></script>
+<!-- 上传图片脚本 -->
+<script src="../../plugin/qCloud/cos-js-sdk-v4.js"></script>
+<script src="../../plugin/qCloud/crypto.js"></script>
+<script src="../../plugin/qCloud/qCloud.js"></script>
+<script src="../../plugin/upload/cropper.js"></script>
+<script src="../../plugin/upload/qcloud-cropper.js"></script>
+<!-- 表单验证-->
+<script src="../../plugin/jquery-validate/localization/messages_zh.js"></script>
+<!-- 自定义共用脚本 -->
+<script src="../../plugin/pager/jquery-pager.js"></script>
+<!-- 本页面依赖js -->
+<script src="../../js/buildingCityIndex/editbuildingCity.js"></script>
+<script>
+    //页面页码模块
+    var editbuildingCity =new EditbuildingCity();
+    editbuildingCity.create();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+/*reset Tab栏样式*/
+.portlet.light.portlet-fit>.portlet-body{
+    padding: 20px 30px;
+}
+.tabbable-line>.nav-tabs>li{
+    padding: 5px 15px;
+}
+.tabbable-line>.nav-tabs>li>a{
+    font-size: 16px;
+}
+
+.tabbable-line>.nav-tabs>li.active a{
+    font-weight: bold;
+}
+
+.mt-element-list .list-todo.mt-list-container ul>.mt-list-item>.list-todo-item .task-list .task-list-item:last-child {
+    border-bottom: 1px solid;
+    border-color: #e7ecf1;
+}
+.mt-element-list .list-todo .list-todo-item.grey .list-toggle{
+    background-color: #f8f8f8;
+}
+.mt-element-list .list-todo .list-todo-item.grey:after{
+    border-right-color: #f8f8f8!important;
+}
+.list-todo-icon .fa-circle-o {
+
+   font-size: 21px;
+   cursor: pointer;
+}
+.list-todo-icon .fa-check-circle{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;   
+}
+.mt-element-list .list-todo.mt-list-container ul>.mt-list-item>.list-todo-item .task-list .task-list-item>.task-content{
+    padding-left:14px;
+}
+.task-content h4{
+    font-weight: 500!important;
+}
+.mt-element-list .list-todo.mt-list-container ul>.mt-list-item>.list-todo-item .task-list .task-list-item a{
+    display: inline-block;
+    padding: 4px 4px 4px 15px;
+    margin-left: 15px;
+    color:#e43a45;
+    border:1px solid #e43a45;
+}
+#hideGropSign{
+    padding-right: 15px!important;
+}
+.mt-element-list .list-todo.mt-list-container ul>.mt-list-item>.list-todo-item .task-list .task-list-item a:hover{
+    background-color: #e43a45;
+    color:#fff;
+}
+span.user-action{
+    display: inline-block;
+    padding: 4px 4px 4px 15px;
+    margin-left: 15px;
+    color:#e43a45;
+    border:1px solid #e43a45; 
+    font-weight: 500;
+}
+span.user-action:hover{
+    background-color: #e43a45;
+    color:#fff;
+}
+.custom-modal .custom-modal-body .custom-form-group{
+    margin:10px 10px 10px 0;
+    display: flex;
+    align-items: center;
+}
+.custom-modal .custom-modal-body .custom-form-group .span-label1{
+    width: 150px;
+}
+.brand-msg input,.brand-msg textarea{
+   flex:1;
+}
+
+
+.custom-modal .custom-modal-body .custom-form-group .span-label2{
+    margin-left: 10px;
+}
+
+.custom-modal-form{
+    position: relative;
+    padding:50px 0 10px 20px; 
+    margin-bottom: 10px;
+    background-color: #e9edef;
+}
+.custom-modal-form .form-title{
+    position: absolute;
+    left:-8px;
+    top:0;
+    padding:10px 10px;
+    background-color: #ed6b75;
+    color:#fff;
+    font-size: 16px;
+    box-shadow:  2px 2px 7px rgba(0,0,0,.4);
+    
+
+}
+.custom-modal-form .form-group .form-group-title{
+    border-left:5px solid #ed6b75;
+    padding-left: 15px;
+
+}
+.custom-input-wrapper{
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+.custom-input-wrapper input{
+    width: 120px;
+    margin:0 10px;
+} 
+.custom-modal-form .form-group  .custom-question{
+    padding-left: 20px;
+}
+.custom-options{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px;
+}
+.custom-options .custom-options-item{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    margin: 8px 20px 10px 0;
+    
+}
+.custom-options .custom-options-item input{
+    margin-left: 10px;
+
+}

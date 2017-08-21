@@ -1,0 +1,56 @@
+.portlet-title .caption{
+    padding-left: 15px!important;
+}
+.disabled{
+    color:lightgray!important;
+}
+.portlet-title button{
+    border-radius: 4px!important;
+}
+
+.modal .modal-body p{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+.modal .modal-body p .span-label{
+    width: 120px;
+}
+.width{
+    width: 120px;
+    text-align: left;
+    display: inline-block;
+}
+/*
+#addWechat p{
+    margin: 5px 0;
+}
+#addWechat button{
+    margin-top:-35px;
+}
+#addWechat ul li{
+    margin-bottom: 20px;
+    border-bottom:1px solid #eee;
+    padding-bottom:10px;
+}
+*/
+form p span {
+    width: 230px;
+    text-align: left;
+}
+#addWechat .modal-content{
+    width: 700px;
+    margin: 0 auto;
+    max-height:800px;
+    -webkit-max-height: 800px; overflow:auto;
+    position: relative;
+    padding-bottom: 40px;
+}
+#addWechat .modal-footer{
+    width:680px;
+    position: fixed;
+    bottom:1px;
+    border: none;
+    background: #fff;
+    z-index:100;
+}

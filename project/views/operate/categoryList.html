@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>好云商-后台管理</title>
+    @@include("shared/global-meta.html")
+    <!-- 引入全局样式 -->
+    @@include("shared/global-import-css.html")
+    <!-- 引入全局插件样式 -->
+    @@include("shared/global-import-plugins-css.html")
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../plugin/pager/css/pager.css">
+    <link rel="stylesheet" href="../../css/category.css">
+    <link rel="stylesheet" href="../../plugin/toastr/toastr.min.css">
+
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+<div class="page-wrapper">
+    <!-- 顶部Bar开始 -->
+    @@include("shared/header.html",{ "username":"NickName" })
+    <!-- 顶部Bar结束 -->
+    <div class="clearfix"></div>
+    <!-- 页面中间部分内容开始 -->
+    <div class="page-container">
+        <!-- 侧边栏开始 -->
+        @@include("shared/operatesliderbar.html")
+        <!-- 侧边栏结束 -->
+        <!-- 页面主内容开始 -->
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div class="page-bar no-border">
+                    <h1 class="page-title bold">品类管理</h1>
+                </div>
+                <div class="row m-heading-1 border-default m-bordered">
+                    <div class="col-sm-3">
+                        <input  id="text" class="form-control input-sm" placeholder="请输入品类名称">
+                    </div>
+                    <div class="btn-group btn-group-devided col-sm-1 col-xs-2" data-toggle="buttons">
+                        <button id="btnQuery" type="button" class="btn dark btn-outline btn pull-right"><i class="fa fa-search"></i> 查询</button>
+                    </div>
+                </div>
+                <!-- 活动查询框结束 -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- 表格开始-->
+                        <div class="portlet light bordered" style="min-height:700px; height:auto!important;height:700px; position: relative;padding-bottom: 70px;">
+                            <div class="btn-group btn-group-devided" data-toggle="buttons" style="width: 100%">
+                                <button type="button" id="addCategory" class=" btn dark pull-right">
+                                    +&nbsp;添加&nbsp;
+                                </button>
+                            </div>
+                            <div class="portlet-body">
+                                <table id="categoryTable" class="table table-striped table-bordered table-hover table-header-fixed">
+                                    <thead>
+                                    <tr class="table-header">
+                                        <th>序号</th>
+                                        <th>品类管理</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                                <div class="row" style="position: absolute;bottom:20px;right: 35px;">
+                                    <span id="pager" class="pager pull-right">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 表格结束 -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 页面主内容结束 -->
+    </div>
+    <!-- 页面中间内容部分结束 -->
+    <!-- 页脚开始 -->
+    @@include("shared/footer.html")
+    <!-- 页脚结束 -->
+</div>
+<div class="modal fade" id="addCategoryWin" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header ui-draggable-handle">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">添加品类</h4>
+            </div>
+            <div class="modal-body">
+                <p class="category-name form-group">
+                    <span class="required" aria-required="true" > *&nbsp;</span>
+                    <span>品类名称&nbsp;&nbsp;</span>
+                    <input type="hidden" value="0" id="categoryId" >
+                    <input  type="text" class="form-control" id="categoryName" >
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal" style="margin-right: 20px;">取消</button>
+                <button type="button" id="saveCategory" class="btn green">保存</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<script id="categoryTmpl" type="text/html">
+    {{each data as value i}}
+        <tr  data-id="{{value.id}}" data-val="{{value.name}}" data-sort="{{value.sortValue}}">
+            <td style="width: 60px;">{{i + 1}}</td>
+            <td style="min-width: 203px;">{{value.name}}</td>
+            <td style="min-width: 203px;">
+
+                <a data-func="up" href="javascript:void(0);">上移</a>&nbsp;&nbsp;&nbsp;
+                <a data-func="down" href="javascript:void(0);">下移</a>&nbsp;&nbsp;&nbsp;
+                <a data-func="edit" href="javascript:void(0);">编辑</a>&nbsp;&nbsp;&nbsp;
+                <a data-func="del" data-toggle="modal" href="#confirmModal">删除</a>
+            </td>
+        </tr>
+    {{/each}}
+
+</script>
+<!-- 页面内容结束 -->
+<div class="modal fade bs-modal-sm" id="confirmModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body"> 确定删除吗？ </div>
+            <div class="modal-footer no-border">
+                <button type="button" class="btn dark confirmDelete">确定</button>
+                <button type="button" class="btn dark btn-outline" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 载入全局依赖js -->
+@@include("shared/global-import-js.html")
+
+<!-- 本页面依赖组件初始化 -->
+<script src="../../plugin/artTemplate/template.js"></script>
+<script src="../../js/config.js"></script>
+<script src="../../js/utils.js"></script>
+<script src="../../js/jquery.extend.js"></script>
+<script src="../../plugin/pager/jquery-pager.js"></script>
+<script src="../../plugin/toastr/toastr.js"></script>
+<script src="../../js/categoryManager/categoryList.js"></script>
+<script>
+   var categoryList =new CategoryList();
+   categoryList.create();
+</script>
+</body>
+</html>

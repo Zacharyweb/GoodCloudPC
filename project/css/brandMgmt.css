@@ -1,0 +1,57 @@
+
+    #addBrand{
+        margin-left: 10px;
+    }
+    table tbody tr .brand-logo {
+        width: 100px;
+        height: 65px;
+    }
+    .post-modal .brand-msg{
+        position: relative;
+        margin-bottom: 30px;
+        display: flex;
+        line-height: 34px;
+    }
+    .post-modal .brand-msg input,.post-modal .brand-msg textarea{
+       flex:1;
+    }
+    .post-modal .brand-msg .span-label{
+        width: 118px;
+    }
+    .post-modal .logo-img-wrapper{
+         display: flex;
+         align-items: flex-end;
+    }
+    .post-modal .logo-img-wrapper img{
+        width: 100px;
+        height: 65px;
+        cursor: pointer;  
+    }
+    .post-modal .logo-img-wrapper .logo-url{
+        display: none;
+    }
+    .post-modal .logo-img-wrapper .tips-text{
+        margin-left: 20px;
+        font-size: 14px;
+        color:#29b4b6;
+    }
+    .post-modal .logo-img-wrapper .tips-text p{
+        margin:0;
+        line-height: 24px;
+    }
+    .post-modal.modal .no-required{
+        padding-left: 15px;
+        width: 130px;
+    }
+   .post-modal.modal label.error{
+        position: absolute;
+        top:24px;
+        left: 124px;
+   }
+    #confirmModal .modal-body{
+        padding:40px 0 0 30px;
+    }
+    .isDisabled{
+        color:lightgray!important;
+        pointer-events: none;
+    }

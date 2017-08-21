@@ -1,0 +1,69 @@
+.payments-info{
+	margin: 0 0 20px;
+    padding: 15px 30px 15px 15px;
+	background-color: #f5f8fd;
+	display: flex;
+}
+.payments-info .payments-info-left,
+.payments-info .payments-info-right{
+	display: flex;
+}
+.payments-info  .payments-info-item{
+	padding:15px 20px;
+	background-color: #fff;	
+}
+.payments-info  .payments-info-left{
+	padding-right: 10px;
+	border-right: 1px dashed #333;
+}
+.payments-info-left .all-payments{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.payments-info-left .fa-question-circle{
+	position: absolute;
+	top:15px;
+	right: 20px;
+	font-size: 26px;
+}
+.payments-info-left .all-income-and-cost,
+.payments-info-right .day-income-and-cost {
+	margin-left: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.payments-info-left .all-income-and-cost p,
+.payments-info-right .day-income-and-cost p{
+	margin:0;
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+.payments-info-left .all-income-and-cost .all-cost,
+.payments-info-right .day-income-and-cost .day-cost{
+	margin-top: 20px;
+}
+.payments-info-right{
+	margin-left: 10px;
+} 
+.payments-info-right .day-payments{
+	display: flex;
+	align-items: center;
+}
+.modal .modal-body .form-group {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+.modal .modal-body .form-group .span-label{
+    width: 120px;
+}
+.modal-dialog-450{
+	width: 450px!important;
+}
+#sequenceNumModal .modal-footer{
+	text-align: left;
+}

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include("shared/global-meta.html")
+    <title>好云商-后台管理</title>
+    <!-- 引入全局样式 -->
+    <!-- 全局样式 -->
+    <!-- 全局样式 -->
+    @@include("shared/global-import-css.html")
+    <!-- 截图插件 -->
+    <link href="../../plugin/cropper/cropper.min.css" type="text/css" rel="stylesheet"/>
+    <!-- 下拉选择框组件样式 -->
+    <link href="../../plugin/temporary/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../plugin/temporary/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- 全局插件样式 -->
+    @@include("shared/global-import-plugins-css.html")
+    <link rel="stylesheet" href="../../plugin/pager/css/pager.css">
+    <link rel="stylesheet" href="../../css/brandMgmt.css">
+    <!-- 主体样式 -->
+    <link rel="stylesheet" href="../../css/combinedShopping.css">
+    <link rel="stylesheet" href="../../css/bulidingCity/managementApp.css">
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+<div class="page-wrapper">
+    <!-- 顶部Bar开始 -->
+    @@include("shared/header.html",{ "username":"NickName" })
+    <!-- 顶部Bar结束 -->
+    <div class="clearfix"> </div>
+    <!-- 页面中间部分内容开始 -->
+    <div class="page-container">
+        <!-- 侧边栏开始 -->
+        @@include("shared/thirdPartysliderbar.html")
+        <!-- 侧边栏结束 -->
+        <!-- 页面主内容开始 -->
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div class="page-bar no-border">
+                    <h1 class="page-title bold">联单联购</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- 表格开始-->
+                        <div id="Header" class="portlet light bordered" style="padding-bottom:30px;">
+                            <div class="portlet-body" >
+                                <div id="queryPage">
+                                    <h3>联单联购活动</h3>
+                                    <form id="galleryContainer">
+                                        <div class="form-group brand-msg" id="icon">
+                                           <span class="width">
+                                               <span class="required" aria-required="true"> *&nbsp;</span>
+                                               <span class="span-label no-required">活动封面：</span>
+                                           </span>
+                                            <div class="logo-img-wrapper" style="display: inline-block;">
+                                                <input type="hidden" class="inputImg" name="img">
+                                                <i class="brand-logo-img icon iconfont icon-add imgIcon1"
+                                                style="position: absolute;border: none;top: 35px;left: 190px;"></i>
+                                                <img class="brand-logo-img bigImg coverImg" alt=""
+                                                     style="display: inline-block;width: 400px;height: 200px;">
+                                                <span class="prompt"></span>
+                                            </div>
+                                            <div id="canvas" class="canvasCss" style="display: none;left: 250px;top: 40px;border:none;">
+                                                <canvas id="myCanvas" width="118px" height="118px">
+                                                    您的浏览器不支持canvas标签。
+                                                </canvas>
+                                                <span class="percent"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group brand-msg" style="padding-left: 110px;">
+                                            <span class="width" style="margin-left: -110px">
+                                                <span style="color:red;"> *&nbsp;</span>
+                                                <span class="span-label">描述说明：</span>
+                                            </span>
+                                            <textarea id="description" style="width: 700px;height: 300px;" name="content"></textarea>
+                                            <span class="prompt"></span>
+                                        </div>
+                                    </form>
+                                    <div class="portlet-title operation" style="padding-top: 60px;">
+                                        <a type="button" class="btn green toggle-disabled" style="margin: 0 20px 0 360px;" id="add">保存</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 表格结束 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 页面主内容结束 -->
+    </div>
+    <!-- 页面中间内容部分结束 -->
+    <!-- 页脚开始 -->
+    @@include("shared/footer.html")
+
+    <!-- 页脚结束 -->
+</div>
+<!-- 页面内容结束 -->
+<!-- 载入全局依赖js -->
+<!-- 全局依赖js -->
+<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../assets/global/scripts/app.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+<script src="../../assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+<script src="../../plugin/artTemplate/template.js"></script>
+
+<script src="../../js/config.js"></script>
+<script src="../../js/utils.js"></script>
+<script src="../../js/jquery.extend.js"></script>
+<script src="../../plugin/toastr/toastr.js"></script>
+<script src="../../plugin/jquery-validate/jquery.validate.js"></script>
+<script src="../../js/common.js"></script>
+<!-- 下拉选择框（带搜索）初始化 -->
+<script src="../../plugin/temporary/select2/js/select2.full.min.js" type="text/javascript"></script>
+<script src="../../plugin/temporary/select2/components-select2.min.js" type="text/javascript"></script>
+<!-- 上传图片脚本 -->
+<script src="../../plugin/qCloud/cos-js-sdk-v4.js"></script>
+<script src="../../plugin/qCloud/crypto.js"></script>
+<script src="../../plugin/qCloud/qCloud.js"></script>
+<script src="../../plugin/upload/cropper.js"></script>
+<script src="../../plugin/upload/qcloud-cropper.js"></script>
+<!-- 表单验证-->
+<script src="../../plugin/jquery-validate/localization/messages_zh.js"></script>
+<!-- 自定义共用脚本 -->
+<script src="../../plugin/pager/jquery-pager.js"></script>
+<!-- 本页面依赖js -->
+<!--导出Excel表格js-->
+<script type="text/javascript" language="javascript" src="../../plugin/excel/excel.js"></script>
+<!--富文本编辑器 -->
+<script type="text/javascript" src="../../plugin/kindeditor-4.1.10/kindeditor.js"></script>
+<script type="text/javascript" src="../../plugin/kindeditor-4.1.10/lang/zh_CN.js"></script>
+<script>
+    //初始化模块
+    var editor;
+    KindEditor.ready(function(K) {
+        editor = K.create('textarea[name="content"]', {
+            allowFileManager : true
+        });
+        K('input[name=getHtml]').click(function(e) {
+            alert(editor.html());
+        });
+        K('input[name=isEmpty]').click(function(e) {
+            alert(editor.isEmpty());
+        });
+        K('input[name=getText]').click(function(e) {
+            alert(editor.text());
+        });
+        K('input[name=selectedHtml]').click(function(e) {
+            alert(editor.selectedHtml());
+        });
+        K('input[name=setHtml]').click(function(e) {
+            editor.html('<h3>Hello KindEditor</h3>');
+        });
+        K('input[name=setText]').click(function(e) {
+            editor.text('<h3>Hello KindEditor</h3>');
+        });
+        K('input[name=insertHtml]').click(function(e) {
+            editor.insertHtml('<strong>插入HTML</strong>');
+        });
+        K('input[name=appendHtml]').click(function(e) {
+            editor.appendHtml('<strong>添加HTML</strong>');
+        });
+        K('input[name=clear]').click(function(e) {
+            editor.html('');
+        });
+        //自定义上传图片
+        K("span[data-name='images']").html('');
+        K("span[data-name='images']").html('<img alt="上传图片">');
+        K("span[data-name='images']").children('img').addClass('ke-toolbar-icon ke-toolbar-icon-url ke-icon-image');
+        K("span[data-name='images']").css({'width':'20px','height':'20px'});
+        K("span[data-name='images']").attr('title','上传图片');
+        K("span[data-name='images']").addClass('timg');
+        K("span[data-name='images']").click(function(e) {
+            $.imgUpload({
+                callbackEle:"[data-name='images'],.timg",
+                successCallback:function(path){
+                    path = urlFunc.imgFormat(path);
+                    editor.appendHtml('<img src='+path+'>');
+                },
+                cropper:true,
+                cropperOpts: {
+                    aspectRatio: 4/3,//截图框的比例
+                    zoomable:false, //禁用鼠标滚轮放大缩小
+                    viewMode:1 //截图框只能在图片区域内移动
+                }
+            },cos)
+        });
+    });
+    //封面图
+    $(".brand-logo-img").click(function(){
+        $.imgUpload({
+            callbackEle:"[name='brandImg'],.brand-logo-img",
+            successCallback:function(path){
+                $("input[type='file']").css('display','none');
+                $("#icon").find('i').css('display',"none");
+                $('.inputImg').attr("path",path);
+            },
+            progressCallBack:function(curr){
+                if(curr>0){
+                    $("#canvas").css('display','block');
+                    $("#canvas").parent().find('i').css('display','none');
+                }
+                var canvas = document.getElementById("myCanvas");
+                if(canvas.getContext){
+                    var ctx = canvas.getContext("2d");
+                    ctx.beginPath();
+                    ctx.lineWidth = 5;
+                    ctx.lineWidth = 5;//线条宽度
+                    var circle = {
+                        x : 60,    //圆心的x轴坐标值
+                        y : 60,    //圆心的y轴坐标值
+                        r : 30      //圆的半径
+                    };
+                    ctx.strokeStyle ='#32c5d2';
+                    ctx.arc(circle.x,circle.y,circle.r,0,2*curr*Math.PI,false);
+                    ctx.stroke();
+                    var percent = (curr.toFixed(2)*100).toFixed(0);
+                    $(".percent").html(""+percent+"%");
+                    if(curr == 1){
+                        $("#canvas").css('display','none');
+                    }
+                }
+            },
+            cropper:true,
+            cropperOpts: {
+                aspectRatio: 2/1,//截图框的比例
+                zoomable:false, //禁用鼠标滚轮放大缩小
+                viewMode:1 //截图框只能在图片区域内移动
+            }
+        },cos)
+    });
+    $.ajaxAuthor({
+        type: "get",
+        url: urlFunc.format("organizeAct/single"),
+        data:{},
+        dataType: "json",
+        success: function(result) {
+            result.data.actImg = urlFunc.imgFormat(result.data.actImg)
+            $(".inputImg").attr('path',result.data.actImg);
+            $('.coverImg').attr('src',result.data.actImg);
+            $(".imgIcon1").css('display','none');
+            editor.html(result.data.description);
+        },
+        error: function(xhr, msg, ex) {
+            console.log(ex);
+        }
+    });
+    //保存
+    $("#add").on('click',function () {
+        $("#add").addClass('thisDisabled');
+        var actImg = $(".inputImg").attr('path');
+        var description = editor.html();
+        if(actImg == undefined){
+            $(".inputImg").siblings('span.prompt').html('请上传活动封面');
+            $("#add").removeClass('thisDisabled');
+            return
+        }else{
+            $(".inputImg").siblings('span.prompt').html('');
+        }
+        if(description == ''){
+            $("#description").siblings('span.prompt').html('请填写描述说明');
+            $("#add").removeClass('thisDisabled');
+            return
+        }else{
+            $(".inputImg").siblings('span.prompt').html('');
+        }
+        $.ajaxAuthor({
+            type: "post",
+            url: urlFunc.format("organizeAct/create"),
+            data:{
+                actImg:actImg,
+                description:description
+            },
+            dataType: "json",
+            success: function(result) {
+                if(result.statusCode == 0){
+                    toastr.success('编辑联单联购活动成功');
+                    $("#add").removeClass('thisDisabled');
+                }else{
+                    toastr.warning('编辑联单联购活动失败')
+                }
+            },
+            error: function(xhr, msg, ex) {
+                console.log(ex);
+            }
+        });
+    })
+
+</script>
+</body>
+
+</html>
